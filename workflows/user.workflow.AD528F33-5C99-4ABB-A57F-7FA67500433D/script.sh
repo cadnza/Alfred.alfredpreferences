@@ -1,9 +1,9 @@
 # Get repo directory
 dirRepos=$1
 
-# Get folder icon path
-iconPathDefault="/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/GenericFolderIcon.icns"
-iconPathAlfred="/Applications/Alfred 4.app/Contents/Resources/appicon.icns"
+# Get icon paths
+iconPathDefault="/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/GenericFolderIcon.icns" # Folder
+iconPathAlfred="/Applications/Alfred 4.app/Contents/Resources/appicon.icns" # Alfred logo
 
 # Open JSON variable
 json=""
