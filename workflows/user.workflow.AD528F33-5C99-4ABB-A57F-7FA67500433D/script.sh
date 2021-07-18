@@ -2,7 +2,8 @@
 dirRepos=$1
 
 # Get folder icon path
-iconPath="/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/GenericFolderIcon.icns"
+iconPathDefault="/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/GenericFolderIcon.icns"
+iconPathAlfred="/Applications/Alfred 4.app/Contents/Resources/appicon.icns"
 
 # Open JSON variable
 json=""
@@ -11,7 +12,14 @@ json=""
 ls $dirRepos | while read -r repo
 do
 	fullpath=$dirRepos/$repo
-	title=$repo
+	if [ $repo = "Alfred.alfredpreferences" ]
+	then
+		title="Alfred workflows"
+		iconPath=$iconPathAlfred
+	else
+		title=$repo
+		iconPath=$iconPathDefault
+	fi
 	subtitle=$fullpath
 	arg=$fullpath
 	autocomplete=$repo
