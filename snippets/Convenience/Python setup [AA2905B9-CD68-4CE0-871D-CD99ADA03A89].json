@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : ".rs.restartR(afterRestartCommand=\"reticulate::use_python('\/Library\/Frameworks\/Python.framework\/Versions\/3.7\/bin\/python3',required=TRUE)\")",
+    "dontautoexpand" : true,
+    "uid" : "AA2905B9-CD68-4CE0-871D-CD99ADA03A89",
+    "name" : "Python setup",
+    "keyword" : ""
+  }
+}

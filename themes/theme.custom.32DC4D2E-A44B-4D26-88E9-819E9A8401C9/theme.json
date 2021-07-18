@@ -1,0 +1,61 @@
+{
+  "alfredtheme" : {
+    "result" : {
+      "textSpacing" : 5,
+      "subtext" : {
+        "size" : 12,
+        "colorSelected" : "#EAEAEAFF",
+        "font" : "System",
+        "color" : "#C0C0C0FF"
+      },
+      "shortcut" : {
+        "size" : 16,
+        "colorSelected" : "#FFFFFFFF",
+        "font" : "System",
+        "color" : "#D5D5D5FF"
+      },
+      "backgroundSelected" : "#00000045",
+      "text" : {
+        "size" : 18,
+        "colorSelected" : "#FFFFFFFF",
+        "font" : "System",
+        "color" : "#D5D5D5FF"
+      },
+      "iconPaddingHorizontal" : 4,
+      "paddingVertical" : 3,
+      "iconSize" : 40
+    },
+    "search" : {
+      "paddingVertical" : 0,
+      "background" : "#0000001D",
+      "spacing" : 8,
+      "text" : {
+        "size" : 35,
+        "colorSelected" : "#FFFFFFFF",
+        "font" : "System",
+        "color" : "#FEFFFFFF"
+      },
+      "backgroundSelected" : "#FEFFFF32"
+    },
+    "window" : {
+      "color" : "#00000033",
+      "paddingHorizontal" : 8,
+      "width" : 559,
+      "borderPadding" : 0,
+      "borderColor" : "#0000007F",
+      "blur" : 40,
+      "roundness" : 6,
+      "paddingVertical" : 8
+    },
+    "credit" : "Cadenza",
+    "separator" : {
+      "color" : "#CBCBCBF3",
+      "thickness" : 0
+    },
+    "scrollbar" : {
+      "color" : "#797979FF",
+      "thickness" : 2
+    },
+    "name" : "Tinted"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "alfredtheme" : {
+    "result" : {
+      "textSpacing" : 2,
+      "subtext" : {
+        "size" : 10,
+        "colorSelected" : "#222322FF",
+        "font" : "System",
+        "color" : "#1C1D1CFF"
+      },
+      "shortcut" : {
+        "size" : 12,
+        "colorSelected" : "#222322FF",
+        "font" : "System",
+        "color" : "#1C1D1CFF"
+      },
+      "backgroundSelected" : "#B1D7FEFF",
+      "text" : {
+        "size" : 14,
+        "colorSelected" : "#1D1C47FF",
+        "font" : "System",
+        "color" : "#1E1F1EFF"
+      },
+      "iconPaddingHorizontal" : 4,
+      "paddingVertical" : 1,
+      "iconSize" : 27
+    },
+    "search" : {
+      "paddingVertical" : 0,
+      "background" : "#CECFCEFF",
+      "spacing" : 0,
+      "text" : {
+        "size" : 18,
+        "colorSelected" : "#000000FF",
+        "font" : "System Light",
+        "color" : "#1D1E1DFF"
+      },
+      "backgroundSelected" : "#B2D7FFFF"
+    },
+    "window" : {
+      "color" : "#CECFCEFF",
+      "paddingHorizontal" : 6,
+      "width" : 407,
+      "borderPadding" : 0,
+      "borderColor" : "#0000007F",
+      "blur" : 0,
+      "roundness" : 4,
+      "paddingVertical" : 7
+    },
+    "credit" : "Daniel Dayley",
+    "separator" : {
+      "color" : "#CBCBCBF3",
+      "thickness" : 0
+    },
+    "scrollbar" : {
+      "color" : "#8D8E8DFF",
+      "thickness" : 4
+    },
+    "name" : "Sierra Small"
+  }
+}

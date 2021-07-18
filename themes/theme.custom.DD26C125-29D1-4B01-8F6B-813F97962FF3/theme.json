@@ -1,0 +1,61 @@
+{
+  "alfredtheme" : {
+    "result" : {
+      "textSpacing" : 5,
+      "subtext" : {
+        "size" : 12,
+        "colorSelected" : "#EAEAEAFF",
+        "font" : "System",
+        "color" : "#EAEAEAFF"
+      },
+      "shortcut" : {
+        "size" : 16,
+        "colorSelected" : "#FFFFFFFF",
+        "font" : "System",
+        "color" : "#D5D5D5FF"
+      },
+      "backgroundSelected" : "#00000026",
+      "text" : {
+        "size" : 18,
+        "colorSelected" : "#FFFFFFFF",
+        "font" : "System",
+        "color" : "#FEFFFFFF"
+      },
+      "iconPaddingHorizontal" : 4,
+      "paddingVertical" : 3,
+      "iconSize" : 40
+    },
+    "search" : {
+      "paddingVertical" : 0,
+      "background" : "#00000026",
+      "spacing" : 8,
+      "text" : {
+        "size" : 35,
+        "colorSelected" : "#FEFFFFFF",
+        "font" : "System",
+        "color" : "#FEFFFFFF"
+      },
+      "backgroundSelected" : "#FEFFFF34"
+    },
+    "window" : {
+      "color" : "#00000000",
+      "paddingHorizontal" : 8,
+      "width" : 559,
+      "borderPadding" : 0,
+      "borderColor" : "#0000007F",
+      "blur" : 40,
+      "roundness" : 3,
+      "paddingVertical" : 8
+    },
+    "credit" : "Cadenza",
+    "separator" : {
+      "color" : "#CBCBCBF3",
+      "thickness" : 0
+    },
+    "scrollbar" : {
+      "color" : "#797979FF",
+      "thickness" : 2
+    },
+    "name" : "Glass"
+  }
+}

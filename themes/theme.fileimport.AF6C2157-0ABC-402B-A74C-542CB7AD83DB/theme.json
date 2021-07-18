@@ -1,0 +1,61 @@
+{
+  "alfredtheme" : {
+    "result" : {
+      "textSpacing" : 5,
+      "subtext" : {
+        "size" : 13,
+        "colorSelected" : "#222322FF",
+        "font" : "System",
+        "color" : "#F4F4F4FF"
+      },
+      "shortcut" : {
+        "size" : 16,
+        "colorSelected" : "#222322FF",
+        "font" : "System",
+        "color" : "#F4F4F4FF"
+      },
+      "backgroundSelected" : "#FAF9FAFF",
+      "text" : {
+        "size" : 18,
+        "colorSelected" : "#222322FF",
+        "font" : "System",
+        "color" : "#F4F4F4FF"
+      },
+      "iconPaddingHorizontal" : 4,
+      "paddingVertical" : 3,
+      "iconSize" : 40
+    },
+    "search" : {
+      "paddingVertical" : 4,
+      "background" : "#222322FF",
+      "spacing" : 8,
+      "text" : {
+        "size" : 34,
+        "colorSelected" : "#000000FF",
+        "font" : "System Light",
+        "color" : "#F4F4F4FF"
+      },
+      "backgroundSelected" : "#B2D7FFFF"
+    },
+    "window" : {
+      "color" : "#222322FF",
+      "paddingHorizontal" : 9,
+      "width" : 559,
+      "borderPadding" : 0,
+      "borderColor" : "#0000007F",
+      "blur" : 0,
+      "roundness" : 4,
+      "paddingVertical" : 8
+    },
+    "credit" : "Daniel Dayley",
+    "separator" : {
+      "color" : "#CBCBCBF3",
+      "thickness" : 0
+    },
+    "scrollbar" : {
+      "color" : "#8D8E8DFF",
+      "thickness" : 2
+    },
+    "name" : "Pro"
+  }
+}

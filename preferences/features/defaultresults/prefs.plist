@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>applicationUseKeywords</key>
+	<true/>
+	<key>fallbacks</key>
+	<array>
+		<string>features.websearch.duckduckgo.fallback</string>
+	</array>
+	<key>showUserDefined</key>
+	<array>
+		<string>dyn.ah62d4rv4ge81e6dwr7za</string>
+	</array>
+</dict>
+</plist>
