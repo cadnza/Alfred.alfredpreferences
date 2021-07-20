@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string></string>
+	<string>com.cadnza.alfredSigningSavvyToLink</string>
 	<key>connections</key>
 	<dict>
 		<key>264A09D9-DE34-403A-9524-C67F6525811D</key>

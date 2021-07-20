@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string></string>
+	<string>com.cadnza.alfredOpenInRStudio</string>
 	<key>connections</key>
 	<dict>
 		<key>69F4985C-E5A7-4C66-91E5-E25269D4BA01</key>

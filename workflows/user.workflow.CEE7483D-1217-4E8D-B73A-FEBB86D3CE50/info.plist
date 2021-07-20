@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string></string>
+	<string>com.cadnza.alfredLegoCategorizer</string>
 	<key>connections</key>
 	<dict>
 		<key>A84CEA46-B446-4257-83AC-F5459E1F4650</key>

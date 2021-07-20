@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string></string>
+	<string>com.cadnza.alfredResetLaunchpad</string>
 	<key>connections</key>
 	<dict>
 		<key>32C11817-6FC0-4801-8D37-51C48B0A3747</key>

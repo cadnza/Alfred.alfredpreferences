@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string></string>
+	<string>com.cadnza.alfredOpenInVScode</string>
 	<key>connections</key>
 	<dict>
 		<key>2D4D86B7-C792-4719-80E2-24636CE39AB6</key>

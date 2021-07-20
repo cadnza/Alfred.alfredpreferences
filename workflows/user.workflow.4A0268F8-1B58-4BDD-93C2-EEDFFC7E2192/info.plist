@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string></string>
+	<string>com.cadnza.alfredToRemindersNotebook</string>
 	<key>connections</key>
 	<dict>
 		<key>CA1C9CE6-2721-46D6-A9FC-38EA9367B33A</key>
