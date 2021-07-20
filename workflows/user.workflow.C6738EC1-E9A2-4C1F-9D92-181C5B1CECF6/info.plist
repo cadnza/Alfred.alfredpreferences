@@ -104,7 +104,8 @@
 		</dict>
 	</array>
 	<key>readme</key>
-	<string></string>
+	<string>v1.0.0
+- First release</string>
 	<key>uidata</key>
 	<dict>
 		<key>69F4985C-E5A7-4C66-91E5-E25269D4BA01</key>
@@ -123,7 +124,7 @@
 		</dict>
 	</dict>
 	<key>version</key>
-	<string></string>
+	<string>1.0.0</string>
 	<key>webaddress</key>
 	<string>https://github.com/cadnza</string>
 </dict>

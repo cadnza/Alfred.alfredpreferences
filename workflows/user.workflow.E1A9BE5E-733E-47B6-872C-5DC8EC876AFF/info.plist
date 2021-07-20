@@ -111,7 +111,8 @@ killall Dock</string>
 		</dict>
 	</array>
 	<key>readme</key>
-	<string></string>
+	<string>v1.0.0
+- First release</string>
 	<key>uidata</key>
 	<dict>
 		<key>235C11C1-CAD7-4B67-B22F-EF3C7E17E80C</key>
@@ -136,6 +137,8 @@ killall Dock</string>
 			<integer>60</integer>
 		</dict>
 	</dict>
+	<key>version</key>
+	<string>1.0.0</string>
 	<key>webaddress</key>
 	<string>https://github.com/cadnza</string>
 </dict>
