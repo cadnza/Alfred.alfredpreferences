@@ -15,7 +15,8 @@ dirWorkflows=$repo/workflows
 workflows=$(ls -1 $dirWorkflows)
 
 # Reset images directory
-imageDir=$repo/readmeImages
+imageDirName=readmeImages
+imageDir=$repo/$imageDirName
 rm -rf $imageDir 2> /dev/null
 mkdir $imageDir
 
@@ -39,12 +40,16 @@ do
 		then
 			iconSource=$(greadlink $iconPre)
 			iconName=$(basename $iconSource)
-			iconPath=$imageDir/$iconName
-			cp $iconSource $iconPath
+			iconPathPre=$imageDir/$iconName
+			cp $iconSource $iconPathPre
+			iconPath=./$imageDirName/$iconName
 		else
-			iconPath=$iconPre
+			#iconPath=$iconPre
+			iconName=$(basename $iconPre)
+			iconPath=./$imageDirName/$iconName
 		fi
-		icon="![]($iconPath)"
+		#icon="![]($iconPath)"
+		icon="<img src=\"$iconPath\"></img>"
 	else
 		icon=""
 	fi
