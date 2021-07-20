@@ -4,11 +4,11 @@
 
 My settings and workflows for [Alfred](https://www.alfredapp.com/) since [syncing can be finicky](https://www.alfredapp.com/help/advanced/sync/#second-mac) and [iCloud and Google Drive aren't recommended](https://www.alfredapp.com/help/advanced/sync/#services). Plus [workflows are awesome](https://www.alfredapp.com/workflows/) and get even better with version control.
 
-Here are my workflows so far:
+## Workflows
 
 | | Workflow | Version | Author | Description |
 |-|-|-|-|-|
-| ![](/Users/cadenza/Repos/Alfred.alfredpreferences/readmeImages/AppIcon.icns) | To Reminders notebook |  | Jon Dayley | Captures text in a Reminders list |
+| ![](/Users/cadenza/Repos/Alfred.alfredpreferences/readmeImages/AppIcon.icns) | To Reminders notebook | 1.0.0 | Jon Dayley | Captures text in a Reminders list |
 | ![](/Users/cadenza/Repos/Alfred.alfredpreferences/readmeImages/anki.icns) | Anki Media | 1.0.0 | Jon Dayley | Shows the Anki media folder |
 | ![](/Users/cadenza/Repos/Alfred.alfredpreferences/readmeImages/Code.icns) | Open in Visual Studio Code | 1.0.0 | Jon Dayley | Lists repos and opens selection in Visual Studio Code |
 | ![](/Users/cadenza/Repos/Alfred.alfredpreferences/readmeImages/RProject.icns) | Open in RStudio | 1.0.0 | Jon Dayley | Lists repos that have associated R projects and opens selection in RStudio |
