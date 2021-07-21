@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string>com.cadnza.alfredAmedia</string>
+	<string>com.jondayley.alfredAmedia</string>
 	<key>connections</key>
 	<dict>
 		<key>53E6DD93-356C-4C3B-82B3-749DE28A54DD</key>
