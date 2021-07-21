@@ -73,7 +73,7 @@ do
 	description=$(defaults read $plist description)
 	# Add row to markdown table
 	md=$md'\n'
-	newRow="| $icon | $name | \`$version\` | $createdby | $description |"
+	newRow="| $icon | **$name** | \`$version\` | $createdby | $description |"
 	md=$md$newRow
 done
 
