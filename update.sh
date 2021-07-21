@@ -66,6 +66,9 @@ do
 	# Get asset name
 	[[ ${#bundleid} = 0 ]] && assetName=$(echo $name | sed 's/[^A-z0-9]//g') || assetName=$bundleid
 
+	# Get author or organization name from bundle ID
+	orgName=$(echo $bundleid | sed 's/^[^\.]*\.//g' | sed 's/\.[^\.]*$//g') # USE THIS #TEMP
+
 	# Get workflow icon
 	iconPre=$dirWorkflow/$iconFileTarget
 	if [[ -f "$iconPre" ]]
