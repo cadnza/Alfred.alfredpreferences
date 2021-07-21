@@ -2,16 +2,17 @@
 # download from Github. The idea's to run it after every update.
 
 # Record current working directory
-currentwd=$(pwd) # USE THIS #TEMP
-
-# Set readme title
-readme=./README.md
+currentwd=$(pwd)
 
 # Get repo directory
 repo=$(greadlink -f ./)
 
+# Set readme title and path
+readme=README.md
+readmePath=$repo/$readme
+
 # Reset readme file
-rm $readme 2> /dev/null
+rm $readmePath 2> /dev/null
 
 # Read in template
 template=$(cat ./READMEtemplate.md)
@@ -125,6 +126,12 @@ do
 	# Copy new image to temporary directory
 	cp $iconPathAbsolute $dirTemp/$iconFileTarget
 
+	# Export temporary directory to Alfred workflow file
+	alfredFileName=$assetName.alfredworkflow
+	alfredFilePath=$exportDir/$alfredFileName
+	cd $dirTemp
+	zip -qr $alfredFilePath .
+
 	# Remove temporary directory
 	rm -rf $dirTemp
 
@@ -137,9 +144,9 @@ echo $template | while read -r line
 do
 	if [[ $line = $wildcard ]]
 	then
-		echo $md >> $readme
+		echo $md >> $readmePath
 	else
-		echo $line >> $readme
+		echo $line >> $readmePath
 	fi
 done
 
