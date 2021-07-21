@@ -71,6 +71,11 @@ do
 	webaddress=$(defaults read $plist webaddress)
 	version=$(defaults read $plist version) 2> /dev/null
 	description=$(defaults read $plist description)
+	# Format version
+	if [[ ${#version} -gt 0 ]]
+	then
+		version=\`$version\`
+	fi
 	# Add https prefix to web address if not present
 	if [[ $(echo $webaddress | grep -Ec ^https?://) ]]
 	then
@@ -85,7 +90,7 @@ do
 	fi
 	# Add row to markdown table
 	md=$md'\n'
-	newRow="| $icon | **$name** | \`$version\` | $author | $description |"
+	newRow="| $icon | **$name** | $version | $author | $description |"
 	md=$md$newRow
 done
 
