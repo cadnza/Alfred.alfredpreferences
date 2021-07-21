@@ -15,7 +15,7 @@ dirWorkflows=$repo/workflows
 workflows=$(ls -1 $dirWorkflows)
 
 # Reset images directory
-imageDirName=readmeImages
+imageDirName=images
 imageDir=$repo/$imageDirName
 rm -rf $imageDir 2> /dev/null
 mkdir $imageDir
