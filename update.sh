@@ -77,7 +77,7 @@ do
 		version=\`$version\`
 	fi
 	# Add https prefix to web address if not present
-	if [[ $(echo $webaddress | grep -Ec ^https?://) ]]
+	if [[ $(echo $webaddress | grep -Ec ^https?://) = 0 ]]
 	then
 		webaddress=https://$webaddress
 	fi
