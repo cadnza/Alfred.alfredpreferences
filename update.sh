@@ -1,6 +1,9 @@
 # This script updates the readme and packages workflows into package files for
 # download from Github. The idea's to run it after every update.
 
+# Record current working directory
+currentwd=$(pwd) # USE THIS #TEMP
+
 # Set readme title
 readme=./README.md
 
@@ -122,3 +125,6 @@ do
 		echo $line >> $readme
 	fi
 done
+
+# Restore current working directory
+cd $currentwd
