@@ -71,6 +71,11 @@ do
 	webaddress=$(defaults read $plist webaddress)
 	version=$(defaults read $plist version) 2> /dev/null
 	description=$(defaults read $plist description)
+	# Add https prefix to web address if not present
+	if [[ $(echo $webaddress | grep -Ec ^https?://) ]]
+	then
+		webaddress=https://$webaddress
+	fi
 	# Sort author
 	if [[ ${#createdby} = 0 ]]
 	then
