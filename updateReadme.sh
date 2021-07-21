@@ -25,6 +25,10 @@ md="| | Workflow | Version | Author | Description |"
 md=$md'\n'
 md=$md"|-|-|-|-|-|"
 
+# Set target icon file and extension
+iconFileTarget=icon.png
+iconExtensionTarget=png
+
 # Get workflow metadata
 echo $workflows | while read -r workflow
 do
@@ -33,23 +37,28 @@ do
 	# Get plist
 	plist=$dirWorkflow/info.plist
 	# Get workflow icon
-	iconPre=$dirWorkflow/icon.png
+	iconPre=$dirWorkflow/$iconFileTarget
 	if [[ -f "$iconPre" ]]
 	then
 		if [[ -L "$iconPre" ]]
 		then
 			iconSource=$(greadlink $iconPre)
-			iconName=$(basename $iconSource)
-			iconPathPre=$imageDir/$iconName
-			cp $iconSource $iconPathPre
-			iconPath=./$imageDirName/$iconName
 		else
-			#iconPath=$iconPre
-			iconName=$(basename $iconPre)
-			iconPath=./$imageDirName/$iconName
+			iconSource=$iconPre
 		fi
-		#icon="![]($iconPath)"
-		icon="<img src=\"$iconPath\"></img>"
+		iconExtension=$(file -b "$iconSource" --extension)
+		if [[ $iconExtension = icns ]]
+		then
+			iconFileNew=$(uuidgen).$iconExtensionTarget
+			iconPathNew=$imageDir/$iconFileNew
+			sips -s format $iconExtensionTarget $iconSource --out $iconPathNew 1> /dev/null
+		else
+			iconFileNew=$(uuidgen).$iconExtension
+			iconPathNew=$imageDir/$iconFileNew
+			cp $iconSource $iconPathNew
+		fi
+		iconPathRelative=$imageDirName/$iconFileNew
+		icon="<img src=\"$iconPathRelative\"></img>"
 	else
 		icon=""
 	fi
