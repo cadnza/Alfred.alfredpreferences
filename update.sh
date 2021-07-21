@@ -45,6 +45,9 @@ do
 	webaddress=$(defaults read $plist webaddress)
 	version=$(defaults read $plist version) 2> /dev/null
 	description=$(defaults read $plist description)
+	bundleid=$(defaults read $plist bundleid)
+	# Get asset name
+	[[ ${#bundleid} = 0 ]] && assetName=$(echo $name | sed 's/[^A-z0-9]//g') || assetName=$bundleid
 	# Get workflow icon
 	iconPre=$dirWorkflow/$iconFileTarget
 	if [[ -f "$iconPre" ]]
@@ -58,11 +61,11 @@ do
 		iconExtension=$(file -b "$iconSource" --extension)
 		if [[ $iconExtension = icns ]]
 		then
-			iconFileNew=$(uuidgen).$iconExtensionTarget
+			iconFileNew=$assetName.$iconExtensionTarget
 			iconPathNew=$imageDir/$iconFileNew
 			sips -s format $iconExtensionTarget $iconSource --out $iconPathNew 1> /dev/null
 		else
-			iconFileNew=$(uuidgen).$iconExtension
+			iconFileNew=$assetName.$iconExtension
 			iconPathNew=$imageDir/$iconFileNew
 			cp $iconSource $iconPathNew
 		fi
