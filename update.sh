@@ -122,7 +122,7 @@ do
 	dirTemp=$(mktemp -d)
 	cp -r $dirWorkflow/. $dirTemp
 
-	# Copy new image to temporary workflow directory
+	# Copy new image to temporary directory
 	cp $iconPathAbsolute $dirTemp/$iconFileTarget
 
 	# Remove temporary directory
