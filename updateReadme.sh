@@ -69,8 +69,16 @@ do
 	name=$(defaults read $plist name)
 	createdby=$(defaults read $plist createdby)
 	webaddress=$(defaults read $plist webaddress)
-	version=$(defaults read $plist version)
+	version=$(defaults read $plist version) 2> /dev/null
 	description=$(defaults read $plist description)
+	# Sort author
+	if [[ ${#createdby} = 0 ]]
+	then
+		[[ ${#webaddress} = 0 ]] && author="" || author=[*Unlisted*]($webaddress)
+	else
+		[[ ${#webaddress} = 0 ]] && author=$createdby || author=[$createdby]($webaddress)
+	fi
+	echo $author
 	# Add row to markdown table
 	md=$md'\n'
 	newRow="| $icon | **$name** | \`$version\` | $createdby | $description |"
