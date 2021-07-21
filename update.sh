@@ -26,6 +26,12 @@ imageDir=$repo/$imageDirName
 rm -rf $imageDir 2> /dev/null
 mkdir $imageDir
 
+# Reset exports directory
+exportDirName=exports
+exportDir=$repo/$exportDirName
+rm -rf $exportDir 2> /dev/null
+mkdir $exportDir
+
 # Open markdown table variable and add header
 md="| | Workflow | Version | Author | Description |"
 md=$md'\n'
@@ -81,6 +87,7 @@ do
 			cp $iconSource $iconPathNew
 		fi
 		iconPathRelative=$imageDirName/$iconFileNew
+		iconPathAbsolute=$imageDir/$iconFileNew
 		icon="<img src=\"$iconPathRelative\" width=\"$iconWidth\"></img>"
 	else
 		icon=""
@@ -115,7 +122,8 @@ do
 	dirTemp=$(mktemp -d)
 	cp -r $dirWorkflow/. $dirTemp
 
-	# ROAD WORK #TEMP
+	# Copy real image to temporary workflow directory
+	cp $iconPathAbsolute $dirTemp/$iconFileTarget
 
 	# Remove temporary directory
 	rm -rf $dirTemp
