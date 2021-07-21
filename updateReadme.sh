@@ -30,8 +30,8 @@ iconFileTarget=icon.png
 iconExtensionTarget=png
 
 # Set icon width and unit
-iconWidth=1
-iconWidthUnit=in
+iconWidth=350
+iconWidthUnit=""
 
 # Get workflow metadata
 echo $workflows | while read -r workflow
