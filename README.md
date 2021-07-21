@@ -11,7 +11,7 @@ Enjoy! 🎩
 | | Workflow | Version | Author | Description |
 |-|-|-|-|-|
 | <img src="images/com.jondayley.alfredToRemindersNotebook.png" width="100"></img> | **To Reminders notebook** | `1.0.0` | [Jon Dayley](https://github.com/cadnza) | Captures text in a Reminders list |
-|  | **Orange Juice → Heaven** |  | [*Unlisted*](https://) |  |
+| <img src="images/OrangeJuiceHeaven.png" width="100"></img> | **Orange Juice → Heaven** |  |  |  |
 | <img src="images/com.jondayley.alfredAmedia.png" width="100"></img> | **Anki Media** | `1.0.0` | [Jon Dayley](https://github.com/cadnza) | Shows the Anki media folder |
 | <img src="images/com.jondayley.alfredOpenInVScode.png" width="100"></img> | **Open in Visual Studio Code** | `1.0.0` | [Jon Dayley](https://github.com/cadnza) | Lists repos and opens selection in Visual Studio Code |
 | <img src="images/com.jondayley.alfredOpenInRStudio.png" width="100"></img> | **Open in RStudio** | `1.0.0` | [Jon Dayley](https://github.com/cadnza) | Lists repos that have associated R projects and opens selection in RStudio |
