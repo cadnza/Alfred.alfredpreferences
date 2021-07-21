@@ -111,6 +111,15 @@ do
 	newRow="| $icon | **$name** | $version | $author | $description |"
 	md=$md$newRow
 
+	# Copy workflow to temporary directory for image replacement pending export
+	dirTemp=$(mktemp -d)
+	cp -r $dirWorkflow/. $dirTemp
+
+	# ROAD WORK #TEMP
+
+	# Remove temporary directory
+	rm -rf $dirTemp
+
 # Close workflow loop
 done
 
