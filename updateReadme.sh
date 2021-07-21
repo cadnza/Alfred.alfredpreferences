@@ -78,10 +78,9 @@ do
 	else
 		[[ ${#webaddress} = 0 ]] && author=$createdby || author=[$createdby]($webaddress)
 	fi
-	echo $author
 	# Add row to markdown table
 	md=$md'\n'
-	newRow="| $icon | **$name** | \`$version\` | $createdby | $description |"
+	newRow="| $icon | **$name** | \`$version\` | $author | $description |"
 	md=$md$newRow
 done
 
