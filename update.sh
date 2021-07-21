@@ -39,6 +39,12 @@ do
 	dirWorkflow=$dirWorkflows/$workflow
 	# Get plist
 	plist=$dirWorkflow/info.plist
+	# Get workflow metadata
+	name=$(defaults read $plist name)
+	createdby=$(defaults read $plist createdby)
+	webaddress=$(defaults read $plist webaddress)
+	version=$(defaults read $plist version) 2> /dev/null
+	description=$(defaults read $plist description)
 	# Get workflow icon
 	iconPre=$dirWorkflow/$iconFileTarget
 	if [[ -f "$iconPre" ]]
@@ -65,12 +71,6 @@ do
 	else
 		icon=""
 	fi
-	# Get workflow metadata
-	name=$(defaults read $plist name)
-	createdby=$(defaults read $plist createdby)
-	webaddress=$(defaults read $plist webaddress)
-	version=$(defaults read $plist version) 2> /dev/null
-	description=$(defaults read $plist description)
 	# Format version
 	if [[ ${#version} -gt 0 ]]
 	then
