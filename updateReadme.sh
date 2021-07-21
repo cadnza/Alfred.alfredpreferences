@@ -29,6 +29,10 @@ md=$md"|-|-|-|-|-|"
 iconFileTarget=icon.png
 iconExtensionTarget=png
 
+# Set icon width and unit
+iconWidth=1
+iconWidthUnit=in
+
 # Get workflow metadata
 echo $workflows | while read -r workflow
 do
@@ -58,7 +62,7 @@ do
 			cp $iconSource $iconPathNew
 		fi
 		iconPathRelative=$imageDirName/$iconFileNew
-		icon="<img src=\"$iconPathRelative\"></img>"
+		icon="<img src=\"$iconPathRelative\" width=\"$iconWidth$iconWidthUnit\"></img>"
 	else
 		icon=""
 	fi
