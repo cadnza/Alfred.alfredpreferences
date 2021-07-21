@@ -10,10 +10,11 @@ Enjoy! 🎩
 
 | | Workflow | Version | Author | Description |
 |-|-|-|-|-|
-| <img src="readmeImages/373D5E2C-FA79-46A3-8598-03E79A42517B.png" width="100"></img> | **To Reminders notebook** | `1.0.0` | Jon Dayley | Captures text in a Reminders list |
-| <img src="readmeImages/93780732-7EB9-4072-A040-230001F39945.png" width="100"></img> | **Anki Media** | `1.0.0` | Jon Dayley | Shows the Anki media folder |
-| <img src="readmeImages/A2AC0A1D-06CB-443D-87FF-DB6F61368414.png" width="100"></img> | **Open in Visual Studio Code** | `1.0.0` | Jon Dayley | Lists repos and opens selection in Visual Studio Code |
-| <img src="readmeImages/48923B8C-D039-4437-9069-253244B6F126.png" width="100"></img> | **Open in RStudio** | `1.0.0` | Jon Dayley | Lists repos that have associated R projects and opens selection in RStudio |
-| <img src="readmeImages/4F794E25-0AE6-4911-A4CB-697C31C4CA9D.png" width="100"></img> | **LEGO categorizer** | `1.0.0` | Jon Dayley | Categorizes LEGO parts |
-| <img src="readmeImages/1DB5241E-5C23-41A3-8D1F-1A1ED32CE5D4.png" width="100"></img> | **SigningSavvy SRC → Link** | `1.0.0` | Jon Dayley | Turns video source from SigningSavvy.com into a usable link |
-| <img src="readmeImages/B4FC8A61-F2A4-4941-BFDF-8E83D576867A.png" width="100"></img> | **Reset Launchpad** | `1.0.0` | Jon Dayley | Resets the Launchpad layout |
+| <img src="readmeImages/11529F43-D366-48A3-BA59-37B4B2D7AA89.png" width="100"></img> | **To Reminders notebook** | `1.0.0` | Jon Dayley | Captures text in a Reminders list |
+| <img src="readmeImages/41AD8B2D-6546-45AB-A5BD-CEB4EF8F1C76.png" width="100"></img> | **Anki Media** | `1.0.0` | Jon Dayley | Shows the Anki media folder |
+| <img src="readmeImages/05B1B804-D339-4C4D-A28A-939324B3EC6A.png" width="100"></img> | **Open in Visual Studio Code** | `1.0.0` | Jon Dayley | Lists repos and opens selection in Visual Studio Code |
+|  | **Testing** | `` |  |  |
+| <img src="readmeImages/191CB31A-A1CC-4293-9258-8548952B99DA.png" width="100"></img> | **Open in RStudio** | `1.0.0` | Jon Dayley | Lists repos that have associated R projects and opens selection in RStudio |
+| <img src="readmeImages/1EB9B8EF-42BE-4D22-A9C0-18C1A44B64FF.png" width="100"></img> | **LEGO categorizer** | `1.0.0` | Jon Dayley | Categorizes LEGO parts |
+| <img src="readmeImages/EE8822CF-ABF7-4BE9-9773-874F6E138654.png" width="100"></img> | **SigningSavvy SRC → Link** | `1.0.0` | Jon Dayley | Turns video source from SigningSavvy.com into a usable link |
+| <img src="readmeImages/379104A4-9F21-4BC5-B49C-8F6698BB8A58.png" width="100"></img> | **Reset Launchpad** | `1.0.0` | Jon Dayley | Resets the Launchpad layout |
