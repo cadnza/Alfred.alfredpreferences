@@ -29,9 +29,8 @@ md=$md"|-|-|-|-|-|"
 iconFileTarget=icon.png
 iconExtensionTarget=png
 
-# Set icon width and unit
+# Set icon width (unitless)
 iconWidth=100
-iconWidthUnit=""
 
 # Get workflow metadata
 echo $workflows | while read -r workflow
@@ -62,7 +61,7 @@ do
 			cp $iconSource $iconPathNew
 		fi
 		iconPathRelative=$imageDirName/$iconFileNew
-		icon="<img src=\"$iconPathRelative\" width=\"$iconWidth$iconWidthUnit\"></img>"
+		icon="<img src=\"$iconPathRelative\" width=\"$iconWidth\"></img>"
 	else
 		icon=""
 	fi
@@ -74,7 +73,7 @@ do
 	description=$(defaults read $plist description)
 	# Add row to markdown table
 	md=$md'\n'
-	newRow="| $icon | $name | $version | $createdby | $description |"
+	newRow="| $icon | $name | \`$version\` | $createdby | $description |"
 	md=$md$newRow
 done
 
