@@ -70,17 +70,23 @@ template=$(cat $readmeTemplate)
 dirWorkflows=$repo/workflows
 workflows=$(ls -1 $dirWorkflows)
 
-# Reset images directory
+# Reset images directory (for readme images)
 imageDirName=images
 imageDir=$repo/$imageDirName
 rm -rf $imageDir 2> /dev/null
 mkdir $imageDir
 
-# Reset exports directory
+# Reset exports directory (for workflow exports)
 exportDirName=exports
 exportDir=$repo/$exportDirName
 rm -rf $exportDir 2> /dev/null
 mkdir $exportDir
+
+# Reset details directory (for workflow readme text files)
+detailDirName=details
+detailDir=$repo/$detailDirName
+rm -rf $detailDir 2> /dev/null
+mkdir $detailDir
 
 # Open markdown table variable and add header
 md="| | Workflow | Version | Author | Description | Link |"
@@ -110,6 +116,7 @@ do
 	webaddress=$(defaults read $plist webaddress)
 	version=$(defaults read $plist version) 2> /dev/null
 	description=$(defaults read $plist description)
+	descriptionLong=$(defaults read $plist readme)
 	bundleid=$(defaults read $plist bundleid)
 
 	# Get asset name
@@ -165,6 +172,20 @@ do
 		[[ ${#webaddress} = 0 ]] && author="" || author=[*Unlisted*]($webaddress)
 	else
 		[[ ${#webaddress} = 0 ]] && author=$createdby || author=[$createdby]($webaddress)
+	fi
+
+	# Write long description to text file if it exists
+	if [[ ${#descriptionLong} != 0 ]]
+	then
+		descriptionLongFileExtension=txt
+		descriptionLongFileName=$assetName.$descriptionLongFileExtension
+		descriptionLongFilePathAbsolute=$detailDir/$descriptionLongFileName
+		descriptionLongFilePathRelative=$detailDirName/$descriptionLongFileName
+		echo $descriptionLong > $descriptionLongFilePathAbsolute
+		descriptionLongLinkText="More info"
+		descriptionLongLink=[$descriptionLongLinkText]($descriptionLongFilePathRelative)
+		[[ ${#description} = 0 ]] && descriptionBreak="" || descriptionBreak="<br/>"
+		description=$description$descriptionBreak$descriptionLongLink
 	fi
 
 	# Check whether workflow belongs to user (to decide whether to provide download link)
