@@ -94,6 +94,7 @@ do
 		iconPathAbsolute=$imageDir/$iconFileNew
 		icon="<img src=\"$iconPathRelative\" width=\"$iconWidth\"></img>"
 	else
+		iconPathAbsolute=""
 		icon=""
 	fi
 
@@ -127,7 +128,7 @@ do
 	cp -r $dirWorkflow/. $dirTemp
 
 	# Copy new image to temporary directory
-	cp $iconPathAbsolute $dirTemp/$iconFileTarget
+	[[ ${#iconPathAbsolute} != 0 ]] && cp $iconPathAbsolute $dirTemp/$iconFileTarget
 
 	# Export temporary directory to Alfred workflow file
 	alfredFileName=$assetName.alfredworkflow
