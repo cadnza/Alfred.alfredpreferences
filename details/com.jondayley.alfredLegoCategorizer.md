@@ -9,6 +9,12 @@ Finds Lego parts! Enter a name or number and it goes to work.
 
 # Versions
 
+## v1.1.0
+
+- Minor tweak to remove dependency on `stringr` package
+- Handling for case of no R installation
+	- I'm about halfway confident in this since it's untested… As of right now I can't remove my R installation to test this workflow.
+
 ## v1.0.0
 
 - First release
