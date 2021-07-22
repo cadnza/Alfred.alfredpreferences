@@ -6,11 +6,26 @@
 	<string>com.jondayley.alfredLegoCategorizer</string>
 	<key>connections</key>
 	<dict>
-		<key>A84CEA46-B446-4257-83AC-F5459E1F4650</key>
+		<key>2B5F291C-1B5A-4C58-B97F-56440FF2CF60</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>C0A6FBC1-91E8-4C5C-A52E-B532864826C1</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>00C66DC9-530B-4DEC-A4F2-2A57E7AED32C</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>A84CEA46-B446-4257-83AC-F5459E1F4650</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2B5F291C-1B5A-4C58-B97F-56440FF2CF60</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -30,6 +45,25 @@
 	<string>LEGO categorizer</string>
 	<key>objects</key>
 	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>C0A6FBC1-91E8-4C5C-A52E-B532864826C1</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -82,19 +116,30 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>browser</key>
-				<string></string>
-				<key>spaces</key>
-				<string></string>
-				<key>url</key>
-				<string>{query}</string>
-				<key>utf8</key>
-				<true/>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string></string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>1</integer>
+						<key>matchstring</key>
+						<string>noR</string>
+						<key>outputlabel</key>
+						<string></string>
+						<key>uid</key>
+						<string>00C66DC9-530B-4DEC-A4F2-2A57E7AED32C</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>No R installation</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
+			<string>alfred.workflow.utility.conditional</string>
 			<key>uid</key>
-			<string>C0A6FBC1-91E8-4C5C-A52E-B532864826C1</string>
+			<string>2B5F291C-1B5A-4C58-B97F-56440FF2CF60</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -116,6 +161,13 @@ Finds Lego parts! Enter a name or number and it goes to work.
 - First release</string>
 	<key>uidata</key>
 	<dict>
+		<key>2B5F291C-1B5A-4C58-B97F-56440FF2CF60</key>
+		<dict>
+			<key>xpos</key>
+			<integer>250</integer>
+			<key>ypos</key>
+			<integer>80</integer>
+		</dict>
 		<key>A84CEA46-B446-4257-83AC-F5459E1F4650</key>
 		<dict>
 			<key>xpos</key>
@@ -126,9 +178,9 @@ Finds Lego parts! Enter a name or number and it goes to work.
 		<key>C0A6FBC1-91E8-4C5C-A52E-B532864826C1</key>
 		<dict>
 			<key>xpos</key>
-			<integer>270</integer>
+			<integer>460</integer>
 			<key>ypos</key>
-			<integer>60</integer>
+			<integer>45</integer>
 		</dict>
 	</dict>
 	<key>version</key>
