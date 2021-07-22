@@ -5,7 +5,7 @@
 		\"title\": \"$title\",
 		\"subtitle\": \"R installation not found\",
 		\"arg\": \"noR\",
-		\"icon\": {\"path\":\"$dirAlfred\",\"type\":\"fileicon\"},
+		\"icon\": {\"path\":\"images/R.png\",},
 		\"autocomplete\": \"$title\",
 		\"text\": \"$title\",
 		\"quicklookurl\": \"$dirAlfred\"
