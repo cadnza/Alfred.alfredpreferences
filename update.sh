@@ -8,7 +8,7 @@ prefsName="com.jondayley.alfredWorkflowShowcaseUpdater.plist"
 prefsNeedWritten=$(defaults read $prefsName &> /dev/null && echo 0 || echo 1)
 
 # Ask whether to edit settings if they've already been written
-[[ prefsNeedWritten = 1 ]] && {
+[[ $prefsNeedWritten = 0 ]] && {
 	editSettings=2
 	while [ $editSettings = 2 ]
 	do
