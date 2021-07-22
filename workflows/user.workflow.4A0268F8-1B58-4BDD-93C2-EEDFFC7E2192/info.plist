@@ -71,27 +71,6 @@ set targetList to "Notebook"tell application "Reminders"	tell list targetList
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>{query}</string>
-				<key>title</key>
-				<string>Noted</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>159A291E-3339-491E-8D3F-79091BE0319B</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>keyword</key>
@@ -110,9 +89,37 @@ set targetList to "Notebook"tell application "Reminders"	tell list targetList
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Noted</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>159A291E-3339-491E-8D3F-79091BE0319B</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 	</array>
 	<key>readme</key>
-	<string>v1.0.0
+	<string># About
+
+About as close as you can get to jotting something down on a sticky note on your Mac. Takes text and remembers it in a Reminders list.
+
+# Versions
+
+## v1.0.0
+
 - First release</string>
 	<key>uidata</key>
 	<dict>
@@ -137,11 +144,6 @@ set targetList to "Notebook"tell application "Reminders"	tell list targetList
 			<key>ypos</key>
 			<integer>50</integer>
 		</dict>
-	</dict>
-	<key>variables</key>
-	<dict>
-		<key>list</key>
-		<string>Notebook</string>
 	</dict>
 	<key>version</key>
 	<string>1.0.0</string>

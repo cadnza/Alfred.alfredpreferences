@@ -103,7 +103,14 @@ end alfred_script</string>
 		</dict>
 	</array>
 	<key>readme</key>
-	<string>v1.0.0
+	<string># About
+
+Makes links from SigningSavvy usable. Somewhat fragile; use with caution.
+
+# Versions
+
+## v1.0.0
+
 - First release</string>
 	<key>uidata</key>
 	<dict>

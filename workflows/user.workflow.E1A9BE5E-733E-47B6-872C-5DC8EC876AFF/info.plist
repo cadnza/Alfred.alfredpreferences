@@ -111,7 +111,14 @@ killall Dock</string>
 		</dict>
 	</array>
 	<key>readme</key>
-	<string>v1.0.0
+	<string># About
+
+Resets the launchpad layout. Just a wrapper for the command; I can never remember it.
+
+# Versions
+
+## v1.0.0
+
 - First release</string>
 	<key>uidata</key>
 	<dict>
