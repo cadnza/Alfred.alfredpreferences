@@ -37,9 +37,9 @@ rm -rf $exportDir 2> /dev/null
 mkdir $exportDir
 
 # Open markdown table variable and add header
-md="| | Workflow | Version | Author | Description |"
+md="| | Workflow | Version | Author | Description | Link |"
 md=$md'\n'
-md=$md"|-|-|-|-|-|"
+md=$md"|-|-|-|-|-|-|"
 
 # Set target icon file and extension
 iconFileTarget=icon.png
@@ -162,9 +162,17 @@ do
 	# End workflow link synthesis logic
 	fi
 
+	# Get formatted link
+	if [[ ${#workflowAddress} = 0 ]]
+	then
+		link=""
+	else
+		link="[$linkText]($workflowAddress)"
+	fi
+
 	# Add row to markdown table
 	md=$md'\n'
-	newRow="| $icon | **$name** | $version | $author | $description |"
+	newRow="| $icon | **$name** | $version | $author | $description | $link |"
 	md=$md$newRow
 
 # Close workflow loop
