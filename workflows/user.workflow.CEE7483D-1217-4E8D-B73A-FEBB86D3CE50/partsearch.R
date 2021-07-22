@@ -10,7 +10,7 @@ tryCatch(
 		)
 	},
 	error=function(x){
-		part <<- "123" # Testing
+		part <<- "93792" # Testing
 	}
 )
 
@@ -257,7 +257,10 @@ getCandidates <- function(part){
 				xml2::xml_find_all(partSearchHTML,"//*[@class='innercontent']//td")[1]
 			)
 			if(length(partTrueId)){
-				partTrueId <- as.numeric(stringr::str_match(partTrueId,"\\d*$")[1])
+				partTrueId <- system(
+					paste("echo",partTrueId,"| grep -o '\\d*$'"),
+					intern=TRUE
+				)
 				candidates <- rbind(
 					candidates,
 					getCandidates2(partTrueId,strictID=TRUE,imageFile="images/green.png")
