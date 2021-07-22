@@ -20,7 +20,7 @@ repoItem="{
 json=$json,$repoItem
 
 # Open main loop through workflows
-ls -1 ~/Repos/Alfred.alfredpreferences/workflows | while read -r dirWkflw
+ls -1 $dirAlfred/workflows | while read -r dirWkflw
 do
 	fullpath=$dirWorkflows/$dirWkflw
 	plist=$fullpath/info.plist
