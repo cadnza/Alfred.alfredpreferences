@@ -1,5 +1,5 @@
 # Get Alfred directory
-dirAlfred=~/Repos/Alfred.alfredpreferences
+dirAlfred=$1
 
 # Get workflows directory
 dirWorkflows=$dirAlfred/workflows

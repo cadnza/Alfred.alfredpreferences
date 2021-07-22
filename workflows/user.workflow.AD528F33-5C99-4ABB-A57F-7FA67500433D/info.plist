@@ -109,7 +109,7 @@
 				<key>runningsubtext</key>
 				<string>Getting workflows…</string>
 				<key>script</key>
-				<string>source scriptAlfred.sh</string>
+				<string>source scriptAlfred.sh ~/Repos/Alfred.alfredpreferences</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
