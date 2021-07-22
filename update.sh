@@ -1,13 +1,53 @@
 # This script updates the readme and packages workflows into package files for
 # download from Github. The idea's to run it after every update.
 
-# Get org name for proprietary workflows (these will get download links)
-orgNameProprietary=$1
+# Set preferences filename
+prefsName="com.jondayley.alfredWorkflowShowcaseUpdater.plist"
+
+# Check whether the preferences file exists
+prefsNeedWritten=$(defaults read prefsName &> /dev/null && echo 0 || echo 1)
+
+# Ask whether to edit settings if they've already been written
+[[ prefsNeedWritten = 1 ]] && {
+	editSettings=2
+	while [ $editSettings = 2 ]
+	do
+		echo Rewrite settings? [y/n]:
+		read editSettingsRaw
+		[[ "$editSettingsRaw" == [Yy]* ]] && editSettings=1
+		[[ "$editSettingsRaw" == [Nn]* ]] && editSettings=0
+	done
+}
+
+# Read or write preferences file
+if [ $prefsNeedWritten = 1 ] || [ $editSettings = 1 ]
+then
+	echo "This script updates a README.md file based on an Alfred preferences directory and a template."
+	echo -e "\e[3mPlease be sure the script is inside your Alfred.alfredpreferences directory before running!\e[0m"
+	echo "Org name:"
+	echo -e "(\e[3me.g.\e[0m com.\e[1morgname\e[0m.oranges)"
+	read orgNameProprietary
+	echo "README template (choose from dialog):"
+	readmeTemplate=$(osascript -e "set directory to POSIX path of (choose file with prompt \"README template:\")" 2> /dev/null || echo "")
+	[[ ${#readmeTemplate} = 0 ]] && return
+	[[ $(echo $readmeTemplate | grep -c "\.md$") = 0 ]] && {
+		echo "Template file must be in markdown format."
+		return
+	}
+	defaults write $prefsName orgNameProprietary $orgNameProprietary
+	defaults write $prefsName readmeTemplate $readmeTemplate
+else
+	orgNameProprietary=$(defaults read $prefsName orgNameProprietary)
+	readmeTemplate=$(defaults read $prefsName readmeTemplate)
+fi
 
 # Record current working directory
 currentwd=$(pwd)
 
-# Get repo directory
+# Move to directory of script
+cd $(dirname $0)
+
+# Get repo directory (current directory)
 repo=$(greadlink -f ./)
 
 # Set readme title and path
@@ -18,7 +58,7 @@ readmePath=$repo/$readme
 rm $readmePath 2> /dev/null
 
 # Read in template
-template=$(cat ./READMEtemplate.md)
+template=$(cat $readmeTemplate)
 
 # Get workflows directories
 dirWorkflows=$repo/workflows
