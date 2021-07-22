@@ -290,6 +290,8 @@ Very simple: Shows you your repos and opens the one you select in VSCode. If you
 		</dict>
 		<key>AEE5C596-CE3C-4ADB-9432-87409B38AF84</key>
 		<dict>
+			<key>note</key>
+			<string>… and HERE.</string>
 			<key>xpos</key>
 			<integer>410</integer>
 			<key>ypos</key>
@@ -297,6 +299,8 @@ Very simple: Shows you your repos and opens the one you select in VSCode. If you
 		</dict>
 		<key>D0BB803B-81E9-4702-9DED-DB8C9547D366</key>
 		<dict>
+			<key>note</key>
+			<string>The default repos directory is ~/Repos. If that's different to you, be sure to update it HERE…</string>
 			<key>xpos</key>
 			<integer>75</integer>
 			<key>ypos</key>
