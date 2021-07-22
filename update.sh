@@ -2,7 +2,7 @@
 # download from Github. The idea's to run it after every update.
 
 # Get org name for proprietary workflows (these will get download links)
-orgNameProprietary=jondayley # Switch this out for $1 #TEMP
+orgNameProprietary=$1
 
 # Record current working directory
 currentwd=$(pwd)
