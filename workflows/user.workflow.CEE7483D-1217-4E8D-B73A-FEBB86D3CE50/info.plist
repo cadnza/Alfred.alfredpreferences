@@ -20,12 +20,35 @@
 				<key>vitoclose</key>
 				<false/>
 			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>E96F89F9-FF66-4EFE-A6D6-ECDC44A9A63A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
 		</array>
 		<key>A84CEA46-B446-4257-83AC-F5459E1F4650</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>2B5F291C-1B5A-4C58-B97F-56440FF2CF60</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>E96F89F9-FF66-4EFE-A6D6-ECDC44A9A63A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>6187EB72-9B8F-4525-B99C-507A02C9F844</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -83,7 +106,7 @@
 				<key>title</key>
 				<string>LEGO Part Finder</string>
 				<key>type</key>
-				<integer>0</integer>
+				<integer>5</integer>
 				<key>withspace</key>
 				<true/>
 			</dict>
@@ -143,6 +166,44 @@
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>echo -n $(/usr/local/bin/realpath installBrew.sh)</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>5</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>E96F89F9-FF66-4EFE-A6D6-ECDC44A9A63A</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>source {query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.terminalcommand</string>
+			<key>uid</key>
+			<string>6187EB72-9B8F-4525-B99C-507A02C9F844</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string># About
@@ -168,6 +229,13 @@ Finds Lego parts! Enter a name or number and it goes to work.
 			<key>ypos</key>
 			<integer>80</integer>
 		</dict>
+		<key>6187EB72-9B8F-4525-B99C-507A02C9F844</key>
+		<dict>
+			<key>xpos</key>
+			<integer>625</integer>
+			<key>ypos</key>
+			<integer>210</integer>
+		</dict>
 		<key>A84CEA46-B446-4257-83AC-F5459E1F4650</key>
 		<dict>
 			<key>xpos</key>
@@ -181,6 +249,13 @@ Finds Lego parts! Enter a name or number and it goes to work.
 			<integer>445</integer>
 			<key>ypos</key>
 			<integer>60</integer>
+		</dict>
+		<key>E96F89F9-FF66-4EFE-A6D6-ECDC44A9A63A</key>
+		<dict>
+			<key>xpos</key>
+			<integer>445</integer>
+			<key>ypos</key>
+			<integer>210</integer>
 		</dict>
 	</dict>
 	<key>version</key>
