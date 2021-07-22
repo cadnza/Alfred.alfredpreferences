@@ -51,7 +51,9 @@
 				<key>escaping</key>
 				<integer>68</integer>
 				<key>script</key>
-				<string>set title to "{query}"tell application "Reminders"	tell list "Notebook"		set entry to make new reminder with properties {name:title}	end tellend tellreturn title</string>
+				<string>set title to "{query}"
+
+set targetList to "Notebook"tell application "Reminders"	tell list targetList		set entry to make new reminder with properties {name:title}	end tellend tellreturn title</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -65,27 +67,6 @@
 			<string>CA1C9CE6-2721-46D6-A9FC-38EA9367B33A</string>
 			<key>version</key>
 			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>keyword</key>
-				<string>note</string>
-				<key>subtext</key>
-				<string>Reminders</string>
-				<key>text</key>
-				<string>Note "{query}"</string>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>CD69778A-A49B-44D1-9F54-B24359DEF8B8</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -105,6 +86,27 @@
 			<string>alfred.workflow.output.notification</string>
 			<key>uid</key>
 			<string>159A291E-3339-491E-8D3F-79091BE0319B</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>note</string>
+				<key>subtext</key>
+				<string>Reminders</string>
+				<key>text</key>
+				<string>Note "{query}"</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>CD69778A-A49B-44D1-9F54-B24359DEF8B8</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
