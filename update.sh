@@ -1,6 +1,9 @@
 # This script updates the readme and packages workflows into package files for
 # download from Github. The idea's to run it after every update.
 
+# Set readme title
+readme=README.md
+
 # Set preferences filename
 prefsName="com.jondayley.alfredWorkflowShowcaseUpdater.plist"
 
@@ -28,7 +31,11 @@ then
 	echo -e "(\e[3me.g.\e[0m com.\e[1morgname\e[0m.oranges)"
 	read orgNameProprietary
 	echo "README template (choose from dialog):"
-	readmeTemplate=$(osascript -e "set directory to POSIX path of (choose file with prompt \"README template:\")" 2> /dev/null || echo "")
+	echo -e "\e[3mThis should be a markdown file with a line somewhere reading %workflows%.\e[0m"
+	echo -e "\e[3mThis script replaces %workflows% with a markdown table showcasing your workflows\e[0m"
+	echo -e "\e[3mand saves the results to a file called $readme.\e[0m"
+	fileDialogPrompt="README template (see shell prompt)"
+	readmeTemplate=$(osascript -e "set directory to POSIX path of (choose file with prompt \"$fileDialogPrompt\")" 2> /dev/null || echo "")
 	[[ ${#readmeTemplate} = 0 ]] && return
 	[[ $(echo $readmeTemplate | grep -c "\.md$") = 0 ]] && {
 		echo "Template file must be in markdown format."
@@ -50,8 +57,7 @@ cd $(dirname $0)
 # Get repo directory (current directory)
 repo=$(greadlink -f ./)
 
-# Set readme title and path
-readme=README.md
+# Set readme path
 readmePath=$repo/$readme
 
 # Reset readme file
