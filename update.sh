@@ -177,7 +177,7 @@ do
 	# Write long description to text file if it exists
 	if [[ ${#descriptionLong} != 0 ]]
 	then
-		descriptionLongFileExtension=txt
+		descriptionLongFileExtension=md
 		descriptionLongFileName=$assetName.$descriptionLongFileExtension
 		descriptionLongFilePathAbsolute=$detailDir/$descriptionLongFileName
 		descriptionLongFilePathRelative=$detailDirName/$descriptionLongFileName
