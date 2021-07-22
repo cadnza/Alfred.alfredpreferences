@@ -9,6 +9,10 @@ Finds Lego parts! Enter a name or number and it goes to work.
 
 # Versions
 
+## v1.1.1
+
+- Make CSV file invisible
+
 ## v1.1.0
 
 - Minor tweak to remove dependency on `stringr` package
