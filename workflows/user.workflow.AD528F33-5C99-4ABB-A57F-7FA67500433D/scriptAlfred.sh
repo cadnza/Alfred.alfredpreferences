@@ -4,9 +4,6 @@ dirAlfred=~/Repos/Alfred.alfredpreferences
 # Get workflows directory
 dirWorkflows=$dirAlfred/workflows
 
-# Get Alfred icon path
-iconPathAlfred="/Applications/Alfred 4.app/Contents/Resources/appicon.icns"
-
 # Open JSON variable
 json=""
 
@@ -15,7 +12,7 @@ repoItem="{
 	\"title\": \"Alfred.alfredpreferences\",
 	\"subtitle\": \"$dirAlfred\",
 	\"arg\": \"$dirAlfred\",
-	\"icon\": {\"path\":\"$iconPathAlfred\"},
+	\"icon\": {\"path\":\"$dirAlfred\",\"type\":\"fileicon\"},
 	\"autocomplete\": \"$dirAlfred\",
 	\"text\": \"$dirAlfred\",
 	\"quicklookurl\": \"$dirAlfred\"

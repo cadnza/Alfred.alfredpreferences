@@ -1,10 +1,6 @@
 # Get repo directory
 dirRepos=$1
 
-# Get icon paths
-iconPathDefault="/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/GenericFolderIcon.icns" # Folder
-iconPathAlfred="/Applications/Alfred 4.app/Contents/Resources/appicon.icns" # Alfred logo
-
 # Open JSON variable
 json=""
 
@@ -15,10 +11,8 @@ do
 	if [ $repo = "Alfred.alfredpreferences" ]
 	then
 		title="Alfred workflows"
-		iconPath=$iconPathAlfred
 	else
 		title=$repo
-		iconPath=$iconPathDefault
 	fi
 	subtitle=$fullpath
 	arg=$fullpath
@@ -29,7 +23,7 @@ do
 		\"title\": \"$title\",
 		\"subtitle\": \"$subtitle\",
 		\"arg\": \"$arg\",
-		\"icon\": {\"path\":\"$iconPath\"},
+		\"icon\": {\"path\":\"$fullpath\",\"type\":\"fileicon\"},
 		\"autocomplete\": \"$autocomplete\",
 		\"text\": \"$text\",
 		\"quicklookurl\": \"$quicklookurl\"
