@@ -92,6 +92,8 @@ Opens the Anki media folder, which can be handy to have and tough to find.
 		</dict>
 		<key>A4AC2414-2721-4B03-B807-04CE520336D1</key>
 		<dict>
+			<key>note</key>
+			<string>Your Anki media file directory here (won't work without it!). It should be somewhere in ~/Library/Application Support/Anki2/.</string>
 			<key>xpos</key>
 			<integer>265</integer>
 			<key>ypos</key>
