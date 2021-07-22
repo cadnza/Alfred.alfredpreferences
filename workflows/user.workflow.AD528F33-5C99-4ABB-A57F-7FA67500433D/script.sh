@@ -8,12 +8,12 @@ json=""
 ls $dirRepos | while read -r repo
 do
 	fullpath=$dirRepos/$repo
-	if [ $repo = "Alfred.alfredpreferences" ]
-	then
-		title="Alfred workflows"
-	else
+	#if [ $repo = "Alfred.alfredpreferences" ]
+	#then
+	#	title="Alfred workflows"
+	#else
 		title=$repo
-	fi
+	#fi
 	subtitle=$fullpath
 	arg=$fullpath
 	autocomplete=$repo
