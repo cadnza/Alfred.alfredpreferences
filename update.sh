@@ -70,7 +70,7 @@ do
 	[[ ${#bundleid} = 0 ]] && assetName=$(echo $name | sed 's/[^A-z0-9]//g') || assetName=$bundleid
 
 	# Get author or organization name from bundle ID
-	orgName=$(echo $bundleid | sed 's/^[^\.]*\.//g' | sed 's/\.[^\.]*$//g') # USE THIS #TEMP
+	orgName=$(echo $bundleid | sed 's/^[^\.]*\.//g' | sed 's/\.[^\.]*$//g')
 
 	# Get workflow icon
 	iconPre=$dirWorkflow/$iconFileTarget
@@ -121,26 +121,51 @@ do
 		[[ ${#webaddress} = 0 ]] && author=$createdby || author=[$createdby]($webaddress)
 	fi
 
+	# Check whether workflow belongs to user (to decide whether to provide download link)
+	if [[ $orgName = $orgNameProprietary ]]
+	then
+
+		# Copy workflow to temporary directory for image replacement pending export
+		dirTemp=$(mktemp -d)
+		cp -r $dirWorkflow/. $dirTemp
+
+		# Copy new image to temporary directory
+		[[ ${#iconPathAbsolute} != 0 ]] && cp $iconPathAbsolute $dirTemp/$iconFileTarget
+
+		# Export temporary directory to Alfred workflow file
+		alfredFileName=$assetName.alfredworkflow
+		alfredFilePath=$exportDir/$alfredFileName
+		cd $dirTemp
+		zip -qr $alfredFilePath .
+
+		# Remove temporary directory
+		rm -rf $dirTemp
+
+		# Get relative path to new Alfred workflow for download link
+		alfredFilePathRelative=$exportDirName/$alfredFileName
+
+		# Assign relative file path to workflow address
+		workflowAddress=$alfredFilePathRelative
+
+		# Set link text to download
+		linkText=Download
+	
+	# Add logic for workflows that don't belong to the user
+	else
+
+		# Assign web address to workflow address
+		workflowAddress=$webaddress
+
+		# Set link text to visit site
+		linkText="Visit site"
+
+	# End workflow link synthesis logic
+	fi
+
 	# Add row to markdown table
 	md=$md'\n'
 	newRow="| $icon | **$name** | $version | $author | $description |"
 	md=$md$newRow
-
-	# Copy workflow to temporary directory for image replacement pending export
-	dirTemp=$(mktemp -d)
-	cp -r $dirWorkflow/. $dirTemp
-
-	# Copy new image to temporary directory
-	[[ ${#iconPathAbsolute} != 0 ]] && cp $iconPathAbsolute $dirTemp/$iconFileTarget
-
-	# Export temporary directory to Alfred workflow file
-	alfredFileName=$assetName.alfredworkflow
-	alfredFilePath=$exportDir/$alfredFileName
-	cd $dirTemp
-	zip -qr $alfredFilePath .
-
-	# Remove temporary directory
-	rm -rf $dirTemp
 
 # Close workflow loop
 done
