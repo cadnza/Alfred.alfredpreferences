@@ -48,25 +48,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>browser</key>
-				<string></string>
-				<key>spaces</key>
-				<string></string>
-				<key>url</key>
-				<string>{query}</string>
-				<key>utf8</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
-			<key>uid</key>
-			<string>C0A6FBC1-91E8-4C5C-A52E-B532864826C1</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>alfredfiltersresults</key>
 				<false/>
 				<key>alfredfiltersresultsmatchmode</key>
@@ -112,6 +93,25 @@
 			<string>A84CEA46-B446-4257-83AC-F5459E1F4650</string>
 			<key>version</key>
 			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>C0A6FBC1-91E8-4C5C-A52E-B532864826C1</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -178,9 +178,9 @@ Finds Lego parts! Enter a name or number and it goes to work.
 		<key>C0A6FBC1-91E8-4C5C-A52E-B532864826C1</key>
 		<dict>
 			<key>xpos</key>
-			<integer>460</integer>
+			<integer>445</integer>
 			<key>ypos</key>
-			<integer>45</integer>
+			<integer>60</integer>
 		</dict>
 	</dict>
 	<key>version</key>
