@@ -182,7 +182,7 @@ do
 		descriptionLongFilePathAbsolute=$detailDir/$descriptionLongFileName
 		descriptionLongFilePathRelative=$detailDirName/$descriptionLongFileName
 		echo $descriptionLong > $descriptionLongFilePathAbsolute
-		descriptionLongLinkText="More info"
+		descriptionLongLinkText="*More info*"
 		descriptionLongLink=[$descriptionLongLinkText]($descriptionLongFilePathRelative)
 		[[ ${#description} = 0 ]] && descriptionBreak="" || descriptionBreak="<br/>"
 		description=$description$descriptionBreak$descriptionLongLink
