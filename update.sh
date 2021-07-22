@@ -5,7 +5,7 @@
 prefsName="com.jondayley.alfredWorkflowShowcaseUpdater.plist"
 
 # Check whether the preferences file exists
-prefsNeedWritten=$(defaults read prefsName &> /dev/null && echo 0 || echo 1)
+prefsNeedWritten=$(defaults read $prefsName &> /dev/null && echo 0 || echo 1)
 
 # Ask whether to edit settings if they've already been written
 [[ prefsNeedWritten = 1 ]] && {
