@@ -15,7 +15,7 @@ tryCatch(
 )
 
 # Set filename ----
-filename <- "bricks.csv"
+filename <- "~/com.jondayley.alfredLegoCategorizer.bricks.csv"
 
 # Set base URL ----
 baseURL <- "https://www.bricklink.com"
@@ -159,7 +159,7 @@ getCandidates <- function(part){
 		# Write to CSV ----
 		write.csv(
 			lookup,
-			file="bricks.csv",
+			file=filename,
 			row.names=FALSE
 		)
 
