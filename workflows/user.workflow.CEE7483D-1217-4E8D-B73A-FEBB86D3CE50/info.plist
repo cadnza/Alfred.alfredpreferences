@@ -58,8 +58,7 @@
 				<key>runningsubtext</key>
 				<string>Sifting…</string>
 				<key>script</key>
-				<string>query=$1
-/Library/Frameworks/R.framework/Resources/bin/Rscript partsearch.R $1</string>
+				<string>/Library/Frameworks/R.framework/Resources/bin/Rscript partsearch.R $1</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
