@@ -262,6 +262,10 @@ Very simple: Shows you your repos and opens the one you select in VSCode. If you
 
 # Versions
 
+## v1.1.0
+
+- Alfred file actions on Ctrl
+
 ## v1.0.0
 
 - First release</string>
@@ -308,7 +312,7 @@ Very simple: Shows you your repos and opens the one you select in VSCode. If you
 		</dict>
 	</dict>
 	<key>version</key>
-	<string>1.0.0</string>
+	<string>1.1.0</string>
 	<key>webaddress</key>
 	<string>https://github.com/cadnza</string>
 </dict>

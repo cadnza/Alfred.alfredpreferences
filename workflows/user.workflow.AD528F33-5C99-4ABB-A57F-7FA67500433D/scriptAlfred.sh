@@ -14,6 +14,7 @@ repoItem="{
 	\"arg\": \"$dirAlfred\",
 	\"icon\": {\"path\":\"$dirAlfred\",\"type\":\"fileicon\"},
 	\"autocomplete\": \"$dirAlfred\",
+	\"type\": \"file:skipcheck\",
 	\"text\": \"$dirAlfred\",
 	\"quicklookurl\": \"$dirAlfred\"
 }"
@@ -37,6 +38,7 @@ do
 		\"arg\": \"$arg\",
 		\"icon\": {\"path\":\"$iconPath\"},
 		\"autocomplete\": \"$autocomplete\",
+		\"type\": \"file:skipcheck\",
 		\"text\": \"$text\",
 		\"quicklookurl\": \"$quicklookurl\"
 	}"
