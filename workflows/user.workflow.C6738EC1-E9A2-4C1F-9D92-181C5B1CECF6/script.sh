@@ -27,6 +27,7 @@ do
 		\"arg\": \"$arg\",
 		\"icon\": {\"path\":\"$iconPath\"},
 		\"autocomplete\": \"$autocomplete\",
+		\"type\": \"file:skipcheck\",
 		\"text\": \"$text\",
 		\"quicklookurl\": \"$quicklookurl\"
 	}"
