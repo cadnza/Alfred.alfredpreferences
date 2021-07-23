@@ -15,7 +15,7 @@ tryCatch(
 )
 
 # Set filename ----
-filename <- "~/.com.jondayley.alfredLegoCategorizer.bricks.csv"
+filename <- "~/.com.jondayley.alfredLegoCategorizer.csv"
 
 # Set base URL ----
 baseURL <- "https://www.bricklink.com"
