@@ -9,6 +9,10 @@ A convenient interface for opening R projects. It displays your repos that conta
 
 # Versions
 
+## v1.1.0
+
+- Alfred file actions on Ctrl
+
 ## v1.0.0
 
 - First release
