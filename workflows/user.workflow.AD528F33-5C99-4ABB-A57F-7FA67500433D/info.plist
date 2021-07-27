@@ -72,6 +72,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>EC82745D-E5E3-4698-9D32-F11C00E621E4</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>6F935E0D-533D-4E71-A29C-56D67F8FE1DC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 	</dict>
 	<key>createdby</key>
 	<string>Jon Dayley</string>
@@ -249,6 +262,27 @@
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsfiles</key>
+				<true/>
+				<key>acceptsmulti</key>
+				<integer>0</integer>
+				<key>acceptstext</key>
+				<false/>
+				<key>acceptsurls</key>
+				<false/>
+				<key>name</key>
+				<string>Open in Visual Studio Code</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.universalaction</string>
+			<key>uid</key>
+			<string>EC82745D-E5E3-4698-9D32-F11C00E621E4</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string># About
@@ -276,21 +310,21 @@ Very simple: Shows you your repos and opens the one you select in VSCode. If you
 			<key>xpos</key>
 			<integer>340</integer>
 			<key>ypos</key>
-			<integer>45</integer>
+			<integer>60</integer>
 		</dict>
 		<key>44F767AD-534D-4EED-B2BF-9C8F00A2B717</key>
 		<dict>
 			<key>xpos</key>
 			<integer>245</integer>
 			<key>ypos</key>
-			<integer>80</integer>
+			<integer>95</integer>
 		</dict>
 		<key>6F935E0D-533D-4E71-A29C-56D67F8FE1DC</key>
 		<dict>
 			<key>xpos</key>
 			<integer>585</integer>
 			<key>ypos</key>
-			<integer>75</integer>
+			<integer>90</integer>
 		</dict>
 		<key>AEE5C596-CE3C-4ADB-9432-87409B38AF84</key>
 		<dict>
@@ -299,7 +333,7 @@ Very simple: Shows you your repos and opens the one you select in VSCode. If you
 			<key>xpos</key>
 			<integer>410</integer>
 			<key>ypos</key>
-			<integer>15</integer>
+			<integer>10</integer>
 		</dict>
 		<key>D0BB803B-81E9-4702-9DED-DB8C9547D366</key>
 		<dict>
@@ -308,7 +342,14 @@ Very simple: Shows you your repos and opens the one you select in VSCode. If you
 			<key>xpos</key>
 			<integer>75</integer>
 			<key>ypos</key>
-			<integer>60</integer>
+			<integer>75</integer>
+		</dict>
+		<key>EC82745D-E5E3-4698-9D32-F11C00E621E4</key>
+		<dict>
+			<key>xpos</key>
+			<integer>75</integer>
+			<key>ypos</key>
+			<integer>275</integer>
 		</dict>
 	</dict>
 	<key>version</key>
