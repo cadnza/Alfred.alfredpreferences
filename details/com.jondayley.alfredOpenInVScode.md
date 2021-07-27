@@ -9,6 +9,10 @@ Very simple: Shows you your repos and opens the one you select in VSCode. If you
 
 # Versions
 
+## v1.2.0
+
+- Open any file or folder in Visual Studio Code via Universal Actions
+
 ## v1.1.0
 
 - Alfred file actions on Ctrl
