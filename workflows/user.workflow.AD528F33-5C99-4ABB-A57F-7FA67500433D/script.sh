@@ -5,9 +5,11 @@ dirRepos=$1
 json=""
 
 # Open main loop through repos
-ls $dirRepos | while read -r repo
+allRepos=$(eval $(echo ls -d $(echo $dirRepos | sed 's/\/*$//')/\*/))
+echo $allRepos | while read -r repoRaw
 do
-	fullpath=$dirRepos/$repo
+	repo=$(basename $repoRaw)
+	fullpath=$repoRaw
 	#if [ $repo = "Alfred.alfredpreferences" ]
 	#then
 	#	title="Alfred workflows"

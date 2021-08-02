@@ -296,6 +296,10 @@ Very simple: Shows you your repos and opens the one you select in VSCode. If you
 
 # Versions
 
+## v1.2.1
+
+- Filter contents of repos directory for directories
+
 ## v1.2.0
 
 - Open any file or folder in Visual Studio Code via Universal Actions
@@ -357,7 +361,7 @@ Very simple: Shows you your repos and opens the one you select in VSCode. If you
 		</dict>
 	</dict>
 	<key>version</key>
-	<string>1.2.0</string>
+	<string>1.2.1</string>
 	<key>webaddress</key>
 	<string>https://github.com/cadnza</string>
 </dict>
