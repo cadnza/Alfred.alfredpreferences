@@ -122,7 +122,9 @@
 				<key>runningsubtext</key>
 				<string>Getting workflows…</string>
 				<key>script</key>
-				<string>source scriptAlfred.sh ~/Repos/Alfred.alfredpreferences</string>
+				<string>newHome=$(echo $HOME | sed 's/\//\\\//g')
+AlfredPrefsDirectory=$(echo $AlfredPrefsDirectory | sed 's/^\~/'$newHome'/')
+source scriptAlfred.sh $AlfredPrefsDirectory</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -151,7 +153,10 @@
 				<key>passthroughargument</key>
 				<false/>
 				<key>variables</key>
-				<dict/>
+				<dict>
+					<key>AlfredPrefsDirectory</key>
+					<string>{var:ReposDirectory}/Alfred.alfredpreferences</string>
+				</dict>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.argument</string>
@@ -188,7 +193,7 @@
 				<key>runningsubtext</key>
 				<string>Getting repos…</string>
 				<key>script</key>
-				<string>source script.sh ~/Repos</string>
+				<string>source script.sh $ReposDirectory</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -336,8 +341,6 @@ Very simple: Shows you your repos and opens the one you select in VSCode. If you
 		</dict>
 		<key>AEE5C596-CE3C-4ADB-9432-87409B38AF84</key>
 		<dict>
-			<key>note</key>
-			<string>… and HERE.</string>
 			<key>xpos</key>
 			<integer>410</integer>
 			<key>ypos</key>
@@ -346,7 +349,7 @@ Very simple: Shows you your repos and opens the one you select in VSCode. If you
 		<key>D0BB803B-81E9-4702-9DED-DB8C9547D366</key>
 		<dict>
 			<key>note</key>
-			<string>The default repos directory is ~/Repos. If that's different to you, be sure to update it HERE…</string>
+			<string>The default repos directory is ~/Repos. If that's different for you, be sure to update it in the workflow variables (button labeled [x] in the top right).</string>
 			<key>xpos</key>
 			<integer>75</integer>
 			<key>ypos</key>
@@ -357,8 +360,13 @@ Very simple: Shows you your repos and opens the one you select in VSCode. If you
 			<key>xpos</key>
 			<integer>75</integer>
 			<key>ypos</key>
-			<integer>275</integer>
+			<integer>295</integer>
 		</dict>
+	</dict>
+	<key>variables</key>
+	<dict>
+		<key>ReposDirectory</key>
+		<string>~/Repos</string>
 	</dict>
 	<key>version</key>
 	<string>1.2.1</string>
