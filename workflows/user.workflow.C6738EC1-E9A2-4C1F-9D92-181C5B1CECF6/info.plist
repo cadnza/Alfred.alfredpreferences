@@ -58,7 +58,9 @@
 				<key>runningsubtext</key>
 				<string>Getting repos…</string>
 				<key>script</key>
-				<string>source script.sh ~/Repos</string>
+				<string>newHome=$(echo $HOME | sed 's/\//\\\//g')
+ReposDirectory=$(echo $ReposDirectory | sed 's/^\~/'$newHome'/')
+source script.sh $ReposDirectory</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -115,6 +117,10 @@ A convenient interface for opening R projects. It displays your repos that conta
 
 # Versions
 
+## v1.1.1
+
+- Outsource directory specification to workflow variable
+
 ## v1.1.0
 
 - Alfred file actions on Ctrl
@@ -127,7 +133,7 @@ A convenient interface for opening R projects. It displays your repos that conta
 		<key>69F4985C-E5A7-4C66-91E5-E25269D4BA01</key>
 		<dict>
 			<key>note</key>
-			<string>Don't forget to set your Repos directory! It's defaulted to ~/Repos.</string>
+			<string>Don't forget to set your Repos directory in the workflow variables! It's defaulted to ~/Repos.</string>
 			<key>xpos</key>
 			<integer>75</integer>
 			<key>ypos</key>
@@ -143,8 +149,13 @@ A convenient interface for opening R projects. It displays your repos that conta
 			<integer>60</integer>
 		</dict>
 	</dict>
+	<key>variables</key>
+	<dict>
+		<key>ReposDirectory</key>
+		<string>~/Repos</string>
+	</dict>
 	<key>version</key>
-	<string>1.1.0</string>
+	<string>1.1.1</string>
 	<key>webaddress</key>
 	<string>https://github.com/cadnza</string>
 </dict>
