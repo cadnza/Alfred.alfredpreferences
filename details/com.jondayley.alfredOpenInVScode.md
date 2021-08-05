@@ -9,6 +9,10 @@ Very simple: Shows you your repos and opens the one you select in VSCode. If you
 
 # Versions
 
+## v1.2.2
+
+- Outsource directory specification to workflow variable
+
 ## v1.2.1
 
 - Filter contents of repos directory for directories

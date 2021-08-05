@@ -9,6 +9,10 @@ A convenient interface for opening R projects. It displays your repos that conta
 
 # Versions
 
+## v1.1.1
+
+- Outsource directory specification to workflow variable
+
 ## v1.1.0
 
 - Alfred file actions on Ctrl
