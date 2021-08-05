@@ -301,6 +301,10 @@ Very simple: Shows you your repos and opens the one you select in VSCode. If you
 
 # Versions
 
+## v1.2.2
+
+- Outsource directory specification to workflow variable
+
 ## v1.2.1
 
 - Filter contents of repos directory for directories
@@ -369,7 +373,7 @@ Very simple: Shows you your repos and opens the one you select in VSCode. If you
 		<string>~/Repos</string>
 	</dict>
 	<key>version</key>
-	<string>1.2.1</string>
+	<string>1.2.2</string>
 	<key>webaddress</key>
 	<string>https://github.com/cadnza</string>
 </dict>
