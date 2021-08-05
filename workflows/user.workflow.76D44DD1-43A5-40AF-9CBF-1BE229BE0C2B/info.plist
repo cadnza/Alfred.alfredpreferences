@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.jondayley.alfredBraveBookmarks</string>
+	<key>connections</key>
+	<dict/>
+	<key>createdby</key>
+	<string>Jon Dayley</string>
+	<key>description</key>
+	<string>Opens bookmarks from the Brave browser</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Brave Bookmarks</string>
+	<key>objects</key>
+	<array/>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict/>
+	<key>webaddress</key>
+	<string>https://github.com/cadnza</string>
+</dict>
+</plist>
