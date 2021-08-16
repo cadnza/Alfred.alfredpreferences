@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 # Get repo directory
 dirRepos=$1
 
