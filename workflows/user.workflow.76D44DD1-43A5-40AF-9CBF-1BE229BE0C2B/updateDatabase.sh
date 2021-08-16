@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 # Identify target directory
 braveDir="/Users/cadnza/Library/Application Support/BraveSoftware/Brave-Browser" # Change to ~ #TEMP
 

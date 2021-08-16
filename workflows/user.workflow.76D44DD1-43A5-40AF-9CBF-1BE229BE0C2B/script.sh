@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 typeset -F SECONDS=0 #TEMP
 
 # Identify target directory
