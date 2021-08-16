@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 # This script updates the readme and packages workflows into package files for
 # download from Github. The idea's to run it after every update.
 

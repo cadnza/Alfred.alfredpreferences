@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 # Get Alfred directory
 dirAlfred=$1
 
