@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 # Initialize database
-db="$alfred_workflow_data/db.sqlite"
+db=$1
 [[ -f $db ]] || {
 	makeCreate() {
 		echo "CREATE TABLE $1 (profile TEXT NOT NULL, json TEXT NOT NULL);"
