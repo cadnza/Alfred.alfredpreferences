@@ -1,5 +1,18 @@
 #!/usr/bin/env zsh
 
+# Create workflow data directory
+[[ -d $alfred_workflow_data ]] || mkdir $alfred_workflow_data
+
+# Initialize database
+db="$alfred_workflow_data/db.sqlite"
+[[ -f $db ]] || {
+	makeCreate() {
+		echo "CREATE TABLE $1 (profile TEXT NOT NULL, json TEXT NOT NULL);"
+	}
+	sqlite3 $db "$(makeCreate stage)"
+	sqlite3 $db "$(makeCreate prod)"
+}
+
 # Identify target directory
 braveDir="/Users/cadnza/Library/Application Support/BraveSoftware/Brave-Browser" # Change to ~ #TEMP
 
@@ -92,10 +105,21 @@ do
 			\"quicklookurl\": \"$d_url\"
 		}"
 
-		echo $newItem, #TEMP
+		# Format JSON element for sqlite insert
+		newItem=$(echo $newItem | sed "s/'/''/g" | perl -pe 's/[\t\n]//g')
+
+		# Insert into stage
+		sqlite3 $db "INSERT INTO stage VALUES ('$d_profile','$newItem');"
 
 	# Close paths loop
 	done
 
 # Close profiles loop
 done
+
+# Replace prod table with stage table
+sqlite3 $db "DELETE FROM prod;"
+sqlite3 $db "INSERT INTO prod SELECT * FROM stage;"
+
+# Truncate stage table
+sqlite3 $db "DELETE FROM stage;"
