@@ -1,8 +1,5 @@
 #!/usr/bin/env zsh
 
-# Create workflow data directory
-[[ -d $alfred_workflow_data ]] || mkdir $alfred_workflow_data
-
 # Initialize database
 db="$alfred_workflow_data/db.sqlite"
 [[ -f $db ]] || {
