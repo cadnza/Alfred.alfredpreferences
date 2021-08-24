@@ -14,7 +14,7 @@ db="$alfred_workflow_data/db.sqlite"
 }
 
 # Identify target directory
-braveDir="/Users/cadnza/Library/Application Support/BraveSoftware/Brave-Browser" # Change to ~ #TEMP
+braveDir="$HOME/Library/Application Support/BraveSoftware/Brave-Browser"
 
 # Get metadata file
 braveFile="$braveDir/Local State"

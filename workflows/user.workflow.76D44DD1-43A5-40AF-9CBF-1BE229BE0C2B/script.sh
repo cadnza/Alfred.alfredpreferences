@@ -1,9 +1,7 @@
 #!/usr/bin/env zsh
 
-typeset -F SECONDS=0 #TEMP
-
 # Identify target directory
-braveDir="/Users/cadnza/Library/Application Support/BraveSoftware/Brave-Browser" # Change to ~ #TEMP
+braveDir="$HOME/Library/Application Support/BraveSoftware/Brave-Browser"
 
 # Get metadata file
 braveFile="$braveDir/Local State"
@@ -51,9 +49,3 @@ do
 
 # Close loop
 done
-
-
-
-
-echo
-echo "$SECONDS" #TEMP
