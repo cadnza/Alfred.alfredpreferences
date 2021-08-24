@@ -4,5 +4,9 @@
 <dict>
 	<key>performedInitialSetup</key>
 	<true/>
+	<key>serverRestartKeywordEnabled</key>
+	<false/>
+	<key>serverStopKeywordEnabled</key>
+	<false/>
 </dict>
 </plist>
