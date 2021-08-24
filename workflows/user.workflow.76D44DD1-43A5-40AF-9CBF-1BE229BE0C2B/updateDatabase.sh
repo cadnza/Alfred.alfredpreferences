@@ -80,7 +80,19 @@ do
 		# Get subtitle
 		d_subtitle="$displayPath $d_url"
 
-		echo $displayPath #TEMP
+		# Create JSON element
+		# Do we need to specify 'action', or does 'arg' take care of that? #TEMP
+		newItem="{
+			\"title\": \"$d_name\",
+			\"subtitle\": \"$d_subtitle\",
+			\"arg\": \"$d_url\",
+			\"icon\": {\"path\":\"$d_icon\"},
+			\"autocomplete\": \"$d_name\",
+			\"text\": \"$d_url\",
+			\"quicklookurl\": \"$d_url\"
+		}"
+
+		echo $newItem, #TEMP
 
 	# Close paths loop
 	done
