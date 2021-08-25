@@ -1,5 +1,8 @@
 #!/usr/bin/env zsh
 
+# Add /usr/local/bin to path
+PATH=/usr/local/bin:$PATH
+
 # Set maximum database age in minutes
 dbMaxAgeMinutes=1 # Outsource to Alfred environment variable #TEMP
 
