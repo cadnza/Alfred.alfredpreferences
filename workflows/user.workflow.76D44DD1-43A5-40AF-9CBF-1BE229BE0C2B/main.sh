@@ -3,6 +3,9 @@
 # Set maximum database age in minutes
 dbMaxAgeMinutes=1
 
+# Set rerun interval, 0.1 to 5 seconds
+rerun=3
+
 # Identify target directory
 braveDir="$HOME/Library/Application Support/BraveSoftware/Brave-Browser"
 
@@ -25,6 +28,16 @@ updateDB() {
 		screen -S $screenKeyName  -dm ./updateDatabase.sh $db
 }
 
+# Get function to prep and echo JSON
+echoJSON() {
+	echo "{
+		\"rerun\": $rerun,
+		\"items\": [
+			$1
+		]
+	}"
+}
+
 # Create database if needed and return placeholder JSON
 [[ -f $db ]] || {
 	updateDB
@@ -33,7 +46,7 @@ updateDB() {
 		\"subtitle\": \"This only happens once. Please come back in a few minutes.\",
 		\"valid\": false
 	}"
-	echo $waitItem #This needs formatted, probably by a function #TEMP
+	echoJSON $waitItem
 	return
 }
 
