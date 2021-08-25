@@ -9,6 +9,30 @@ dbMaxAgeMinutes=1 # Outsource to Alfred environment variable #TEMP
 # Set rerun interval, 0.1 to 5 seconds
 rerun=3
 
+# Get function to prep and echo JSON
+echoJSON() {
+	echo "{
+		\"rerun\": $rerun,
+		\"items\": [
+			$1
+		]
+	}"
+}
+
+# Check for jq
+[[ -f $(which jq) ]] || {
+	jqURL="https://stedolan.github.io/jq/download/"
+	nojq="{
+		\"title\": \"Please install jq to continue.\",
+		\"subtitle\": \"Hit 'Enter' to visit the download page.\",
+		\"arg\": \"$jqURL\",
+		\"text\": \"$jqURL\",
+		\"quicklookurl\": \"$jqURL\"
+	}"
+	echoJSON $nojq
+	return
+}
+
 # Identify target directory
 braveDir="$HOME/Library/Application Support/BraveSoftware/Brave-Browser"
 
@@ -29,16 +53,6 @@ updateDB() {
 	screenKeyName=braveBookmarksScreenIdJonDayley
 	[[ $(screen -ls | grep -Fc $screenKeyName) = 0 ]] && \
 		screen -S $screenKeyName  -dm ./updateDatabase.sh $db
-}
-
-# Get function to prep and echo JSON
-echoJSON() {
-	echo "{
-		\"rerun\": $rerun,
-		\"items\": [
-			$1
-		]
-	}"
 }
 
 # Set routine to update database and display wait
