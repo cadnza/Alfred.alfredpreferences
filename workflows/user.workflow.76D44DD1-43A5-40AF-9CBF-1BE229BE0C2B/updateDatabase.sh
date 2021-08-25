@@ -82,18 +82,20 @@ do
 		selector=$urlPath".url"
 		d_url=$(echo $jsonRoot | jq -r $selector)
 
-		# Get display path
+		# Get bookmark path
 		urlPathSplit=$(echo $urlPath | perl -pe 's/(?<=.)\./\n./g')
 		urlPath=""
-		displayPath=$d_profileName
+		bookmarkPath=$d_profileName
 		echo $urlPathSplit | while read -r emt
 		do
 			urlPath=$urlPath$emt
 			emtName=$(echo $jsonRoot | jq -r $urlPath | jq -r '.name')
 			emtType=$(echo $jsonRoot | jq -r $urlPath | jq -r '.type')
-			[[ $emtType = folder ]] && displayPath="$displayPath / $emtName"
+			[[ $emtType = folder ]] && bookmarkPath="$bookmarkPath / $emtName"
 		done
-		displayPath="[ $(echo $displayPath | perl -pe 's/^\s*\/\s*//') ]"
+
+		# Format display path
+		displayPath="[ $(echo $bookmarkPath | perl -pe 's/^\s*\/\s*//') ]"
 
 		# Get subtitle
 		d_subtitle="$displayPath $d_url"
