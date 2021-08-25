@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 # Set maximum database age in minutes
-dbMaxAge=5
+dbMaxAgeMinutes=1
 
 # Identify target directory
 braveDir="$HOME/Library/Application Support/BraveSoftware/Brave-Browser"
@@ -33,4 +33,4 @@ updateDB() {
 
 # Update database if due for refresh
 nMinsOld=$((($(date +%s)-$(date -r $db +%s))/60))
-[[ $nMinsOld -ge $dbMaxAge ]] && updateDB
+[[ $nMinsOld -ge $dbMaxAgeMinutes ]] && updateDB
