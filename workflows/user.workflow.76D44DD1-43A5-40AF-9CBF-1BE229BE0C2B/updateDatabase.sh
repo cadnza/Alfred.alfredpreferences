@@ -1,14 +1,13 @@
 #!/usr/bin/env zsh
 
-# Initialize database
+# Get database path and table creation function
 db=$1
-[[ -f $db ]] || {
-	makeCreate() {
-		echo "CREATE TABLE $1 (profile TEXT NOT NULL, json TEXT NOT NULL);"
-	}
-	sqlite3 $db "$(makeCreate stage)"
-	sqlite3 $db "$(makeCreate prod)"
+makeCreate() {
+	echo "CREATE TABLE IF NOT EXISTS $1 (profile TEXT NOT NULL, json TEXT NOT NULL);"
 }
+
+# Create stage
+sqlite3 $db "$(makeCreate stage)"
 
 # Identify target directory
 braveDir="$HOME/Library/Application Support/BraveSoftware/Brave-Browser"
@@ -116,6 +115,9 @@ do
 
 # Close profiles loop
 done
+
+# Create prod
+sqlite3 $db "$(makeCreate prod)"
 
 # Replace prod table with stage table
 sqlite3 $db "DELETE FROM prod;"

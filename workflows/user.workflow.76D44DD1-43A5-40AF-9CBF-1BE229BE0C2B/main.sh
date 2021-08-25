@@ -38,8 +38,8 @@ echoJSON() {
 	}"
 }
 
-# Create database if needed and return placeholder JSON
-[[ -f $db ]] || {
+# Set routine to update database and display wait
+showPleaseWait() {
 	updateDB
 	waitItem="{
 		\"title\": \"Indexing bookmarks...\",
@@ -47,6 +47,17 @@ echoJSON() {
 		\"valid\": false
 	}"
 	echoJSON $waitItem
+}
+
+# Wait if there's no database
+[[ -f $db ]] || {
+	showPleaseWait
+	return
+}
+
+# Wait if there's no prod table
+[[ $(sqlite3 $db "SELECT name FROM sqlite_master WHERE type='table' AND name='prod';" | grep -c .) = 0 ]] && {
+	showPleaseWait
 	return
 }
 
