@@ -29,11 +29,14 @@ do
 	# Get profile directory
 	profileDir=$(echo $jsonSubset | jq -r '.key')
 
+	# Get profile identifier
+	d_profile=$(basename $profileDir)
+
 	# Subset JSON for profile directory
 	jsonProfile=$(echo $jsonSubset | jq "select(.key == \"$profileDir\")")
 
 	# Get profile name
-	d_profile=$(echo $jsonProfile | jq -r '.value.name')
+	d_profileName=$(echo $jsonProfile | jq -r '.value.name') # Use this #TEMP
 
 	# Get icon
 	d_icon=$(echo $jsonProfile | jq -r '.value.avatar_icon') # This returns a URL scheme that only Chromium browsers can read. We need to find a way to turn it into either a usable URL or a file (preferably a file). #TEMP
