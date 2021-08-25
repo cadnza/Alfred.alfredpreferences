@@ -85,7 +85,7 @@ do
 		# Get display path
 		urlPathSplit=$(echo $urlPath | perl -pe 's/(?<=.)\./\n./g')
 		urlPath=""
-		displayPath=""
+		displayPath=$d_profileName
 		echo $urlPathSplit | while read -r emt
 		do
 			urlPath=$urlPath$emt
