@@ -6,8 +6,11 @@ makeCreate() {
 	echo "CREATE TABLE IF NOT EXISTS $1 (profile TEXT NOT NULL, json TEXT NOT NULL);"
 }
 
-# Create stage
+# Create stage if needed
 sqlite3 $db "$(makeCreate stage)"
+
+# Truncate stage for good measure (should already be empty)
+sqlite3 $db "DELETE FROM stage;"
 
 # Identify target directory
 braveDir="$HOME/Library/Application Support/BraveSoftware/Brave-Browser"
@@ -116,12 +119,12 @@ do
 # Close profiles loop
 done
 
-# Create prod
+# Create prod if needed
 sqlite3 $db "$(makeCreate prod)"
 
-# Replace prod table with stage table
+# Replace prod with stage
 sqlite3 $db "DELETE FROM prod;"
 sqlite3 $db "INSERT INTO prod SELECT * FROM stage;"
 
-# Truncate stage table
+# Truncate stage
 sqlite3 $db "DELETE FROM stage;"
