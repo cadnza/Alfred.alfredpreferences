@@ -28,7 +28,13 @@ updateDB() {
 # Create database if needed and return placeholder JSON
 [[ -f $db ]] || {
 	updateDB
-	return # Return PLEASE WAIT # ROAD WORK #TEMP
+	waitItem="{
+		\"title\": \"Indexing bookmarks...\",
+		\"subtitle\": \"This only happens once. Please come back in a few minutes.\",
+		\"valid\": false
+	}"
+	echo $waitItem #This needs formatted, probably by a function #TEMP
+	return
 }
 
 # Update database if due for refresh
