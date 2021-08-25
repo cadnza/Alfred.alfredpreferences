@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 # Set maximum database age in minutes
-dbMaxAgeMinutes=1
+dbMaxAgeMinutes=1 # Outsource to Alfred environment variable #TEMP
 
 # Set rerun interval, 0.1 to 5 seconds
 rerun=3
