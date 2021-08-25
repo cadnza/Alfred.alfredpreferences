@@ -2,12 +2,12 @@
 
 # Get database path and table creation function
 db=$1
-makeCreate() {
-	echo "CREATE TABLE IF NOT EXISTS $1 (profile TEXT NOT NULL, json TEXT NOT NULL);"
+safeCreate() {
+	sqlite3 $db "CREATE TABLE IF NOT EXISTS $1 (profile TEXT NOT NULL, json TEXT NOT NULL);"
 }
 
 # Create stage if needed
-sqlite3 $db "$(makeCreate stage)"
+safeCreate stage
 
 # Truncate stage for good measure (should already be empty)
 sqlite3 $db "DELETE FROM stage;"
@@ -120,7 +120,7 @@ do
 done
 
 # Create prod if needed
-sqlite3 $db "$(makeCreate prod)"
+safeCreate prod
 
 # Replace prod with stage
 sqlite3 $db "DELETE FROM prod;"
