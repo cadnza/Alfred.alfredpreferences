@@ -85,28 +85,31 @@ do
 		# Get bookmark path
 		urlPathSplit=$(echo $urlPath | perl -pe 's/(?<=.)\./\n./g')
 		urlPath=""
-		bookmarkPath=$d_profileName
+		bookmarkPathRaw=$d_profileName
 		echo $urlPathSplit | while read -r emt
 		do
 			urlPath=$urlPath$emt
 			emtName=$(echo $jsonRoot | jq -r $urlPath | jq -r '.name')
 			emtType=$(echo $jsonRoot | jq -r $urlPath | jq -r '.type')
-			[[ $emtType = folder ]] && bookmarkPath="$bookmarkPath / $emtName"
+			[[ $emtType = folder ]] && bookmarkPathRaw="$bookmarkPathRaw"'_/_'"$emtName"
 		done
+		bookmarkPath=$(echo $bookmarkPathRaw | sed 's/_\/_/\//g')
 
 		# Format display path
-		displayPath="[ $(echo $bookmarkPath | perl -pe 's/^\s*\/\s*//') ]"
+		displayPath=$(echo $bookmarkPathRaw | sed 's/_\/_/ \/ /g')
+		displayPath="[ $(echo $displayPath | perl -pe 's/^\s*\/\s*//') ]"
 
 		# Get subtitle
 		d_subtitle="$displayPath $d_url"
 
 		# Create JSON element
-		# Do we need to specify 'action', or does 'arg' take care of that? #TEMP
+		# Make sure "match" can match any point in the term, not just from the beginning #TEMP
 		newItem="{
 			\"title\": \"$d_name\",
 			\"subtitle\": \"$d_subtitle\",
 			\"arg\": \"$d_url\",
 			\"icon\": {\"path\":\"$d_icon\"},
+			\"match\": \"$bookmarkPath\/$d_name\",
 			\"autocomplete\": \"$d_name\",
 			\"text\": \"$d_url\",
 			\"quicklookurl\": \"$d_url\"
