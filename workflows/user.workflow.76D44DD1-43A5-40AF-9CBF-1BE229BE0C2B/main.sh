@@ -24,7 +24,7 @@ echoJSON() {
 	jqURL="https://stedolan.github.io/jq/download/"
 	nojq="{
 		\"title\": \"Please install jq to continue.\",
-		\"subtitle\": \"Hit 'Enter' to visit the download page.\",
+		\"subtitle\": \"Hit 'Enter' to visit the download page, or be sure it's in Alfred's \$PATH.\",
 		\"arg\": \"$jqURL\",
 		\"text\": \"$jqURL\",
 		\"quicklookurl\": \"$jqURL\"
