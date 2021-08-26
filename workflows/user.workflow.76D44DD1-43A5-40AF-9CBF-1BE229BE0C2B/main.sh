@@ -22,6 +22,24 @@ echoJSON() {
 		}'
 }
 
+# Check for Brave
+[[ $(mdfind "kMDItemKind == 'Application'" | grep -Fc "Brave Browser.app") = 0 ]] && {
+	braveURL="https://brave.com/download/"
+	final=$(
+		jq -nc \
+			--arg braveURL $braveURL \
+			'{
+				"title": "It looks like you don'"'"'t have Brave Browser installed.",
+				"subtitle": "Hit '"'"'Enter'"'"' to visit the download page.",
+				"arg": $braveURL,
+				"text": $braveURL,
+				"quicklookurl": $braveURL
+			}'
+	)
+	echoJSON $final
+	return
+}
+
 # Check for jq
 [[ -f $(which jq) ]] || {
 	jqURL="https://stedolan.github.io/jq/download/"
