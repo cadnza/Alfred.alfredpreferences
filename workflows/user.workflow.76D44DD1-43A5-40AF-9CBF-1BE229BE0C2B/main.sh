@@ -115,18 +115,19 @@ queryResult=$(sqlite3 $db "SELECT json FROM prod WHERE profile='$lastProfileSQL'
 # Validate non-zero bookmark count and reindex otherwise
 [[ $(echo $queryResult | grep -c ".") = 0 ]] && {
 	profileName=$(sqlite3 $db "SELECT name FROM prodProf WHERE profile = '$lastProfileSQL'")
+	noBookmarksTitle="No bookmarks found for $profileName."
 	[[ $(screen -ls | grep -Fc $screenKeyName) = 0 ]] && \
-		noBookmarksExplanation="Add some bookmarks and then check here again." \
+		noBookmarksSubtitle="Add some bookmarks and then check here again." \
 	|| \
-		noBookmarksExplanation="Reindexing..."
+		noBookmarksSubtitle="Reindexing..."
 	# Get profile name working #TEMP
 	final=$(
 		jq -nc \
-			--arg noBookmarksExplanation "$noBookmarksExplanation" \
-			--arg profileName "$profileName" \
+			--arg noBookmarksTitle "$noBookmarksTitle" \
+			--arg noBookmarksSubtitle "$noBookmarksSubtitle" \
 			'{
-				"title": "No bookmarks found for $profileName.",
-				"subtitle": $noBookmarksExplanation,
+				"title": $noBookmarksTitle,
+				"subtitle": $noBookmarksSubtitle,
 				"valid": false
 			}'
 	)
