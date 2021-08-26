@@ -108,6 +108,11 @@ nMinsOld=$((($(date +%s)-$(date -r $db +%s))/60))
 
 # Query database
 queryResult=$(sqlite3 $db "SELECT json FROM prod WHERE profile='$lastProfile';")
+
+# Check for bookmarks
+#[[ $(echo $queryResult | grep -c ".") = 0 ]] && {} # ROAD WORK #TEMP
+
+# Format final JSON
 final=$(echo $queryResult | perl -pe 's/\n/,/g' | sed 's/,$//g')
 
 # Echo results
