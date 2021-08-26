@@ -21,9 +21,6 @@ braveDir="$HOME/Library/Application Support/BraveSoftware/Brave-Browser"
 # Get metadata file
 braveFile="$braveDir/Local State"
 
-# Convert to JSON
-jsonMaster=$(cat $braveFile | jq .)
-
 # Subset JSON for profiles
 jsonSubsets=$(cat $braveFile | jq -c '.profile.info_cache | to_entries[]')
 
