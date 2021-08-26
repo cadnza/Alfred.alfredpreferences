@@ -3,6 +3,9 @@
 # This script updates the readme and packages workflows into package files for
 # download from Github. The idea's to run it after every update.
 
+# Go to top directory
+cd $(git -C $(dirname $0) rev-parse --show-toplevel)
+
 # Set readme title
 readme=README.md
 
@@ -17,7 +20,7 @@ prefsNeedWritten=$(defaults read $prefsName &> /dev/null && echo 0 || echo 1)
 	editSettings=2
 	while [ $editSettings = 2 ]
 	do
-		echo Rewrite settings? [y/n]:
+		echo "Rewrite settings? [y/n]:"
 		read editSettingsRaw
 		[[ "$editSettingsRaw" == [Yy]* ]] && editSettings=1
 		[[ "$editSettingsRaw" == [Nn]* ]] && editSettings=0
@@ -163,7 +166,7 @@ do
 	fi
 
 	# Add https prefix to web address if not present
-	if [[ $(echo $webaddress | grep -Ec ^https?://) = 0 && ${#webaddress} != 0 ]]
+	if [[ $(echo $webaddress | grep -Ec '^https?://') = 0 && ${#webaddress} != 0 ]]
 	then
 		webaddress=https://$webaddress
 	fi
@@ -218,7 +221,7 @@ do
 
 		# Set link text to download
 		linkText=Download
-	
+
 	# Add logic for workflows that don't belong to the user
 	else
 
