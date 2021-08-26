@@ -107,11 +107,8 @@ nMinsOld=$((($(date +%s)-$(date -r $db +%s))/60))
 [[ $nMinsOld -ge $dbMaxAgeMinutes ]] && updateDB
 
 # Query database
-final=$(
-	sqlite3 $db "SELECT json FROM prod WHERE profile='$lastProfile';" | \
-		perl -pe 's/\n/,/g' | \
-		sed 's/,$//g'
-)
+queryResult=$(sqlite3 $db "SELECT json FROM prod WHERE profile='$lastProfile';")
+final=$(echo $queryResult | perl -pe 's/\n/,/g' | sed 's/,$//g')
 
 # Echo results
 echoJSON $final
