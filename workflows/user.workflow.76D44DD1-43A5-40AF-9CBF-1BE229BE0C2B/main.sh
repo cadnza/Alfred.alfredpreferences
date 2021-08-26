@@ -63,6 +63,7 @@ braveFile="$braveDir/Local State"
 
 # Get last used profile directory
 lastProfile=$(cat $braveFile | jq -r '.profile.last_used')
+lastProfileSQL=$(echo $lastProfile | sed "s/'/''/g")
 
 # Create workflow data directory
 [[ -d $alfred_workflow_data ]] || mkdir $alfred_workflow_data
@@ -109,19 +110,22 @@ nMinsOld=$((($(date +%s)-$(date -r $db +%s))/60))
 [[ $nMinsOld -ge $dbMaxAgeMinutes ]] && reindex
 
 # Query database
-queryResult=$(sqlite3 $db "SELECT json FROM prod WHERE profile='$lastProfile';")
+queryResult=$(sqlite3 $db "SELECT json FROM prod WHERE profile='$lastProfileSQL';")
 
 # Validate non-zero bookmark count and reindex otherwise
 [[ $(echo $queryResult | grep -c ".") = 0 ]] && {
+	profileName=$(sqlite3 $db "SELECT name FROM prodProf WHERE profile = '$lastProfileSQL'")
 	[[ $(screen -ls | grep -Fc $screenKeyName) = 0 ]] && \
 		noBookmarksExplanation="Add some bookmarks and then check here again." \
 	|| \
 		noBookmarksExplanation="Reindexing..."
+	# Get profile name working #TEMP
 	final=$(
 		jq -nc \
 			--arg noBookmarksExplanation "$noBookmarksExplanation" \
+			--arg profileName "$profileName" \
 			'{
-				"title": "No bookmarks found.",
+				"title": "No bookmarks found for $profileName.",
 				"subtitle": $noBookmarksExplanation,
 				"valid": false
 			}'
