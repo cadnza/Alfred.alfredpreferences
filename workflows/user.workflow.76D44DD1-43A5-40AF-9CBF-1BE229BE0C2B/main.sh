@@ -65,11 +65,13 @@ updateDB() {
 # Set routine to update database and display wait
 showPleaseWait() {
 	updateDB
-	waitItem="{
-		\"title\": \"Indexing bookmarks...\",
-		\"subtitle\": \"This only happens once. Please come back in a few minutes.\",
-		\"valid\": false
-	}"
+	waitItem=$(
+		jq -nc '{
+			"title": "Indexing bookmarks...",
+			"subtitle": "This only happens once. Please come back in a few minutes.",
+			"valid": false
+		}'
+	)
 	echoJSON $waitItem
 }
 
