@@ -46,7 +46,7 @@ lastProfile=$(cat $braveFile | jq -r '.profile.last_used')
 [[ -d $alfred_workflow_data ]] || mkdir $alfred_workflow_data
 
 # Set db path
-db="$alfred_workflow_data/db.sqlite"
+db="$alfred_workflow_data/index.sqlite"
 
 # Get function to update database
 updateDB() {
