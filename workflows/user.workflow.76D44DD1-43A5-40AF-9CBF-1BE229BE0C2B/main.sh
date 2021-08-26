@@ -120,7 +120,6 @@ queryResult=$(sqlite3 $db "SELECT json FROM prod WHERE profile='$lastProfileSQL'
 		noBookmarksSubtitle="Add some bookmarks and then check here again." \
 	|| \
 		noBookmarksSubtitle="Reindexing..."
-	# Get profile name working #TEMP
 	final=$(
 		jq -nc \
 			--arg noBookmarksTitle "$noBookmarksTitle" \
