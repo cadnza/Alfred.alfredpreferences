@@ -93,7 +93,7 @@ do
 			emtType=$(echo $jsonRoot | jq -r $urlPath | jq -r '.type')
 			[[ $emtType = folder ]] && bookmarkPathRaw="$bookmarkPathRaw"'_/_'"$emtName"
 		done
-		bookmarkPath=$(echo $bookmarkPathRaw | sed 's/_\/_/\//g')
+		bookmarkPath=$(echo $bookmarkPathRaw | sed 's/_\/_/ /g')
 
 		# Format display path
 		displayPath=$(echo $bookmarkPathRaw | sed 's/_\/_/ \/ /g')
@@ -109,7 +109,7 @@ do
 			\"subtitle\": \"$d_subtitle\",
 			\"arg\": \"$d_url\",
 			\"icon\": {\"path\":\"$d_icon\"},
-			\"match\": \"$bookmarkPath\/$d_name\",
+			\"match\": \"$bookmarkPath $d_name\",
 			\"autocomplete\": \"$d_name\",
 			\"text\": \"$d_url\",
 			\"quicklookurl\": \"$d_url\"
