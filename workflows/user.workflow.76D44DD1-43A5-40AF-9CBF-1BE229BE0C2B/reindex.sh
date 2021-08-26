@@ -3,17 +3,22 @@
 # Add /usr/local/bin to path
 PATH=/usr/local/bin:$PATH
 
-# Get database path and table creation function
+# Get database path and table creation functions
 db=$1
 safeCreate() {
 	sqlite3 $db "CREATE TABLE IF NOT EXISTS $1 (profile TEXT NOT NULL, json TEXT NOT NULL);"
 }
+safeCreateProf() {
+	sqlite3 $db "CREATE TABLE IF NOT EXISTS $1 (profile TEXT NOT NULL, name TEXT NOT NULL);"
+}
 
-# Create stage if needed
+# Create stages if needed
 safeCreate stage
+safeCreateProf stageProf
 
-# Truncate stage for good measure (should already be empty)
+# Truncate stages for good measure (should already be empty)
 sqlite3 $db "DELETE FROM stage;"
+sqlite3 $db "DELETE FROM stageProf;"
 
 # Identify target directory
 braveDir="$HOME/Library/Application Support/BraveSoftware/Brave-Browser"
@@ -39,6 +44,9 @@ do
 
 	# Get profile name
 	d_profileName=$(echo $jsonProfile | jq -r '.value.name')
+
+	# Insert into profile stage
+	sqlite3 $db "INSERT INTO stageProf VALUES ('$d_profile','$d_profileName');"
 
 	# Get icon
 	d_icon=$(echo $jsonProfile | jq -r '.value.avatar_icon') # This returns a URL scheme that only Chromium browsers can read. We need to find a way to turn it into either a usable URL or a file (preferably a file). #TEMP
@@ -141,12 +149,16 @@ do
 # Close profiles loop
 done
 
-# Create prod if needed
+# Create prods if needed
 safeCreate prod
+safeCreateProf prodProf
 
-# Replace prod with stage
+# Replace prods with stages
 sqlite3 $db "DELETE FROM prod;"
 sqlite3 $db "INSERT INTO prod SELECT * FROM stage;"
+sqlite3 $db "DELETE FROM prodProf;"
+sqlite3 $db "INSERT INTO prodProf SELECT * FROM stageProf;"
 
-# Truncate stage
+# Truncate stages
 sqlite3 $db "DELETE FROM stage;"
+sqlite3 $db "DELETE FROM stageProf;"
