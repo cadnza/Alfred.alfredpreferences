@@ -103,12 +103,13 @@ do
 		d_subtitle="$displayPath $d_url"
 
 		# Create JSON element
+		# The "icon" field is currently not in use (note "_icon" in the JSON)
 		newItem=$(
 			jq -nc \
 				--arg title "$d_name" \
 				--arg subtitle "$d_subtitle" \
 				--arg arg "$d_url" \
-				--arg icon "$d_icon" \ # Currently not in use
+				--arg icon "$d_icon" \
 				--arg match "$bookmarkPath $d_name" \
 				--arg autocomplete "$d_name" \
 				--arg text "$d_url" \
