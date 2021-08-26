@@ -108,7 +108,7 @@ do
 				--arg title "$d_name" \
 				--arg subtitle "$d_subtitle" \
 				--arg arg "$d_url" \
-				--arg icon "$d_icon" \
+				--arg icon "$d_icon" \ # Currently not in use
 				--arg match "$bookmarkPath $d_name" \
 				--arg autocomplete "$d_name" \
 				--arg text "$d_url" \
@@ -117,7 +117,7 @@ do
 					"title": $title,
 					"subtitle": $subtitle,
 					"arg": $arg,
-					"icon": {"path": $icon},
+					"_icon": {"path": $icon},
 					"match": $match,
 					"autocomplete": $autocomplete,
 					"text": $text,
