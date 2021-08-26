@@ -11,12 +11,15 @@ rerun=3
 
 # Get function to prep and echo JSON
 echoJSON() {
-	echo "{
-		\"rerun\": $rerun,
-		\"items\": [
-			$1
-		]
-	}"
+	jq -nc \
+		--argjson rerun $rerun \
+		--argjson main $1 \
+		'{
+			"rerun": $rerun,
+			"items": [
+				$main
+			]
+		}'
 }
 
 # Check for jq
