@@ -52,6 +52,9 @@ do
 	# Get bookmarks file
 	bookmarks=$profileDir/bookmarks
 
+	# Skip profile if no bookmarks file
+	[[ -f $bookmarks ]] || continue
+
 	# Convert bookmarks file to JSON
 	jsonBm=$(cat $bookmarks | jq .)
 
@@ -60,6 +63,9 @@ do
 
 	# Get nodes containing url attributes
 	urlPaths=$(echo $jsonRoot | jq -rc 'paths | select(.[-1] == "url") | del(. | last) | join(".")')
+
+	# Skip profile if no bookmarks
+	[[ $(echo $urlPaths | grep -c ".") = 0 ]] && continue
 
 	# Open paths loop
 	echo $urlPaths | while read -r urlPath
