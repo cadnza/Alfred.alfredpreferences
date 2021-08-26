@@ -11,15 +11,12 @@ rerun=3
 
 # Get function to prep and echo JSON
 echoJSON() {
-	jq -nc \
-		--argjson rerun $rerun \
-		--argjson main $1 \
-		'{
-			"rerun": $rerun,
-			"items": [
-				$main
-			]
-		}'
+	echo "{
+		\"rerun\": $rerun,
+		\"items\": [
+			$1
+		]
+	}"
 }
 
 # Check for Brave
