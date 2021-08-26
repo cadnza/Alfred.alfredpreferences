@@ -70,16 +70,18 @@ lastProfile=$(cat $braveFile | jq -r '.profile.last_used')
 # Set db path
 db="$alfred_workflow_data/index.sqlite"
 
-# Get function to update database
-updateDB() {
-	screenKeyName=braveBookmarksScreenIdJonDayley
+# Set screen key of indexing process
+screenKeyName=braveBookmarksIndexingRoutine
+
+# Get function to reindex
+reindex() {
 	[[ $(screen -ls | grep -Fc $screenKeyName) = 0 ]] && \
-		screen -S $screenKeyName -dm ./updateDatabase.sh $db
+		screen -S $screenKeyName -dm ./reindex.sh $db
 }
 
-# Set routine to update database and display wait
+# Set routine to reindex and display wait
 showPleaseWait() {
-	updateDB
+	reindex
 	waitItem=$(
 		jq -nc '{
 			"title": "Indexing bookmarks...",
@@ -102,15 +104,36 @@ showPleaseWait() {
 	return
 }
 
-# Update database if due for refresh
+# Reindex if due for reindexing
 nMinsOld=$((($(date +%s)-$(date -r $db +%s))/60))
-[[ $nMinsOld -ge $dbMaxAgeMinutes ]] && updateDB
+[[ $nMinsOld -ge $dbMaxAgeMinutes ]] && reindex
 
 # Query database
 queryResult=$(sqlite3 $db "SELECT json FROM prod WHERE profile='$lastProfile';")
 
-# Check for bookmarks
-#[[ $(echo $queryResult | grep -c ".") = 0 ]] && {} # ROAD WORK #TEMP
+# Validate non-zero bookmark count and reindex otherwise
+[[ $(echo $queryResult | grep -c ".") = 0 ]] && {
+	[[ $dbMaxAgeMinutes = 1 ]] && \
+		minsPlural="minute" \
+	|| \
+		minsPlural="minutes"
+	[[ $(screen -ls | grep -Fc $screenKeyName) = 0 ]] && \
+		noBookmarksExplanation="Add some bookmarks and then check here again in $dbMaxAgeMinutes $minsPlural." \
+	|| \
+		noBookmarksExplanation="Reindexing..."
+	final=$(
+		jq -nc \
+			--arg noBookmarksExplanation "$noBookmarksExplanation" \
+			'{
+				"title": "No bookmarks found.",
+				"subtitle": $noBookmarksExplanation,
+				"valid": false
+			}'
+	)
+	echoJSON $final
+	reindex
+	return
+}
 
 # Format final JSON
 final=$(echo $queryResult | perl -pe 's/\n/,/g' | sed 's/,$//g')
