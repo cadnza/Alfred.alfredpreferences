@@ -45,7 +45,7 @@ echoJSON() {
 			--arg jqURL $jqURL \
 			'{
 				"title": "Please install jq to continue.",
-				"subtitle": "Hit '"'"'Enter'"'"' to visit the download page, or be sure it'"'"'s in Alfred'"'"'s $PATH.",
+				"subtitle": "Hit '"'"'Enter'"'"' to visit the download page, or be sure jq is in Alfred'"'"'s $PATH.",
 				"arg": $jqURL,
 				"text": $jqURL,
 				"quicklookurl": $jqURL
