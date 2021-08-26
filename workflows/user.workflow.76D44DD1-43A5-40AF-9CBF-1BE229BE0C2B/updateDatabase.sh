@@ -103,17 +103,27 @@ do
 		d_subtitle="$displayPath $d_url"
 
 		# Create JSON element
-		# Make sure "match" can match any point in the term, not just from the beginning #TEMP
-		newItem="{
-			\"title\": \"$d_name\",
-			\"subtitle\": \"$d_subtitle\",
-			\"arg\": \"$d_url\",
-			\"icon\": {\"path\":\"$d_icon\"},
-			\"match\": \"$bookmarkPath $d_name\",
-			\"autocomplete\": \"$d_name\",
-			\"text\": \"$d_url\",
-			\"quicklookurl\": \"$d_url\"
-		}"
+		newItem=$(
+			jq -nc \
+				--arg title "$d_name" \
+				--arg subtitle "$d_subtitle" \
+				--arg arg "$d_url" \
+				--arg icon "$d_icon" \
+				--arg match "$bookmarkPath $d_name" \
+				--arg autocomplete "$d_name" \
+				--arg text "$d_url" \
+				--arg quicklookurl "$quicklookurl" \
+				'{
+					"title": $title,
+					"subtitle": $subtitle,
+					"arg": $arg,
+					"icon": {"path": $icon},
+					"match": $match,
+					"autocomplete": $autocomplete,
+					"text": $text,
+					"quicklookurl": $quicklookurl
+				}'
+		)
 
 		# Format JSON element for sqlite insert
 		newItem=$(echo $newItem | sed "s/'/''/g" | perl -pe 's/[\t\n]//g')
