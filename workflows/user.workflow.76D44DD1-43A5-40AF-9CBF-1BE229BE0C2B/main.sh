@@ -74,7 +74,7 @@ db="$alfred_workflow_data/index.sqlite"
 updateDB() {
 	screenKeyName=braveBookmarksScreenIdJonDayley
 	[[ $(screen -ls | grep -Fc $screenKeyName) = 0 ]] && \
-		screen -S $screenKeyName  -dm ./updateDatabase.sh $db
+		screen -S $screenKeyName -dm ./updateDatabase.sh $db
 }
 
 # Set routine to update database and display wait
