@@ -113,12 +113,8 @@ queryResult=$(sqlite3 $db "SELECT json FROM prod WHERE profile='$lastProfile';")
 
 # Validate non-zero bookmark count and reindex otherwise
 [[ $(echo $queryResult | grep -c ".") = 0 ]] && {
-	[[ $dbMaxAgeMinutes = 1 ]] && \
-		minsPlural="minute" \
-	|| \
-		minsPlural="minutes"
 	[[ $(screen -ls | grep -Fc $screenKeyName) = 0 ]] && \
-		noBookmarksExplanation="Add some bookmarks and then check here again in $dbMaxAgeMinutes $minsPlural." \
+		noBookmarksExplanation="Add some bookmarks and then check here again." \
 	|| \
 		noBookmarksExplanation="Reindexing..."
 	final=$(
