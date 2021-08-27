@@ -121,7 +121,7 @@ do
 				--arg match "$bookmarkPath $d_name" \
 				--arg autocomplete "$d_name" \
 				--arg text "$d_url" \
-				--arg quicklookurl "$quicklookurl" \
+				--arg quicklookurl "$d_url" \
 				'{
 					"title": $title,
 					"subtitle": $subtitle,
