@@ -157,13 +157,6 @@ Anyway, happy bookmarking!
 			<integer>65</integer>
 		</dict>
 	</dict>
-	<key>variables</key>
-	<dict>
-		<key>dbMaxAgeMinutes</key>
-		<string>1</string>
-		<key>showAllProfiles</key>
-		<string>0</string>
-	</dict>
 	<key>version</key>
 	<string>1.0.0</string>
 	<key>webaddress</key>
