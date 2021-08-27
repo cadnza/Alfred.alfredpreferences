@@ -59,17 +59,13 @@ echoJSON() {
 	return
 }
 
-# Identify target directory
-braveDir="$HOME/Library/Application Support/BraveSoftware/Brave-Browser"
-
 # Get metadata file
-braveFile="$braveDir/Local State"
+braveFile="$HOME/Library/Application Support/BraveSoftware/Brave-Browser/Local State"
 
 # Get last used profile directory
-lastProfile=$(cat $braveFile | jq -r '.profile.last_used')
-lastProfileSQL=$(echo $lastProfile | sed "s/'/''/g")
+lastProfileSQL=$(cat $braveFile | jq -r '.profile.last_used' | sed "s/'/''/g")
 
-# Create workflow data directory
+# Create workflow data directory if needed
 [[ -d $alfred_workflow_data ]] || mkdir $alfred_workflow_data
 
 # Set db path
