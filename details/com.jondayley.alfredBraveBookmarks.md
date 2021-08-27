@@ -27,7 +27,7 @@ Anyway, happy bookmarking!
 (Don't worry; the workflow will let you know if you're missing dependencies.)
 
 - Brave Browser
-- jq
+- `jq`
 
 # Versions
 
