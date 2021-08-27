@@ -5,7 +5,21 @@
 	<key>bundleid</key>
 	<string>com.jondayley.alfredBraveBookmarks</string>
 	<key>connections</key>
-	<dict/>
+	<dict>
+		<key>41439865-33E9-42FA-A7ED-258B8E615E21</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>79F62384-1338-47D4-B3DC-D55F2F411258</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
 	<key>createdby</key>
 	<string>Jon Dayley</string>
 	<key>description</key>
@@ -16,6 +30,29 @@
 	<string>Brave Bookmarks</string>
 	<key>objects</key>
 	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string></string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>open.sh</string>
+				<key>type</key>
+				<integer>8</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>79F62384-1338-47D4-B3DC-D55F2F411258</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -74,6 +111,13 @@
 		<dict>
 			<key>xpos</key>
 			<integer>70</integer>
+			<key>ypos</key>
+			<integer>65</integer>
+		</dict>
+		<key>79F62384-1338-47D4-B3DC-D55F2F411258</key>
+		<dict>
+			<key>xpos</key>
+			<integer>270</integer>
 			<key>ypos</key>
 			<integer>65</integer>
 		</dict>
