@@ -1,8 +1,5 @@
 #!/usr/bin/env zsh
 
-# Add /usr/local/bin to path
-PATH=/usr/local/bin:$PATH
-
 # Get database path and table creation functions
 db=$1
 safeCreate() {
