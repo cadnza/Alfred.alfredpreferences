@@ -1,5 +1,10 @@
 #!/usr/bin/env zsh
 
-# Check whether bookmarks are set to open in default or native browser
+# Get bookmark preference file
 bkPrefsFile=$alfred_preferences/preferences/features/webbookmarks/prefs.plist
-# ROAD WORK #TEMP
+
+# Open in either default or native browser
+defaults read $bkPrefsFile browsermode 2> /dev/null && \
+	open -a "Brave Browser" $1 \
+|| \
+	open $1
