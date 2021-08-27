@@ -79,7 +79,7 @@
 				<key>queuemode</key>
 				<integer>1</integer>
 				<key>runningsubtext</key>
-				<string>One moment...</string>
+				<string></string>
 				<key>script</key>
 				<string>source main.sh</string>
 				<key>scriptargtype</key>
