@@ -122,6 +122,13 @@
 			<integer>65</integer>
 		</dict>
 	</dict>
+	<key>variables</key>
+	<dict>
+		<key>dbMaxAgeMinutes</key>
+		<string>1</string>
+	</dict>
+	<key>version</key>
+	<string></string>
 	<key>webaddress</key>
 	<string>https://github.com/cadnza</string>
 </dict>
