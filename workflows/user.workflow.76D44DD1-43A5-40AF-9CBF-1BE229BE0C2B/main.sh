@@ -113,13 +113,22 @@ showPleaseWait() {
 nMinsOld=$((($(date +%s)-$(date -r $db +%s))/60))
 [[ $nMinsOld -ge $dbMaxAgeMinutes ]] && reindex
 
+# Get query according to setting on whether to retrieve bookmarks from all profiles
+[[ $showAllProfiles = 1 ]] && \
+	q="SELECT json FROM prod;" \
+|| \
+	q="SELECT json FROM prod WHERE profile='$lastProfileSQL';"
+
 # Query database
-queryResult=$(sqlite3 $db "SELECT json FROM prod WHERE profile='$lastProfileSQL';")
+queryResult=$(sqlite3 $db $q)
 
 # Validate non-zero bookmark count and reindex otherwise
 [[ $(echo $queryResult | grep -c ".") = 0 ]] && {
 	profileName=$(sqlite3 $db "SELECT name FROM prodProf WHERE profile = '$lastProfileSQL'")
-	noBookmarksTitle="No bookmarks found for $profileName."
+	[[ $showAllProfiles = 1 ]] && \
+		noBookmarksTitle="No bookmarks found." \
+	|| \
+		noBookmarksTitle="No bookmarks found for $profileName."
 	[[ $(screen -ls | grep -Fc $screenKeyName) = 0 ]] && \
 		noBookmarksSubtitle="Add some bookmarks and then check here again." \
 	|| \
