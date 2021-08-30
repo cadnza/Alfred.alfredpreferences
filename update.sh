@@ -4,7 +4,7 @@
 # download from Github. The idea's to run it after every update.
 
 # Go to top directory
-cd $(git -C $(dirname $0) rev-parse --show-toplevel)
+cd $(git -C $(dirname $0:A) rev-parse --show-toplevel)
 
 # Set readme title
 readme=README.md
@@ -52,12 +52,6 @@ else
 	orgNameProprietary=$(defaults read $prefsName orgNameProprietary)
 	readmeTemplate=$(defaults read $prefsName readmeTemplate)
 fi
-
-# Record current working directory
-currentwd=$(pwd)
-
-# Move to directory of script
-cd $(dirname $0)
 
 # Get repo directory (current directory)
 repo=$(greadlink -f ./)
@@ -262,5 +256,5 @@ do
 	fi
 done
 
-# Restore current working directory
-cd $currentwd
+# Exit
+exit 0
