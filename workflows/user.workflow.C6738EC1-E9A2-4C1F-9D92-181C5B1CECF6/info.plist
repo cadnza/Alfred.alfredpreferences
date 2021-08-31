@@ -117,6 +117,10 @@ A convenient interface for opening R projects. It displays your repos that conta
 
 # Versions
 
+## v1.2.0
+
+- Refactor code to use jq for more reliable JSON parsing
+
 ## v1.1.1
 
 - Outsource directory specification to workflow variable
@@ -155,7 +159,7 @@ A convenient interface for opening R projects. It displays your repos that conta
 		<string>~/Repos</string>
 	</dict>
 	<key>version</key>
-	<string>1.1.1</string>
+	<string>1.2.0</string>
 	<key>webaddress</key>
 	<string>https://github.com/cadnza</string>
 </dict>
