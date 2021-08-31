@@ -31,6 +31,10 @@ Anyway, happy bookmarking!
 
 # Versions
 
+## v1.0.1
+
+- Clean up exit codes
+
 ## v1.0.0
 
 - First release

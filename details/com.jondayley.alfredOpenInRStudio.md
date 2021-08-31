@@ -9,6 +9,10 @@ A convenient interface for opening R projects. It displays your repos that conta
 
 # Versions
 
+## v1.2.0
+
+- Refactor code to use jq for more reliable JSON parsing
+
 ## v1.1.1
 
 - Outsource directory specification to workflow variable

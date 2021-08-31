@@ -6,8 +6,13 @@ Finds Lego parts! Enter a name or number and it goes to work.
 
 - BrickLink Studio
 - R
+- jq
 
 # Versions
+
+## v1.2.0
+
+- Massively harden against bugs
 
 ## v1.1.2
 

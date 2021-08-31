@@ -6,8 +6,13 @@ Very simple: Shows you your repos and opens the one you select in VSCode. If you
 
 - Visual Studio Code
 - A directory for repos
+- jq
 
 # Versions
+
+## v1.3.0
+
+- Refactor code to use jq for more reliable JSON parsing
 
 ## v1.2.2
 
