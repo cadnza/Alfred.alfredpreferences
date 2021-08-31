@@ -5,14 +5,16 @@ rm(list=ls())
 
 # Get part number from user ----
 arguments <- commandArgs(TRUE)
-if(length(arguments)){
-	part <- arguments[1]
-}else{
+if(!length(arguments)){
+	alfred_workflow_data <- "~" # Testing
 	part <- "93792" # Testing
+}else{
+	alfred_workflow_data <- arguments[1]
+	part <- arguments[2]
 }
 
 # Set filename ----
-filename <- "~/.com.jondayley.alfredLegoCategorizer.csv"
+filename <- file.path(alfred_workflow_data,"index.csv")
 
 # Set base URL ----
 baseURL <- "https://www.bricklink.com"

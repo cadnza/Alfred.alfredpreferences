@@ -3,8 +3,11 @@
 # Add /usr/local/bin to path
 PATH=/usr/local/bin:$PATH
 
+# Make workflow data directory
+[[ -d $alfred_workflow_data ]] || mkdir $alfred_workflow_data
+
 # Search for part
-./partsearch.R $1
+./partsearch.R $alfred_workflow_data $1
 [[ $? = 127 ]] && {
 	rMessage=$(
 		jq -nc \
