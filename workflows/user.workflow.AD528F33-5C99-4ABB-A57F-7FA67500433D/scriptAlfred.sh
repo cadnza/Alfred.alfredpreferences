@@ -36,23 +36,24 @@ ls -1 $dirAlfred/workflows | while read -r dirWkflw
 do
 	fullpath=$dirWorkflows/$dirWkflw
 	plist=$fullpath/info.plist
-	title=$(defaults read $plist name)
-	subtitle=$(defaults read $plist description)
-	arg=$fullpath
-	iconPath=$fullpath/icon.png
-	autocomplete=$title
-	text=$title
-	quicklookurl=$fullpath
-	newItem="{
-		\"title\": \"$title\",
-		\"subtitle\": \"$subtitle\",
-		\"arg\": \"$arg\",
-		\"icon\": {\"path\":\"$iconPath\"},
-		\"autocomplete\": \"$autocomplete\",
-		\"type\": \"file:skipcheck\",
-		\"text\": \"$text\",
-		\"quicklookurl\": \"$quicklookurl\"
-	}"
+	newItem=$(
+		jq -nc \
+			--arg title "$(defaults read $plist name)" \
+			--arg subtitle "$(defaults read $plist description)" \
+			--arg arg "$fullpath" \
+			--arg iconPath "$fullpath/icon.png" \
+			--arg fullpath "$dirWorkflows/$dirWkflw" \
+			'{
+				"title": $title,
+				"subtitle": $subtitle,
+				"arg": $arg,
+				"icon": {"path": $iconPath},
+				"autocomplete": $title,
+				"type": "file:skipcheck",
+				"text": $title,
+				"quicklookurl": $fullpath
+			}'
+	)
 	json=$json,$newItem
 done
 
