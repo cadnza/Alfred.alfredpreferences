@@ -8,3 +8,6 @@ defaults read $bkPrefsFile browsermode 2> /dev/null && \
 	open -a "Brave Browser" $1 \
 || \
 	open $1
+
+# Exit
+exit 0

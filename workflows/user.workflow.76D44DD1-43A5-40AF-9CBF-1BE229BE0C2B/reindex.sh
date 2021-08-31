@@ -159,3 +159,6 @@ sqlite3 $db "INSERT INTO prodProf SELECT * FROM stageProf;"
 # Truncate stages
 sqlite3 $db "DELETE FROM stage;"
 sqlite3 $db "DELETE FROM stageProf;"
+
+# Exit
+exit 0

@@ -38,7 +38,7 @@ echoJSON() {
 			}'
 	)
 	echoJSON $final
-	return
+	exit 0
 }
 
 # Check for jq
@@ -56,7 +56,7 @@ echoJSON() {
 			}'
 	)
 	echoJSON $final
-	return
+	exit 0
 }
 
 # Get metadata file
@@ -96,13 +96,13 @@ showPleaseWait() {
 # Wait if there's no database
 [[ -f $db ]] || {
 	showPleaseWait
-	return
+	exit 0
 }
 
 # Wait if there's no prod table
 [[ $(sqlite3 $db "SELECT name FROM sqlite_master WHERE type='table' AND name='prod';" | grep -c .) = 0 ]] && {
 	showPleaseWait
-	return
+	exit 0
 }
 
 # Reindex if due for reindexing
@@ -141,7 +141,7 @@ queryResult=$(sqlite3 $db $q)
 	)
 	echoJSON $final
 	reindex
-	return
+	exit 0
 }
 
 # Format final JSON
@@ -149,3 +149,6 @@ final=$(echo $queryResult | perl -pe 's/\n/,/g' | sed 's/,$//g')
 
 # Echo results
 echoJSON $final
+
+# Exit
+exit 0
