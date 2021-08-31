@@ -21,7 +21,7 @@ do
 				"title": $repo,
 				"subtitle": $fullpath,
 				"arg": $fullpath,
-				"icon": {"path": $fullpath,"type": "fileicon"},
+				"icon": {"path": $fullpath, "type": "fileicon"},
 				"autocomplete": $repo,
 				"type": "file:skipcheck",
 				"text": $fullpath,
