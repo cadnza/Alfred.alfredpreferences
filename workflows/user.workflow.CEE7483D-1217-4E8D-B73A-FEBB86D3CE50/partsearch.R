@@ -304,7 +304,7 @@ getCandidates <- function(part){
 	output <- list()
 	for(i in 1:nrow(candidates)){
 		categoryText <- paste0(
-			" [",
+			"[",
 			candidates[i,"Name"],
 			"]",
 			" — ",
