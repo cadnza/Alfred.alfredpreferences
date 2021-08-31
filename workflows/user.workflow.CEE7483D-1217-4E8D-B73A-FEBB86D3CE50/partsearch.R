@@ -4,17 +4,12 @@
 rm(list=ls())
 
 # Get part number from user ----
-arguments <- commandArgs()
-tryCatch(
-	exp={
-		part <<- paste(
-			arguments[(which(arguments=="--args")+1):length(arguments)],collapse=" "
-		)
-	},
-	error=function(x){
-		part <<- "93792" # Testing
-	}
-)
+arguments <- commandArgs(TRUE)
+if(length(arguments)){
+	part <- arguments[1]
+}else{
+	part <- "93792" # Testing
+}
 
 # Set filename ----
 filename <- "~/.com.jondayley.alfredLegoCategorizer.csv"
