@@ -352,3 +352,7 @@ getCandidates <- function(part){
 
 # Forward output ----
 send(getCandidates(part))
+
+# Exit ----
+if(length(arguments))
+	quit(status=0)
