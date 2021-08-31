@@ -53,3 +53,6 @@ json="${json:1}"
 # Frame final JSON
 final="{\"items\": [$json]}"
 echo -n $final
+
+# Return
+exit 0
