@@ -1,5 +1,8 @@
 #!/usr/bin/env zsh
 
+# Add /usr/local/bin to path
+PATH=/usr/local/bin:$PATH
+
 # Get Alfred directory
 dirAlfred=$1
 
@@ -47,7 +50,7 @@ do
 	json=$json,$newItem
 done
 
-# Remove final comma
+# Remove leading comma
 json="${json:1}"
 
 # Frame final JSON
