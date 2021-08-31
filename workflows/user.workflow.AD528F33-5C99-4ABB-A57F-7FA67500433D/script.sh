@@ -12,12 +12,7 @@ echo $allRepos | while read -r repoRaw
 do
 	repo=$(basename $repoRaw)
 	fullpath=$repoRaw
-	#if [ $repo = "Alfred.alfredpreferences" ]
-	#then
-	#	title="Alfred workflows"
-	#else
-		title=$repo
-	#fi
+	title=$repo
 	subtitle=$fullpath
 	arg=$fullpath
 	autocomplete=$repo
