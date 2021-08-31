@@ -26,3 +26,6 @@ PATH=/usr/local/bin:$PATH
 	)
 	echo $rMessage
 }
+
+# Exit
+exit 0
