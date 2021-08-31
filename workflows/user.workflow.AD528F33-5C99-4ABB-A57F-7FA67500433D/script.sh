@@ -1,5 +1,8 @@
 #!/usr/bin/env zsh
 
+# Add /usr/local/bin to path
+PATH=/usr/local/bin:$PATH
+
 # Get repo directory
 dirRepos=$1
 
@@ -10,24 +13,21 @@ json=""
 allRepos=$(eval $(echo ls -d $(echo $dirRepos | sed 's/\/*$//')/\*/))
 echo $allRepos | while read -r repoRaw
 do
-	repo=$(basename $repoRaw)
-	fullpath=$repoRaw
-	title=$repo
-	subtitle=$fullpath
-	arg=$fullpath
-	autocomplete=$repo
-	text=$fullpath
-	quicklookurl=$fullpath
-	newItem="{
-		\"title\": \"$title\",
-		\"subtitle\": \"$subtitle\",
-		\"arg\": \"$arg\",
-		\"icon\": {\"path\":\"$fullpath\",\"type\":\"fileicon\"},
-		\"autocomplete\": \"$autocomplete\",
-		\"type\": \"file:skipcheck\",
-		\"text\": \"$text\",
-		\"quicklookurl\": \"$quicklookurl\"
-	}"
+	newItem=$(
+		jq -nc \
+			--arg repo "$(basename $repoRaw)" \
+			--arg fullpath "$repoRaw" \
+			'{
+				"title": $repo,
+				"subtitle": $fullpath,
+				"arg": $fullpath,
+				"icon": {"path": $fullpath,"type": "fileicon"},
+				"autocomplete": $repo,
+				"type": "file:skipcheck",
+				"text": $fullpath,
+				"quicklookurl": $fullpath
+			}'
+	)
 	json=$json,$newItem
 done
 
