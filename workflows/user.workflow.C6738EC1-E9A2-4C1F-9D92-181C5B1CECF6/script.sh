@@ -1,10 +1,10 @@
 #!/usr/bin/env zsh
 
+# Add /usr/local/bin to path
+PATH=/usr/local/bin:$PATH
+
 # Get repo directory
 dirRepos=$1
-
-# Get folder icon path
-iconPath="/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/GenericFolderIcon.icns"
 
 # Open JSON variable
 json=""
@@ -17,22 +17,23 @@ do
 	candidates=$(ls -1 $fullpath | grep -i $filterpattern)
 	hasRproj=$(echo $candidates | grep -c .)
 	[ $hasRproj = 0 ] && continue
-	title=$repo
-	subtitle=$fullpath
-	arg=$fullpath/$candidates
-	autocomplete=$repo
-	text=$fullpath
-	quicklookurl=$fullpath
-	newItem="{
-		\"title\": \"$title\",
-		\"subtitle\": \"$subtitle\",
-		\"arg\": \"$arg\",
-		\"icon\": {\"path\":\"$iconPath\"},
-		\"autocomplete\": \"$autocomplete\",
-		\"type\": \"file:skipcheck\",
-		\"text\": \"$text\",
-		\"quicklookurl\": \"$quicklookurl\"
-	}"
+	arg=$fullpath/$(echo $candidates | sed -n 1p)
+	newItem=$(
+		jq -nc \
+			--arg repo $repo \
+			--arg fullpath $fullpath \
+			--arg arg "$fullpath/$(echo $candidates | sed -n 1p)" \
+			'{
+				"title": $repo,
+				"subtitle": $fullpath,
+				"arg": $arg,
+				"icon": {"path": $fullpath, "type": "fileicon"},
+				"autocomplete": $repo,
+				"type": "file:skipcheck",
+				"text": $fullpath,
+				"quicklookurl": $fullpath
+			}'
+	)
 	json=$json,$newItem
 done
 
