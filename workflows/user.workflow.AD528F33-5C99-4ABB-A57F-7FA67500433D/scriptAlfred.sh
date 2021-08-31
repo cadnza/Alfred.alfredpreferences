@@ -5,6 +5,7 @@ PATH=/usr/local/bin:$PATH
 
 # Get Alfred directory
 dirAlfred=$1
+dirAlfredName=$(basename $dirAlfred)
 
 # Get workflows directory
 dirWorkflows=$dirAlfred/workflows
@@ -13,16 +14,21 @@ dirWorkflows=$dirAlfred/workflows
 json=""
 
 # Add item to modify entire repo
-repoItem="{
-	\"title\": \"Alfred.alfredpreferences\",
-	\"subtitle\": \"$dirAlfred\",
-	\"arg\": \"$dirAlfred\",
-	\"icon\": {\"path\":\"$dirAlfred\",\"type\":\"fileicon\"},
-	\"autocomplete\": \"$dirAlfred\",
-	\"type\": \"file:skipcheck\",
-	\"text\": \"$dirAlfred\",
-	\"quicklookurl\": \"$dirAlfred\"
-}"
+repoItem=$(
+	jq -nc \
+		--arg dirAlfred "$dirAlfred" \
+		--arg dirAlfredName "$dirAlfredName" \
+		'{
+			"title": $dirAlfredName,
+			"subtitle": $dirAlfred,
+			"arg": $dirAlfred,
+			"icon": {"path": $dirAlfred, "type": "fileicon"},
+			"autocomplete": $dirAlfred,
+			"type": "file:skipcheck",
+			"text": $dirAlfred,
+			"quicklookurl": $dirAlfred
+		}'
+)
 json=$json,$repoItem
 
 # Open main loop through workflows
