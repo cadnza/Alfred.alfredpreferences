@@ -14,7 +14,7 @@ if(!length(arguments)){
 }
 
 # Set filename ----
-filename <- file.path(alfred_workflow_data,"index.csv")
+filename <- file.path(alfred_workflow_data,"index.rds")
 
 # Set base URL ----
 baseURL <- "https://www.bricklink.com"
@@ -155,12 +155,8 @@ getCandidates <- function(part){
 		lookup <- merge(parts,categories,"Lookup")
 		lookup$Lookup <- NULL
 
-		# Write to CSV ----
-		write.csv(
-			lookup,
-			file=filename,
-			row.names=FALSE
-		)
+		# Save RDS ----
+		saveRDS(lookup,filename)
 
 		# Return ----
 		return(lookup)
@@ -169,7 +165,7 @@ getCandidates <- function(part){
 	# Refresh part data if needed ----
 	tryCatch(
 		expr={
-			lookup <<- read.csv(filename)
+			lookup <<- readRDS(filename)
 			cdate <- as.Date(file.info(filename)$ctime)
 			margin <- as.integer(Sys.Date()-cdate)
 			if(margin!=0){warning()}
