@@ -31,7 +31,7 @@ do
 	json=$json,$newItem
 done
 
-# Remove first comma
+# Remove leading comma
 json="${json:1}"
 
 # Frame final JSON
