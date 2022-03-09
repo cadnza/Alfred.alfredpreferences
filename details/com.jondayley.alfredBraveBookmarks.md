@@ -31,6 +31,10 @@ Anyway, happy bookmarking!
 
 # Versions
 
+## v1.0.2
+
+- Fix bug that kept Brave application from being found if installed (basically disabling the entire extension)
+
 ## v1.0.1
 
 - Clean up exit codes
