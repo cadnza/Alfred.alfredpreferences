@@ -24,7 +24,7 @@ echoJSON() {
 }
 
 # Check for Brave
-[[ $(mdfind "kMDItemKind == 'Application'" | grep -Fc "Brave Browser.app") = 0 ]] && {
+[[ $(ls /Applications | grep -Fc "Brave Browser.app") = 0 ]] && {
 	braveURL="https://brave.com/download/"
 	final=$(
 		jq -nc \
@@ -62,7 +62,7 @@ echoJSON() {
 # Get metadata file
 braveFile="$HOME/Library/Application Support/BraveSoftware/Brave-Browser/Local State"
 
-# Get last used profile directory
+# Get last used profile di rectory
 lastProfileSQL=$(cat $braveFile | jq -r '.profile.last_used' | sed "s/'/''/g")
 
 # Create workflow data directory if needed
