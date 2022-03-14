@@ -187,7 +187,7 @@ Nice little screenshotting and OCRing utility for use with [theMachine](https://
 		</dict>
 	</dict>
 	<key>version</key>
-	<string></string>
+	<string>1.0.0</string>
 	<key>webaddress</key>
 	<string>https://www.github.com/cadnza</string>
 </dict>
