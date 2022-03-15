@@ -5,6 +5,9 @@ f=$(./capture.sh)
 final=$(./OCR.R $f)
 succeeded=$?
 
+# Exit on early termination
+[[ $succeeded = 2 ]] && exit 0
+
 # Show notification and exit on failure
 [[ $succeeded = 1 ]] && {
 	osascript -e "display alert \"Tesseract Not Configured\" message \"Please install the tesseract package for R with the 'rus' engine.\" as critical"
