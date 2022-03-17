@@ -123,6 +123,19 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>A29EECF0-EA15-43BC-A444-42DCFBE58BE1</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>yan</string>
+			<key>text</key>
+			<string>Яндекс Переводчик - Перевести {query} на русский</string>
+			<key>url</key>
+			<string>https://translate.yandex.ru/?lang=en-ru&amp;text={query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>AC64DCCB-C281-4459-AD8A-19C1EE7AB368</key>
 		<dict>
 			<key>enabled</key>
