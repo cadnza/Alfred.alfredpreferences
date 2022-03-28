@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string>com.jondayley.theMachineScanner</string>
+	<string>com.jondayley.russianCopy</string>
 	<key>connections</key>
 	<dict>
 		<key>02996606-FC21-462F-BB12-45AE335A873F</key>
@@ -49,11 +49,11 @@
 	<key>createdby</key>
 	<string>Jon Dayley</string>
 	<key>description</key>
-	<string>Scans Russian words to feed theMachine</string>
+	<string>Copies Russian text to the clipboard</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>theMachine Scanner</string>
+	<string>Russian Copy</string>
 	<key>objects</key>
 	<array>
 		<dict>
@@ -146,9 +146,7 @@
 	<key>readme</key>
 	<string># About
 
-Nice little screenshotting and OCRing utility for use with [theMachine](https://github.com/cadnza/theMachine). Currently configured to work with the Brave browser when theMachine is running.
-
-**Note:** *This workflow currently only copies Russian terms to the clipboard from OCR. The end goal is to have it trigger theMachine on scanning a term, but I don't have a lot of time and I need a minimum viable product.*
+Nice little utility for copying Russian text via OCR. Just invoke the keystroke, select your text, and paste. :-)
 
 # Versions
 
