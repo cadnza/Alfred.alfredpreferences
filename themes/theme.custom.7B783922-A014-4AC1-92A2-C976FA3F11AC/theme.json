@@ -22,12 +22,13 @@
         "color" : "#D5D5D5FF"
       },
       "iconPaddingHorizontal" : 4,
+      "roundness" : 3,
       "paddingVertical" : 3,
       "iconSize" : 40
     },
     "search" : {
-      "paddingVertical" : 0,
-      "background" : "#242524FF",
+      "backgroundSelected" : "#B2D7FFFF",
+      "paddingHorizontal" : 8,
       "spacing" : 8,
       "text" : {
         "size" : 35,
@@ -35,7 +36,9 @@
         "font" : "English Phonetica",
         "color" : "#FEFFFFFF"
       },
-      "backgroundSelected" : "#B2D7FFFF"
+      "background" : "#242524FF",
+      "roundness" : 0,
+      "paddingVertical" : 0
     },
     "window" : {
       "color" : "#242524FF",
@@ -47,7 +50,7 @@
       "roundness" : 3,
       "paddingVertical" : 8
     },
-    "credit" : "Cadenza",
+    "credit" : "Jon Dayley",
     "separator" : {
       "color" : "#CBCBCBF3",
       "thickness" : 0

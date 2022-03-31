@@ -22,12 +22,13 @@
         "color" : "#FEFFFFFF"
       },
       "iconPaddingHorizontal" : 4,
+      "roundness" : 3,
       "paddingVertical" : 3,
       "iconSize" : 40
     },
     "search" : {
-      "paddingVertical" : 0,
-      "background" : "#00000026",
+      "backgroundSelected" : "#FEFFFF34",
+      "paddingHorizontal" : 8,
       "spacing" : 8,
       "text" : {
         "size" : 35,
@@ -35,7 +36,9 @@
         "font" : "System",
         "color" : "#FEFFFFFF"
       },
-      "backgroundSelected" : "#FEFFFF34"
+      "background" : "#00000026",
+      "roundness" : 3,
+      "paddingVertical" : 0
     },
     "window" : {
       "color" : "#00000000",
@@ -47,14 +50,14 @@
       "roundness" : 3,
       "paddingVertical" : 8
     },
-    "credit" : "Cadenza",
+    "credit" : "Jon Dayley",
     "separator" : {
       "color" : "#CBCBCBF3",
       "thickness" : 0
     },
     "scrollbar" : {
       "color" : "#797979FF",
-      "thickness" : 2
+      "thickness" : 3
     },
     "name" : "Glass"
   }
