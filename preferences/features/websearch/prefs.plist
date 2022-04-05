@@ -160,7 +160,7 @@
 			<key>text</key>
 			<string>Search Forvo for '{query}' in Russian</string>
 			<key>url</key>
-			<string>https://forvo.com/search/{query}/ru/</string>
+			<string>https://forvo.com/word/{query}/#ru</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
