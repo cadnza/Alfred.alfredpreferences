@@ -8,9 +8,5 @@
 	<array>
 		<string>features.websearch.duckduckgo.fallback</string>
 	</array>
-	<key>showUserDefined</key>
-	<array>
-		<string>dyn.ah62d4rv4ge81e6dwr7za</string>
-	</array>
 </dict>
 </plist>
