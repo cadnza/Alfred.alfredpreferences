@@ -95,6 +95,19 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>84E7C086-6F82-4857-B105-57C5F290B26A</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>man</string>
+			<key>text</key>
+			<string>Search man pages for {query}</string>
+			<key>url</key>
+			<string>https://manpage.me/?q={query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>8B16DA2C-909D-40C5-A805-0398A7F5A0F6</key>
 		<dict>
 			<key>enabled</key>
