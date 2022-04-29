@@ -45,12 +45,12 @@ echoJSON() {
 [[ -f $(which jq) ]] || {
 	jqURL="https://stedolan.github.io/jq/download/"
 	final="{
-				\"title\": \"Please install jq to continue.\",
-				\"subtitle\": \"Hit 'Enter' to visit the download page, or be sure jq is in Alfred's \$PATH.\",
-				\"arg\": \"$jqURL\",
-				\"text\": \"$jqURL\",
-				\"quicklookurl\": \"$jqURL\"
-			}"
+		\"title\": \"Please install jq to continue.\",
+		\"subtitle\": \"Hit 'Enter' to visit the download page, or be sure jq is in Alfred's \$PATH.\",
+		\"arg\": \"$jqURL\",
+		\"text\": \"$jqURL\",
+		\"quicklookurl\": \"$jqURL\"
+	}"
 	echoJSON $final
 	exit 0
 }
