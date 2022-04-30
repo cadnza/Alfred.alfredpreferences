@@ -56,13 +56,14 @@ showPleaseWait() {
 reindex
 
 # Validate non-zero count in prod table
+sbtl="No repos were found for $githubUsername."
 [[ $(sqlite3 $db 'SELECT COUNT(1) FROM prod') = 0 ]] && {
 	noRepos=$(
 		jq -nc \
-			--arg githubUsername $githubUsername \
+			--arg subtitle $sbtl \
 			'{
 				"title": "No repos found",
-				"subtitle": "No repos were found for $githubUsername.",
+				"subtitle": $subtitle,
 				"valid": false
 			}'
 	)
