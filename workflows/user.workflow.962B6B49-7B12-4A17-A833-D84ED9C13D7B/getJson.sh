@@ -88,7 +88,7 @@ do
 		sqlDirArray=$sqlDirArray,$newDirElement
 done
 sqlDirArray=\($sqlDirArray\)
-final=$(sqlite3 $db "SELECT json FROM prod WHERE name NOT IN $sqlDirArray")
+final=$(sqlite3 $db "SELECT json FROM prod WHERE name NOT IN $sqlDirArray ORDER BY lower(name)")
 
 # Echo final JSON
 echoJSON $final
