@@ -19,7 +19,7 @@ echoJSON() {
 # Create workflow data directory if needed
 [[ -d $alfred_workflow_data ]] || mkdir $alfred_workflow_data
 
-# Set db paths
+# Set db path
 db="$alfred_workflow_data/idx"
 
 # Set screen key of indexing process
