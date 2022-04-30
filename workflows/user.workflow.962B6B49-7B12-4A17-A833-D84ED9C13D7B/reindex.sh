@@ -21,7 +21,7 @@ jsonRaw=$(curl -s -H "Authorization: token $githubToken" \
 }
 
 # Open loop for repos
-jsonSubsets=$(echo $jsonRaw  | jq -c '.items | to_entries[]')
+jsonSubsets=$(echo $jsonRaw | jq -c '.items | to_entries[]')
 echo $jsonSubsets | while read -r jsonSubsetRaw
 do
 
