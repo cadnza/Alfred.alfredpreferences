@@ -3,6 +3,13 @@
 # Add /usr/local/bin to path
 PATH=/usr/local/bin:$PATH
 
+# Grab and save user icon
+userJson=$(curl -s -H "Authorization: token $githubToken" \
+	https://api.github.com/users/$githubUsername)
+iconURL=$(echo $userJson | jq -r '.avatar_url')
+userIcon="$alfred_workflow_data/user.png"
+[[ $iconURL = null ]] || curl -s -o $userIcon $iconURL
+
 # Set db path
 db=$1
 
@@ -37,9 +44,12 @@ do
 
 	# Get visibility and set appropriate icon
 	repoVis=$(echo $jsonSubset | jq -r '.visibility')
-	[[ $repoVis = private ]] && \
-		repoIcon=locked.png || \
+	[[ $repoVis = private ]] && {
+		repoIcon=locked.png
+	} || {
 		repoIcon=""
+		[[ -f $userIcon ]] && repoIcon=$userIcon
+	}
 
 	# Get URL
 	repoURL=$(echo $jsonSubset | jq -r '.html_url')
