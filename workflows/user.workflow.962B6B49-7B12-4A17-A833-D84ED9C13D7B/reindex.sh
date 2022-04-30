@@ -3,18 +3,22 @@
 # Add /usr/local/bin to path
 PATH=/usr/local/bin:$PATH
 
+# Set db path
+db=$1
+
+# Create stage table if needed
+sqlite3 $db "CREATE TABLE IF NOT EXISTS stage (name TEXT NOT NULL, json TEXT NOT NULL);"
+
 # Pull repos
 jsonRaw=$(curl -s -H "Authorization: token $githubToken" \
 	"https://api.github.com/search/repositories?q=user:$githubUsername")
 
-# Validate pull
+# Validate pull and delete database if bad
 [[ $(echo $jsonRaw | jq -r -c '.message') = "Bad credentials" ]] && {
 	osascript -e "display alert \"Bad credentials\" message \"Please check your username and access token.\" as critical"
+	[[ -f $db ]] && rm $db
 	exit 0
 }
-
-# Open variable for JSON items
-jsonItems=""
 
 # Open loop for repos
 jsonSubsets=$(echo $jsonRaw  | jq -c '.items | to_entries[]')
@@ -26,9 +30,6 @@ do
 
 	# Get name
 	repoName=$(echo $jsonSubset | jq -r '.name')
-
-	# Skip if repo already exists in repos directory
-	[[ -d $reposDirectory/$repoName ]] && continue
 
 	# Get description
 	repoDescr=$(echo $jsonSubset | jq -r '.description')
@@ -64,7 +65,6 @@ do
 			'{
 				"title": $repoName,
 				"subtitle": $subtitle,
-				"arg": "",
 				"icon": {"path": $icon},
 				"match": $match,
 				"autocomplete": $autocomplete,
@@ -76,16 +76,19 @@ do
 				}
 			}'
 	),
-	jsonItems=$jsonItems$newItem
+
+	# Insert into stage
+	sqlite3 $db "INSERT INTO stage VALUES ('$repoName','$newItem');"
 
 # Close loop
 done
 
-# Remove trailing comma
-jsonItems=$(echo $jsonItems | sed 's/,$//')
+# Create prod table if needed
+sqlite3 $db "CREATE TABLE IF NOT EXISTS prod (name TEXT NOT NULL, json TEXT NOT NULL);"
 
-# Echo items
-echo $jsonItems
+# Replace prod with stage
+sqlite3 $db "DELETE FROM prod;"
+sqlite3 $db "INSERT INTO prod SELECT * FROM stage;"
 
 # Exit
 exit 0
