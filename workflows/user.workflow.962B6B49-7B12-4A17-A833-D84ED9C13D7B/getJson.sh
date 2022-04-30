@@ -78,7 +78,7 @@ final=$(echo $queryResult | perl -pe 's/\n/,/g' | sed 's/,$//g')
 final=$(sqlite3 $db 'SELECT json FROM prod') # Add logic to exclude already cloned repos
 
 # Echo final JSON
-echoJSON $final #TEMP
+echoJSON $final
 
 # Exit
 exit 0
