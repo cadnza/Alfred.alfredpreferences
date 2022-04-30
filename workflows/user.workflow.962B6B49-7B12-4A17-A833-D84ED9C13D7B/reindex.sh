@@ -91,5 +91,8 @@ sqlite3 $db "CREATE TABLE IF NOT EXISTS prod (name TEXT NOT NULL, json TEXT NOT 
 sqlite3 $db "DELETE FROM prod;"
 sqlite3 $db "INSERT INTO prod SELECT * FROM stage;"
 
+# Truncate stage
+sqlite3 $db "DELETE FROM stage;"
+
 # Exit
 exit 0
