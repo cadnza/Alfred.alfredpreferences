@@ -4,6 +4,7 @@
 PATH=/usr/local/bin:$PATH
 
 # Get function to prep and echo JSON
+# Add repeat clause #TEMP
 echoJSON() {
 	echo "{
 		\"items\": [
