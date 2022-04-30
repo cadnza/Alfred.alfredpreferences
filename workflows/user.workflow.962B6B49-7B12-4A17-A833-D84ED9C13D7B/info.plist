@@ -151,27 +151,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>clone</string>
-				<key>subtext</key>
-				<string>User: {var:githubUsername}</string>
-				<key>text</key>
-				<string>Clone Github repository</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>A898622A-B01D-4930-ADD7-EC522D92B3D9</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -191,6 +170,27 @@
 			<string>CBB2E534-EA04-4A9C-BA12-C5D80D1B33C5</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>clone</string>
+				<key>subtext</key>
+				<string>User: {var:githubUsername}</string>
+				<key>text</key>
+				<string>Clone Github repository</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>A898622A-B01D-4930-ADD7-EC522D92B3D9</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>

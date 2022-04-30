@@ -13,8 +13,6 @@ echoJSON() {
 }
 
 # Pull repos
-githubToken=asdfasf
-githubUsername=cadnza
 jsonRaw=$(curl -s -H "Authorization: token $githubToken" \
 	"https://api.github.com/search/repositories?q=user:$githubUsername")
 
