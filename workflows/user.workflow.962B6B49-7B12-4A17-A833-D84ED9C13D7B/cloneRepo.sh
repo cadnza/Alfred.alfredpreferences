@@ -6,8 +6,8 @@ screen -dm git -C $reposDirectory clone -q $repoClone
 # Synthesize repo directory
 repoDirectory=$reposDirectory/$repoName
 
-# Open repo directory when available
-screen -dm ./openDirectory.sh $repoDirectory
+# Open repo directory when available if configured
+[[ $openOnClone = 1 ]] && screen -dm ./openDirectory.sh $repoDirectory
 
 # Exit
 exit 0

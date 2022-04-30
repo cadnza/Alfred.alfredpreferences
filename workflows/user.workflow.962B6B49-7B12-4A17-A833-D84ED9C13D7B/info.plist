@@ -433,6 +433,8 @@
 		<string>cadnza</string>
 		<key>keychain</key>
 		<string>dev.keychain</string>
+		<key>openOnClone</key>
+		<string>1</string>
 		<key>reposDirectory</key>
 		<string>/Users/cadnza/Repos</string>
 		<key>service</key>
