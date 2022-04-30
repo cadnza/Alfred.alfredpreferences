@@ -78,8 +78,17 @@ sbtl="No repos were found for $githubUsername."
 # Format final JSON
 final=$(echo $queryResult | perl -pe 's/\n/,/g' | sed 's/,$//g')
 
-# Query database
-final=$(sqlite3 $db 'SELECT json FROM prod') # Add logic to exclude already cloned repos #TEMP
+# Query databasesqlDirArray=""
+ls $reposDirectory | while read -r singleDir
+do
+	newDirElement=\'$(echo $singleDir | sed "s/'/''/g")\'
+	[[ $sqlDirArray = "" ]] && \
+		sqlDirArray=$newDirElement \
+	|| \
+		sqlDirArray=$sqlDirArray,$newDirElement
+done
+sqlDirArray=\($sqlDirArray\)
+final=$(sqlite3 $db "SELECT json FROM prod WHERE name NOT IN $sqlDirArray")
 
 # Echo final JSON
 echoJSON $final
