@@ -10,11 +10,12 @@ iconURL=$(echo $userJson | jq -r '.avatar_url')
 userIcon="$alfred_workflow_data/user.png"
 [[ $iconURL = null ]] || curl -s -o $userIcon $iconURL
 
-# Set db path
-db=$1
+# Set db paths
+dbOpen=$1
+dbClosed=$2
 
-# Create stage table if needed
-sqlite3 $db "CREATE TABLE IF NOT EXISTS stage (name TEXT NOT NULL, json TEXT NOT NULL);"
+# Create prod table
+sqlite3 $dbOpen "CREATE TABLE IF NOT EXISTS prod (name TEXT NOT NULL, json TEXT NOT NULL);"
 
 # Pull repos
 jsonRaw=$(curl -s -H "Authorization: token $githubToken" \
@@ -22,8 +23,8 @@ jsonRaw=$(curl -s -H "Authorization: token $githubToken" \
 
 # Validate pull and delete database if bad
 [[ $(echo $jsonRaw | jq -r -c '.message') = "Bad credentials" ]] && {
+	[[ -f $dbOpen ]] && rm $dbOpen
 	osascript -e "display alert \"Bad credentials\" message \"Please check your username and access token.\" as critical"
-	[[ -f $db ]] && rm $db
 	exit 0
 }
 
@@ -89,23 +90,16 @@ do
 	),
 	newItem=${newItem//$'\n'/}
 
-	# Insert into stage
+	# Insert into prod
 	repoNameEscaped=$(echo $repoName | sed 's/"/\\"/g')
 	newItemEscaped=$(echo $newItem | sed 's/"/\\"/g')
-	sqlite3 $db -cmd ".param clear" -cmd ".parameter init" -cmd ".parameter set @reponame \"$repoNameEscaped\"" -cmd ".parameter set @newitem \"$newItemEscaped\"" "INSERT INTO stage VALUES (@reponame,@newitem);"
+	sqlite3 $dbOpen -cmd ".param clear" -cmd ".parameter init" -cmd ".parameter set @reponame \"$repoNameEscaped\"" -cmd ".parameter set @newitem \"$newItemEscaped\"" "INSERT INTO prod VALUES (@reponame,@newitem);"
 
 # Close loop
 done
 
-# Create prod table if needed
-sqlite3 $db "CREATE TABLE IF NOT EXISTS prod (name TEXT NOT NULL, json TEXT NOT NULL);"
-
-# Replace prod with stage
-sqlite3 $db "DELETE FROM prod;"
-sqlite3 $db "INSERT INTO prod SELECT * FROM stage;"
-
-# Truncate stage
-sqlite3 $db "DELETE FROM stage;"
+# Close database
+openssl des3 -in $dbOpen -out $dbClosed -pass pass:githubToken
 
 # Exit
 exit 0
