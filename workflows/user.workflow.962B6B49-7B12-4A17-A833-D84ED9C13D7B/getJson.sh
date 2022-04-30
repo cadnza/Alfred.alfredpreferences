@@ -3,10 +3,13 @@
 # Add /usr/local/bin to path
 PATH=/usr/local/bin:$PATH
 
+# Set rerun interval, 0.1 to 5 seconds
+rerun=1
+
 # Get function to prep and echo JSON
-# Add repeat clause #TEMP
 echoJSON() {
 	echo "{
+		\"rerun\": $rerun,
 		\"items\": [
 			$@
 		]
