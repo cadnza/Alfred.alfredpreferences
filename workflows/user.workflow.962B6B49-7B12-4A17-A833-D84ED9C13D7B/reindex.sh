@@ -79,7 +79,9 @@ do
 	newItem=${newItem//$'\n'/}
 
 	# Insert into stage
-	sqlite3 $db "INSERT INTO stage VALUES ('$repoName','$newItem');"
+	repoNameEscaped=$(echo $repoName | sed 's/"/\\"/g')
+	newItemEscaped=$(echo $newItem | sed 's/"/\\"/g')
+	sqlite3 $db -cmd ".param clear" -cmd ".parameter init" -cmd ".parameter set @reponame \"$repoNameEscaped\"" -cmd ".parameter set @newitem \"$newItemEscaped\"" "INSERT INTO stage VALUES (@reponame,@newitem);"
 
 # Close loop
 done
