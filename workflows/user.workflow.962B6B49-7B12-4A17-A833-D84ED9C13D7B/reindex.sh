@@ -33,6 +33,7 @@ do
 
 	# Get description
 	repoDescr=$(echo $jsonSubset | jq -r '.description')
+	[[ $repoDescr = "null" ]] && repoDescr=""
 
 	# Get visibility and set appropriate icon
 	repoVis=$(echo $jsonSubset | jq -r '.visibility')
