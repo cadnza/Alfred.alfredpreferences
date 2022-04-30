@@ -75,7 +75,7 @@ sbtl="No repos were found for $githubUsername."
 final=$(echo $queryResult | perl -pe 's/\n/,/g' | sed 's/,$//g')
 
 # Query database
-final=$(sqlite3 $db 'SELECT json FROM prod') # Add logic to exclude already cloned repos
+final=$(sqlite3 $db 'SELECT json FROM prod') # Add logic to exclude already cloned repos #TEMP
 
 # Echo final JSON
 echoJSON $final
