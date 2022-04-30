@@ -76,6 +76,7 @@ do
 				}
 			}'
 	),
+	newItem=${newItem//$'\n'/}
 
 	# Insert into stage
 	sqlite3 $db "INSERT INTO stage VALUES ('$repoName','$newItem');"
