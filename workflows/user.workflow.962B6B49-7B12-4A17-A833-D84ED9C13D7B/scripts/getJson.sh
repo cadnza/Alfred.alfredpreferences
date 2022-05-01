@@ -29,7 +29,7 @@ screenKeyName=githubCloneIndexingRoutine
 # Get function to reindex
 reindex() {
 	[[ $(screen -ls | grep -Fc $screenKeyName) = 0 ]] && \
-		screen -S $screenKeyName -dm ./reindex.sh $dbOpen $dbClosed
+		screen -S $screenKeyName -dm ./scripts/reindex.sh $dbOpen $dbClosed
 }
 
 # Set routine to reindex and display wait

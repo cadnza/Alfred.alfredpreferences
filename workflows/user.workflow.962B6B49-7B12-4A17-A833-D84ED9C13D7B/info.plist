@@ -137,7 +137,7 @@
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
-				<string>getToken.sh</string>
+				<string>scripts/getToken.sh</string>
 				<key>type</key>
 				<integer>8</integer>
 			</dict>
@@ -160,7 +160,7 @@
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
-				<string>validateInputs.sh</string>
+				<string>scripts/validateInputs.sh</string>
 				<key>type</key>
 				<integer>8</integer>
 			</dict>
@@ -293,7 +293,7 @@
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
-				<string>cloneRepo.sh</string>
+				<string>scripts/cloneRepo.sh</string>
 				<key>type</key>
 				<integer>8</integer>
 			</dict>
@@ -334,7 +334,7 @@
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
-				<string>getJSON.sh</string>
+				<string>scripts/getJSON.sh</string>
 				<key>subtext</key>
 				<string>Getting repos...</string>
 				<key>title</key>

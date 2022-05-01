@@ -7,7 +7,7 @@ screen -dm git -C $reposDirectory clone -q $repoClone
 repoDirectory=$reposDirectory/$repoName
 
 # Open repo directory when available if configured
-[[ $openOnClone = 1 ]] && screen -dm ./openDirectory.sh $repoDirectory
+[[ $openOnClone = 1 ]] && screen -dm ./scripts/openDirectory.sh $repoDirectory
 
 # Exit
 exit 0
