@@ -5,6 +5,9 @@ githubToken=$(security find-internet-password  -w -s $service $keychain || \
 	security find-generic-password  -w -s $service $keychain
 )
 
+# Abort on cancel
+[[ $? = 0 ]] || exit 0
+
 # Validate access token
 [[ $? = 0 ]] || {
 	osascript -e "display alert \"Item of service $service in the $keychain keychain cannot be found.\" message \"Please review your keychain and Alfred variables.\" as critical"
