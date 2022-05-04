@@ -213,7 +213,7 @@
 					</dict>
 				</array>
 				<key>elselabel</key>
-				<string>Inputs missing</string>
+				<string>Not all clear</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.conditional</string>
