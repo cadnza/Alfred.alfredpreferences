@@ -402,6 +402,10 @@ Yep. Happy cloning! :floppy_disk:
 
 # Versions
 
+## v1.1.1
+
+-   Fix early termination bug
+
 ## v1.1.0
 
 -   Validate connnection to Github
@@ -504,7 +508,7 @@ Yep. Happy cloning! :floppy_disk:
 		<string>service</string>
 	</array>
 	<key>version</key>
-	<string>1.1.0</string>
+	<string>1.1.1</string>
 	<key>webaddress</key>
 	<string>https://github.com/cadnza</string>
 </dict>
