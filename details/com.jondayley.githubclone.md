@@ -14,10 +14,10 @@ Lightning fast and super secure `git clone` for Github. :fast_forward: Lists you
         3. Create a new password item with _File > New Password Item..._. Paste your personal access token in the _Password_ field, and take note of the _Keychain Item Name_ field.
     - **Via [`security`](https://ss64.com/osx/security.html)** :pager:
         1. Run the following commands, replacing variables as appropriate:
-           `security create-keychain`
-           `security add-internet-password -s serviceNameHere -a accountNameHere keychainNameHere`
-        - The account name is of little consequence; it's just a convenient identifier to help you find the key.
-        - The service name _is_ of consequence; that's what Github Clone uses to find your personal access token. By default, Github Clone looks for a service called `https://api.github.com/`, but that's configurable (keep reading).
+			- `security create-keychain`
+			- `security add-internet-password -s serviceNameHere -a accountNameHere keychainNameHere`
+			- The account name is of little consequence; it's just a convenient identifier to help you find the key.
+			- The service name _is_ of consequence; that's what Github Clone uses to find your personal access token. By default, Github Clone looks for a service called `https://api.github.com/`, but that's configurable (keep reading).
 3. Open the workflow in Alfred and set the following [Workflow Environment Variables](https://www.alfredapp.com/help/workflows/advanced/variables/#environment): :pencil:
     - `githubUsername`: The username associated with your Github account.
     - `keychain`: The name of your keychain _file_. If you're unsure, check in the location where you created the keychain.
@@ -46,6 +46,14 @@ Your Github personal access token is basically another password to your Github a
 Yep. Happy cloning! :floppy_disk:
 
 # Versions
+
+## v1.1.1
+
+-   Fix early termination bug
+
+## v1.1.0
+
+-   Validate connnection to Github
 
 ## v1.0.0
 
