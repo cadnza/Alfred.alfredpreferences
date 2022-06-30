@@ -3,14 +3,14 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string>com.jondayley.alfredResetLaunchpad</string>
+	<string>com.jondayley.alfredRestartDictation</string>
 	<key>connections</key>
 	<dict>
-		<key>32C11817-6FC0-4801-8D37-51C48B0A3747</key>
+		<key>22499A58-3450-4416-A968-BEB9711B9233</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>5168C4DC-BBDA-45DC-BEAA-B8022A98927F</string>
+				<string>261F9451-9E21-4FD4-8D50-5B1EFBF805DC</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -19,11 +19,11 @@
 				<false/>
 			</dict>
 		</array>
-		<key>5168C4DC-BBDA-45DC-BEAA-B8022A98927F</key>
+		<key>2ED8A790-E569-45BB-9455-26851A02DD59</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>235C11C1-CAD7-4B67-B22F-EF3C7E17E80C</string>
+				<string>22499A58-3450-4416-A968-BEB9711B9233</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -36,11 +36,11 @@
 	<key>createdby</key>
 	<string>Jon Dayley</string>
 	<key>description</key>
-	<string>Resets the Launchpad layout</string>
+	<string>Restarts the dictation service</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>Reset Launchpad</string>
+	<string>Restart Dictation</string>
 	<key>objects</key>
 	<array>
 		<dict>
@@ -49,44 +49,20 @@
 				<key>argumenttype</key>
 				<integer>2</integer>
 				<key>keyword</key>
-				<string>launchpad</string>
+				<string>dictation</string>
 				<key>subtext</key>
 				<string></string>
 				<key>text</key>
-				<string>Reset Launchpad layout</string>
+				<string>Restart Dictation</string>
 				<key>withspace</key>
 				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
-			<string>32C11817-6FC0-4801-8D37-51C48B0A3747</string>
+			<string>2ED8A790-E569-45BB-9455-26851A02DD59</string>
 			<key>version</key>
 			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>defaults write com.apple.dock ResetLaunchPad -bool true
-killall Dock</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>5</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>5168C4DC-BBDA-45DC-BEAA-B8022A98927F</string>
-			<key>version</key>
-			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -98,22 +74,45 @@ killall Dock</string>
 				<key>removeextension</key>
 				<false/>
 				<key>text</key>
-				<string>The Launchpad layout has been reset.</string>
+				<string>Dictation is restarting.</string>
 				<key>title</key>
 				<string>Done!</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.output.notification</string>
 			<key>uid</key>
-			<string>235C11C1-CAD7-4B67-B22F-EF3C7E17E80C</string>
+			<string>261F9451-9E21-4FD4-8D50-5B1EFBF805DC</string>
 			<key>version</key>
 			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>killall -9 DictationIM com.apple.SpeechRecognitionCore.speechrecognitiond com.apple.SpeechRecognitionCore.brokerd</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>5</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>22499A58-3450-4416-A968-BEB9711B9233</string>
+			<key>version</key>
+			<integer>2</integer>
 		</dict>
 	</array>
 	<key>readme</key>
 	<string># About
 
-Resets the launchpad layout. Just a wrapper for the command; I can never remember it.
+Wrapper to reset the dictation service since it can be buggy.
 
 # Versions
 
@@ -122,26 +121,26 @@ Resets the launchpad layout. Just a wrapper for the command; I can never remembe
 - First release</string>
 	<key>uidata</key>
 	<dict>
-		<key>235C11C1-CAD7-4B67-B22F-EF3C7E17E80C</key>
-		<dict>
-			<key>xpos</key>
-			<real>460</real>
-			<key>ypos</key>
-			<real>60</real>
-		</dict>
-		<key>32C11817-6FC0-4801-8D37-51C48B0A3747</key>
-		<dict>
-			<key>xpos</key>
-			<real>60</real>
-			<key>ypos</key>
-			<real>60</real>
-		</dict>
-		<key>5168C4DC-BBDA-45DC-BEAA-B8022A98927F</key>
+		<key>22499A58-3450-4416-A968-BEB9711B9233</key>
 		<dict>
 			<key>xpos</key>
 			<real>260</real>
 			<key>ypos</key>
-			<real>60</real>
+			<real>70</real>
+		</dict>
+		<key>261F9451-9E21-4FD4-8D50-5B1EFBF805DC</key>
+		<dict>
+			<key>xpos</key>
+			<real>450</real>
+			<key>ypos</key>
+			<real>70</real>
+		</dict>
+		<key>2ED8A790-E569-45BB-9455-26851A02DD59</key>
+		<dict>
+			<key>xpos</key>
+			<real>65</real>
+			<key>ypos</key>
+			<real>70</real>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>

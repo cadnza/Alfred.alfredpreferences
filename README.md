@@ -8,6 +8,7 @@ My [settings](https://www.alfredapp.com/help/advanced/) and [workflows](https://
 
 | | Workflow | Version | Author | Description | Link |
 |-|-|-|-|-|-|
+| <img src="images/com.jondayley.alfredRestartDictation.png" width="100"></img> | **Restart Dictation** | `1.0.0` | [Jon Dayley](https://github.com/cadnza) | Restarts the dictation service<br/>[*More info*](details/com.jondayley.alfredRestartDictation.md) | [Download](exports/com.jondayley.alfredRestartDictation.alfredworkflow) |
 | <img src="images/com.jondayley.alfredToRemindersNotebook.png" width="100"></img> | **To Reminders notebook** | `1.0.0` | [Jon Dayley](https://github.com/cadnza) | Captures text in a Reminders list<br/>[*More info*](details/com.jondayley.alfredToRemindersNotebook.md) | [Download](exports/com.jondayley.alfredToRemindersNotebook.alfredworkflow) |
 | <img src="images/com.jondayley.russianCopy.png" width="100"></img> | **Russian Copy** | `1.0.0` | [Jon Dayley](https://www.github.com/cadnza) | Copies Russian text to the clipboard<br/>[*More info*](details/com.jondayley.russianCopy.md) | [Download](exports/com.jondayley.russianCopy.alfredworkflow) |
 | <img src="images/com.jondayley.alfredBraveBookmarks.png" width="100"></img> | **Brave Bookmarks** | `1.0.2` | [Jon Dayley](https://github.com/cadnza) | Opens bookmarks from the Brave browser<br/>[*More info*](details/com.jondayley.alfredBraveBookmarks.md) | [Download](exports/com.jondayley.alfredBraveBookmarks.alfredworkflow) |
