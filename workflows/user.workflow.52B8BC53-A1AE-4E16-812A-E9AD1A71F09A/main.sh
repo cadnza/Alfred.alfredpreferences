@@ -4,7 +4,7 @@
 f=$(./capture.sh) || exit 0
 
 # Run OCR and record exit status
-final=$(./OCR.sh $f)
+final=$(./ocr.sh $f)
 succeeded=$?
 
 # Show notification and exit on failure
