@@ -1,7 +1,9 @@
 #!/usr/bin/env zsh
 
-# Go
-f=$(./capture.sh)
+# Capture screen and exit on cancel
+f=$(./capture.sh) || exit 0
+
+# Run OCR and record exit status
 final=$(./OCR.sh $f)
 succeeded=$?
 
