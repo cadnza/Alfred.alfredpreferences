@@ -158,32 +158,34 @@ Nice little utility for copying Russian text via OCR. Just invoke the keystroke,
 		<key>02996606-FC21-462F-BB12-45AE335A873F</key>
 		<dict>
 			<key>xpos</key>
-			<integer>70</integer>
+			<real>70</real>
 			<key>ypos</key>
-			<integer>65</integer>
+			<real>65</real>
 		</dict>
 		<key>46B90489-FDD9-405A-B728-7A919DE69F09</key>
 		<dict>
 			<key>xpos</key>
-			<integer>545</integer>
+			<real>545</real>
 			<key>ypos</key>
-			<integer>65</integer>
+			<real>65</real>
 		</dict>
 		<key>8FDA13D9-E352-4960-BA2C-B7E2F5E86874</key>
 		<dict>
 			<key>xpos</key>
-			<integer>245</integer>
+			<real>245</real>
 			<key>ypos</key>
-			<integer>65</integer>
+			<real>65</real>
 		</dict>
 		<key>ED8A073B-9FA7-44A8-839A-27BAEE45EFA8</key>
 		<dict>
 			<key>xpos</key>
-			<integer>435</integer>
+			<real>435</real>
 			<key>ypos</key>
-			<integer>95</integer>
+			<real>95</real>
 		</dict>
 	</dict>
+	<key>userconfigurationconfig</key>
+	<array/>
 	<key>version</key>
 	<string>1.0.0</string>
 	<key>webaddress</key>
