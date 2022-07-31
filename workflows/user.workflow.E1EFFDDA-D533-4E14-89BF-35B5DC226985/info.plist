@@ -148,7 +148,7 @@ Throws a wrench at iCloud by running `killall bird`. Or set `hardcore` to `1` to
 	<key>variables</key>
 	<dict>
 		<key>hardcore</key>
-		<string>0</string>
+		<string>1</string>
 	</dict>
 	<key>version</key>
 	<string>1.0.0</string>
