@@ -257,6 +257,17 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>DBA08303-2E95-44A0-9B1D-A6826BBC274B</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>genius</string>
+			<key>text</key>
+			<string>Search Genius for '{query}'</string>
+			<key>url</key>
+			<string>https://genius.com/search?q={query}</string>
+		</dict>
 		<key>E1ABA243-92CA-4816-BB70-B3F84C71EAEE</key>
 		<dict>
 			<key>enabled</key>
