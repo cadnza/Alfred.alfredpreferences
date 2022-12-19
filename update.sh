@@ -100,7 +100,8 @@ iconExtensionTarget=png
 iconWidth=100
 
 # Open workflow loop
-echo $workflows | while read -r workflow
+ptrnLocal="LOCAL$"
+echo $workflows | grep -i -v $ptrnLocal | while read -r workflow
 do
 
 	# Set workflow directory
