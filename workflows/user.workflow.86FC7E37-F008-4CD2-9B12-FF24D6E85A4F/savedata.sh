@@ -1,5 +1,8 @@
 #!/usr/bin/env zsh
 
+# Add /usr/local/bin to path
+PATH=/usr/local/bin:$PATH
+
 # Create cache directory
 [[ -d $alfred_workflow_cache ]] || mkdir $alfred_workflow_cache
 
