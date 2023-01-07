@@ -1,5 +1,8 @@
 #!/usr/bin/env zsh
 
+# Add /usr/local/bin to path
+PATH=/usr/local/bin:$PATH
+
 # Set cache file
 f=$alfred_workflow_cache/$cachefilename
 
