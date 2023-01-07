@@ -6,5 +6,7 @@
 	<array/>
 	<key>showAlignmentGuides</key>
 	<true/>
+	<key>showCanvasHints</key>
+	<false/>
 </dict>
 </plist>
