@@ -127,7 +127,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>D1C197F2-28C3-4BEE-B5DD-B88126570303</string>
+				<string>94ACD450-5B88-4D28-A163-72D909ED045E</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -141,6 +141,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>76F54574-E63E-42E2-9920-FA8D4F3871E4</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>94ACD450-5B88-4D28-A163-72D909ED045E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D1C197F2-28C3-4BEE-B5DD-B88126570303</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -269,6 +282,19 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
+				<string>E9FEB208-5DE3-4F01-A16F-8A4C46BC7875</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>E9FEB208-5DE3-4F01-A16F-8A4C46BC7875</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
 				<string>0960F40A-EA31-42C6-A0D2-16B68C299C45</string>
 				<key>modifiers</key>
 				<integer>0</integer>
@@ -335,6 +361,29 @@
 			<string>DE9722F8-A410-4B18-AA48-2D70C4BD3CE0</string>
 			<key>version</key>
 			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string></string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>refreshcache.sh</string>
+				<key>type</key>
+				<integer>8</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>E9FEB208-5DE3-4F01-A16F-8A4C46BC7875</string>
+			<key>version</key>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -877,6 +926,29 @@
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
+				<string>refreshcache.sh</string>
+				<key>type</key>
+				<integer>8</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>94ACD450-5B88-4D28-A163-72D909ED045E</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string></string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
 				<string>calculate.R</string>
 				<key>type</key>
 				<integer>8</integer>
@@ -968,140 +1040,147 @@ Calculates compound interest. Awfully handy and very straightforward.
 			<key>xpos</key>
 			<real>195</real>
 			<key>ypos</key>
-			<real>320</real>
+			<real>450</real>
 		</dict>
 		<key>0960F40A-EA31-42C6-A0D2-16B68C299C45</key>
 		<dict>
 			<key>xpos</key>
 			<real>195</real>
 			<key>ypos</key>
-			<real>60</real>
+			<real>190</real>
 		</dict>
 		<key>14C0036D-B693-4376-A997-C7DC0D5F03B5</key>
 		<dict>
 			<key>xpos</key>
 			<real>440</real>
 			<key>ypos</key>
-			<real>420</real>
+			<real>550</real>
 		</dict>
 		<key>2BB880E8-BDB1-4398-BBFF-E48E7081AB3F</key>
 		<dict>
 			<key>xpos</key>
 			<real>440</real>
 			<key>ypos</key>
-			<real>290</real>
+			<real>420</real>
 		</dict>
 		<key>3A7B9364-EB21-4CB2-8FF1-52F75BFC598D</key>
 		<dict>
 			<key>xpos</key>
 			<real>850</real>
 			<key>ypos</key>
-			<real>60</real>
+			<real>190</real>
 		</dict>
 		<key>44D96BC0-F981-4E94-8AA0-7AF449CD5190</key>
 		<dict>
 			<key>xpos</key>
 			<real>850</real>
 			<key>ypos</key>
-			<real>450</real>
+			<real>580</real>
 		</dict>
 		<key>59EDF579-D771-4E8A-9E10-755656F18B66</key>
 		<dict>
 			<key>xpos</key>
-			<real>365</real>
+			<real>695</real>
 			<key>ypos</key>
-			<real>550</real>
+			<real>680</real>
 		</dict>
 		<key>5A1768AB-ABAC-4C91-B407-678B8016F199</key>
 		<dict>
 			<key>xpos</key>
 			<real>275</real>
 			<key>ypos</key>
-			<real>290</real>
+			<real>420</real>
 		</dict>
 		<key>76F54574-E63E-42E2-9920-FA8D4F3871E4</key>
 		<dict>
 			<key>xpos</key>
 			<real>275</real>
 			<key>ypos</key>
-			<real>420</real>
+			<real>550</real>
 		</dict>
 		<key>7C17154C-9D0B-4123-B924-7FECE2B93E9A</key>
 		<dict>
 			<key>xpos</key>
 			<real>30</real>
 			<key>ypos</key>
-			<real>550</real>
+			<real>680</real>
 		</dict>
 		<key>867DFFFF-1454-422E-812D-B7BF39AF6B54</key>
 		<dict>
 			<key>xpos</key>
 			<real>195</real>
 			<key>ypos</key>
-			<real>450</real>
+			<real>580</real>
+		</dict>
+		<key>94ACD450-5B88-4D28-A163-72D909ED045E</key>
+		<dict>
+			<key>xpos</key>
+			<real>275</real>
+			<key>ypos</key>
+			<real>680</real>
 		</dict>
 		<key>96CDDC59-8EF6-4E4E-B5C2-A78715E9CAEA</key>
 		<dict>
 			<key>xpos</key>
 			<real>440</real>
 			<key>ypos</key>
-			<real>160</real>
+			<real>290</real>
 		</dict>
 		<key>97AE4765-FC3F-4DBB-A0F6-949531CDA344</key>
 		<dict>
 			<key>xpos</key>
 			<real>195</real>
 			<key>ypos</key>
-			<real>190</real>
+			<real>320</real>
 		</dict>
 		<key>98437FE5-7C53-45CD-9045-C95C10DB066A</key>
 		<dict>
 			<key>xpos</key>
-			<real>540</real>
+			<real>850</real>
 			<key>ypos</key>
-			<real>580</real>
+			<real>710</real>
 		</dict>
 		<key>AA797936-801F-48F5-A588-23C0B63B532F</key>
 		<dict>
 			<key>xpos</key>
 			<real>850</real>
 			<key>ypos</key>
-			<real>190</real>
+			<real>320</real>
 		</dict>
 		<key>B3E75DA8-F6EE-4AC3-91D7-096DD603F0CC</key>
 		<dict>
 			<key>xpos</key>
 			<real>850</real>
 			<key>ypos</key>
-			<real>320</real>
+			<real>450</real>
 		</dict>
 		<key>C3841679-8915-45DA-B226-192FD7698CCA</key>
 		<dict>
 			<key>xpos</key>
 			<real>275</real>
 			<key>ypos</key>
-			<real>30</real>
+			<real>160</real>
 		</dict>
 		<key>D1C197F2-28C3-4BEE-B5DD-B88126570303</key>
 		<dict>
 			<key>xpos</key>
-			<real>195</real>
+			<real>440</real>
 			<key>ypos</key>
-			<real>550</real>
+			<real>680</real>
 		</dict>
 		<key>D8A6D361-D0B9-4878-AFA6-D16BFF142B3B</key>
 		<dict>
 			<key>xpos</key>
 			<real>600</real>
 			<key>ypos</key>
-			<real>180</real>
+			<real>310</real>
 		</dict>
 		<key>DCBC3242-263A-4C4F-B349-BE71352DB9D0</key>
 		<dict>
 			<key>xpos</key>
 			<real>275</real>
 			<key>ypos</key>
-			<real>160</real>
+			<real>290</real>
 		</dict>
 		<key>DE9722F8-A410-4B18-AA48-2D70C4BD3CE0</key>
 		<dict>
@@ -1110,19 +1189,26 @@ Calculates compound interest. Awfully handy and very straightforward.
 			<key>ypos</key>
 			<real>30</real>
 		</dict>
+		<key>E9FEB208-5DE3-4F01-A16F-8A4C46BC7875</key>
+		<dict>
+			<key>xpos</key>
+			<real>275</real>
+			<key>ypos</key>
+			<real>30</real>
+		</dict>
 		<key>F145505E-389F-4365-B60F-45D124E0F30F</key>
 		<dict>
 			<key>xpos</key>
 			<real>695</real>
 			<key>ypos</key>
-			<real>160</real>
+			<real>290</real>
 		</dict>
 		<key>F68DE5A4-0903-4EE1-B5CC-51248F982E9D</key>
 		<dict>
 			<key>xpos</key>
 			<real>440</real>
 			<key>ypos</key>
-			<real>30</real>
+			<real>160</real>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
@@ -1131,6 +1217,8 @@ Calculates compound interest. Awfully handy and very straightforward.
 	<dict>
 		<key>cachefilename</key>
 		<string>data.json</string>
+		<key>cachelifespanminutes</key>
+		<string>5</string>
 	</dict>
 	<key>version</key>
 	<string>1.0.0</string>
