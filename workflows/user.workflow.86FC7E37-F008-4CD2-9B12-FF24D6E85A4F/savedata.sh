@@ -15,13 +15,11 @@ jq --null-input \
 	--arg r $r \
 	--arg t $t \
 	--arg n $n \
-	--arg timestamp $(date +%s) \
 	'{
 		p: $p,
 		r: $r,
 		t: $t,
-		n: $n,
-		timestamp: $timestamp
+		n: $n
 	}' \
 	> $f
 
