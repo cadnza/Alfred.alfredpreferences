@@ -84,19 +84,6 @@
 				<false/>
 			</dict>
 		</array>
-		<key>59EDF579-D771-4E8A-9E10-755656F18B66</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>98437FE5-7C53-45CD-9045-C95C10DB066A</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>5A1768AB-ABAC-4C91-B407-678B8016F199</key>
 		<array>
 			<dict>
@@ -231,7 +218,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>59EDF579-D771-4E8A-9E10-755656F18B66</string>
+				<string>98437FE5-7C53-45CD-9045-C95C10DB066A</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -963,25 +950,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>autopaste</key>
-				<false/>
-				<key>clipboardtext</key>
-				<string>{query}</string>
-				<key>ignoredynamicplaceholders</key>
-				<false/>
-				<key>transient</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.clipboard</string>
-			<key>uid</key>
-			<string>59EDF579-D771-4E8A-9E10-755656F18B66</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -1076,13 +1044,6 @@ Calculates compound interest. Awfully handy and very straightforward.
 			<real>850</real>
 			<key>ypos</key>
 			<real>580</real>
-		</dict>
-		<key>59EDF579-D771-4E8A-9E10-755656F18B66</key>
-		<dict>
-			<key>xpos</key>
-			<real>695</real>
-			<key>ypos</key>
-			<real>680</real>
 		</dict>
 		<key>5A1768AB-ABAC-4C91-B407-678B8016F199</key>
 		<dict>
