@@ -24,9 +24,6 @@ amount <- ifelse(
 	vars$p*(1+vars$r/vars$n)^(vars$n*vars$t)
 )
 
-# Calculate amount per period at rate ----
-amountPerPeriod <- amount*vars$r
-
 # Round amount ----
 amount <- round(amount,2)
 
