@@ -140,7 +140,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>D1C197F2-28C3-4BEE-B5DD-B88126570303</string>
+				<string>5ADF769C-A3FA-474A-ACA4-DE28B12C03C8</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -206,19 +206,6 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>F68DE5A4-0903-4EE1-B5CC-51248F982E9D</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>D1C197F2-28C3-4BEE-B5DD-B88126570303</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>98437FE5-7C53-45CD-9045-C95C10DB066A</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -927,25 +914,49 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
+				<key>alfredfiltersresults</key>
+				<true/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>2</integer>
 				<key>escaping</key>
 				<integer>0</integer>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
 				<key>script</key>
 				<string></string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
 				<string>calculate.R</string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string></string>
 				<key>type</key>
 				<integer>8</integer>
+				<key>withspace</key>
+				<false/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
-			<string>D1C197F2-28C3-4BEE-B5DD-B88126570303</string>
+			<string>5ADF769C-A3FA-474A-ACA4-DE28B12C03C8</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -969,21 +980,6 @@
 			<string>7C17154C-9D0B-4123-B924-7FECE2B93E9A</string>
 			<key>version</key>
 			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
-				<string>{query}</string>
-				<key>leftcursor</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.showalfred</string>
-			<key>uid</key>
-			<string>98437FE5-7C53-45CD-9045-C95C10DB066A</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 	</array>
 	<key>readme</key>
@@ -1052,6 +1048,13 @@ Calculates compound interest. Awfully handy and very straightforward.
 			<key>ypos</key>
 			<real>420</real>
 		</dict>
+		<key>5ADF769C-A3FA-474A-ACA4-DE28B12C03C8</key>
+		<dict>
+			<key>xpos</key>
+			<real>440</real>
+			<key>ypos</key>
+			<real>680</real>
+		</dict>
 		<key>76F54574-E63E-42E2-9920-FA8D4F3871E4</key>
 		<dict>
 			<key>xpos</key>
@@ -1094,13 +1097,6 @@ Calculates compound interest. Awfully handy and very straightforward.
 			<key>ypos</key>
 			<real>320</real>
 		</dict>
-		<key>98437FE5-7C53-45CD-9045-C95C10DB066A</key>
-		<dict>
-			<key>xpos</key>
-			<real>850</real>
-			<key>ypos</key>
-			<real>710</real>
-		</dict>
 		<key>AA797936-801F-48F5-A588-23C0B63B532F</key>
 		<dict>
 			<key>xpos</key>
@@ -1121,13 +1117,6 @@ Calculates compound interest. Awfully handy and very straightforward.
 			<real>275</real>
 			<key>ypos</key>
 			<real>160</real>
-		</dict>
-		<key>D1C197F2-28C3-4BEE-B5DD-B88126570303</key>
-		<dict>
-			<key>xpos</key>
-			<real>440</real>
-			<key>ypos</key>
-			<real>680</real>
 		</dict>
 		<key>D8A6D361-D0B9-4878-AFA6-D16BFF142B3B</key>
 		<dict>
