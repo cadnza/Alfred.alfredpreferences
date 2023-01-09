@@ -883,7 +883,7 @@
 				<key>variables</key>
 				<dict>
 					<key>name</key>
-					<string>Number of times compounded per period</string>
+					<string>Number of times compounded per period (C for continuous)</string>
 					<key>prompt</key>
 					<string>Please enter the number of times interest compounds per period.</string>
 					<key>ptrn</key>
