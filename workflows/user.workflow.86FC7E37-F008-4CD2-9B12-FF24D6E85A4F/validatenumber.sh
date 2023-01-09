@@ -5,6 +5,7 @@ PATH=/usr/local/bin:$PATH
 
 # Get display variable
 [[ $showpct = 1 ]] && disp=$(./decimaltopercent.R $1) || disp=$1
+[[ $disp =~ '[Cc]' ]] && disp='Continuous'
 
 # Validate
 [[ $1 =~ $ptrn ]] && {

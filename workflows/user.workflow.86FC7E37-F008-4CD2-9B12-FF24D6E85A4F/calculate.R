@@ -9,11 +9,23 @@ varsVector <- c(
 	"n"
 )
 for(x in varsVector){
-	vars[[x]] <- as.numeric(Sys.getenv(x))
+	varVal <- Sys.getenv(x)
+	tryCatch(
+		vars[[x]] <- as.numeric(varVal),
+		warning=function(w)
+			vars[[x]] <<- varVal
+	)
 }
 
 # Calculate amount ----
-amount <- vars$p*(1+vars$r/vars$n)^(vars$n*vars$t)
+amount <- ifelse(
+	grepl("c",vars$n,ignore.case=TRUE),
+	vars$p*exp(vars$r*vars$t),
+	vars$p*(1+vars$r/vars$n)^(vars$n*vars$t)
+)
+
+# Calculate amount per period at rate ----
+amountPerPeriod <- amount*vars$r
 
 # Round amount ----
 amount <- round(amount,2)

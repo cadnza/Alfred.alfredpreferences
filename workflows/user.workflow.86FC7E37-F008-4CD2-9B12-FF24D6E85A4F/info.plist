@@ -887,7 +887,7 @@
 					<key>prompt</key>
 					<string>Please enter the number of times interest compounds per period.</string>
 					<key>ptrn</key>
-					<string>^[1-9][0-9]*$</string>
+					<string>^([1-9][0-9]*|[Cc])$</string>
 					<key>showpct</key>
 					<string>0</string>
 					<key>varname</key>
