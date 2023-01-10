@@ -17,16 +17,17 @@ for(x in varsVector){
 	)
 }
 
-# Calculate amount ----
+# Calculate amounts ----
 ptrnC <- "c"
-amount <- ifelse(
+amtBase <- ifelse(
 	grepl(ptrnC,vars$n,ignore.case=TRUE),
 	vars$p*exp(vars$r*vars$t),
 	vars$p*(1+vars$r/vars$n)^(vars$n*vars$t)
 )
-
-# Calculate amount per period at rate ----
-amountPerPeriod <- amount*vars$r
+amts <- c(
+	`Amount`=amtBase,
+	`Per period`=amtBase*vars$r
+)
 
 # Define function to format currency ----
 curr <- function(x,prty=TRUE)
@@ -41,8 +42,8 @@ curr <- function(x,prty=TRUE)
 	)
 
 # Format amounts ----
-amount <- curr(amount,FALSE)
-amountPerPeriod <- curr(amountPerPeriod,FALSE)
+for(x in names(amts))
+	amts[x] <- as.numeric(curr(amts[x],FALSE))
 
 # Assemble JSON ----
 reportSep <- " | "
@@ -55,17 +56,27 @@ accumulateString <- ifelse(
 report <- glue::glue("{curr(vars$p)}{reportSep}{vars$r}{reportSep}{vars$t} periods{reportSep}{accumulateString}")
 final <- jsonlite::toJSON(
 	list(
-		items=list(
-			list(
-				title=amount,
-				subtitle=glue::glue("Amount{reportSep}{report}")
-				# ROAD WORK #TEMP
-			),
-			list(
-				title=amountPerPeriod,
-				subtitle=glue::glue("Per period{reportSep}{report}")
-				# ROAD WORK #TEMP
-			)
+		items=lapply(
+			names(amts),
+			function(x)
+				list(
+					title=curr(amts[x]),
+					subtitle=glue::glue("{x}{reportSep}{report}"),
+					arg=amts[x],
+					icon=list(
+						path=ifelse(
+							x=="Amount",
+							"stack.png",
+							"wings.png"
+						)
+					),
+					match=x,
+					autocomplete=x,
+					text=list(
+						copy=amts[x],
+						largetype=curr(amts[x])
+					)
+				)
 		)
 	),
 	auto_unbox=TRUE
