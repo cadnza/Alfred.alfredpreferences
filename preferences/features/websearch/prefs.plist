@@ -4,19 +4,6 @@
 <dict>
 	<key>customSites</key>
 	<dict>
-		<key>18B8594E-3418-4015-9874-11B243C48EC8</key>
-		<dict>
-			<key>enabled</key>
-			<true/>
-			<key>keyword</key>
-			<string>wkflw</string>
-			<key>text</key>
-			<string>Search Alfred workflows for '{query}'</string>
-			<key>url</key>
-			<string>https://duckduckgo.com/?q={query}+site%3Ahttp%3A%2F%2Fwww.packal.org%2F&amp;t=osx&amp;ia=web</string>
-			<key>utf8</key>
-			<true/>
-		</dict>
 		<key>325D47B0-428B-4E47-AB4E-BEA3C05FFDCD</key>
 		<dict>
 			<key>enabled</key>
@@ -79,19 +66,6 @@
 			<string>Search Handspeak for '{query}'</string>
 			<key>url</key>
 			<string>https://duckduckgo.com/?q=\{query}+site%3Awww.handspeak.com%2Fword%2F&amp;t=osx&amp;ia=web</string>
-			<key>utf8</key>
-			<true/>
-		</dict>
-		<key>7E3AA710-D508-45E9-97EE-58AF3EB452E5</key>
-		<dict>
-			<key>enabled</key>
-			<true/>
-			<key>keyword</key>
-			<string>wall</string>
-			<key>text</key>
-			<string>Search for desktop images of '{query}'</string>
-			<key>url</key>
-			<string>https://www.google.com/search?&amp;hl=en&amp;tbs=isz%3Alt%2Cislt%3A4mp%2Ciar%3Aw&amp;tbm=isch&amp;q={query}</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
@@ -231,19 +205,6 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
-		<key>D1CA5D6C-ACEC-46C6-9A3F-FADE52920B7E</key>
-		<dict>
-			<key>enabled</key>
-			<true/>
-			<key>keyword</key>
-			<string>rhyme</string>
-			<key>text</key>
-			<string>Find rhymes for '{query}'</string>
-			<key>url</key>
-			<string>http://www.rhymer.com/RhymingDictionary/{query}.html</string>
-			<key>utf8</key>
-			<true/>
-		</dict>
 		<key>D2F01B95-85A2-4207-AB31-E6B0BD796753</key>
 		<dict>
 			<key>enabled</key>
@@ -267,19 +228,6 @@
 			<string>Search Genius for '{query}'</string>
 			<key>url</key>
 			<string>https://genius.com/search?q={query}</string>
-		</dict>
-		<key>E1ABA243-92CA-4816-BB70-B3F84C71EAEE</key>
-		<dict>
-			<key>enabled</key>
-			<true/>
-			<key>keyword</key>
-			<string>shtk</string>
-			<key>text</key>
-			<string>Search Project Schtooka for recordings of {query} (Русский)</string>
-			<key>url</key>
-			<string>http://shtooka.net/search.php?str={query}&amp;lang=rus</string>
-			<key>utf8</key>
-			<true/>
 		</dict>
 		<key>F0C846CC-AF7F-46F1-B59B-BBFF4B424C59</key>
 		<dict>
