@@ -47,10 +47,11 @@ for(x in names(amts))
 
 # Assemble JSON ----
 reportSep <- " | "
+timeString <- ifelse(vars$n==1,"time","times")
 accumulateString <- ifelse(
 	grepl(ptrnC,vars$n,ignore.case=TRUE),
 	"Accumulates continuously",
-	glue::glue("Accumulates {vars$n} times per period")
+	glue::glue("Accumulates {vars$n} {timeString} per period")
 
 )
 report <- glue::glue("{curr(vars$p)}{reportSep}{vars$r*100}%{reportSep}{vars$t} periods{reportSep}{accumulateString}")
