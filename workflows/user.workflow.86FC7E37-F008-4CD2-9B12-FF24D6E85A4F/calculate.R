@@ -30,20 +30,20 @@ amts <- c(
 )
 
 # Define function to format currency ----
-curr <- function(x,prty=TRUE)
+curr <- function(x)
 	paste0(
-		ifelse(prty,"$",""),
+		"$",
 		formatC(
 			x,
-			big.mark=ifelse(prty,",",""),
+			big.mark=",",
 			format="f",
 			digits=2
 		)
 	)
 
-# Format amounts ----
+# Round amounts ----
 for(x in names(amts))
-	amts[x] <- as.numeric(curr(amts[x],FALSE))
+	amts[x] <- round(amts[x])
 
 # Assemble JSON ----
 reportSep <- " | "
@@ -53,7 +53,7 @@ accumulateString <- ifelse(
 	glue::glue("Accumulates {vars$n} times per period")
 
 )
-report <- glue::glue("{curr(vars$p)}{reportSep}{vars$r}{reportSep}{vars$t} periods{reportSep}{accumulateString}")
+report <- glue::glue("{curr(vars$p)}{reportSep}{vars$r*100}%{reportSep}{vars$t} periods{reportSep}{accumulateString}")
 final <- jsonlite::toJSON(
 	list(
 		items=lapply(
