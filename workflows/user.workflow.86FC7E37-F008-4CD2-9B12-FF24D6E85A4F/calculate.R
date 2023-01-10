@@ -43,7 +43,7 @@ curr <- function(x)
 
 # Round amounts ----
 for(x in names(amts))
-	amts[x] <- round(amts[x])
+	amts[x] <- round(amts[x],2)
 
 # Assemble JSON ----
 reportSep <- " | "
