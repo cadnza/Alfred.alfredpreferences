@@ -229,6 +229,17 @@
 			<key>url</key>
 			<string>https://genius.com/search?q={query}</string>
 		</dict>
+		<key>EA4EFEA6-026F-4062-A156-27BC62EC095B</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>sl</string>
+			<key>text</key>
+			<string>SwiftLint Reference</string>
+			<key>url</key>
+			<string>https://realm.github.io/SwiftLint/{query}.html</string>
+		</dict>
 		<key>F0C846CC-AF7F-46F1-B59B-BBFF4B424C59</key>
 		<dict>
 			<key>enabled</key>
