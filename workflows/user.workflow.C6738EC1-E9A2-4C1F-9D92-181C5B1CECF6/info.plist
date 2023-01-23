@@ -66,7 +66,7 @@ source script.sh $ReposDirectory</string>
 				<key>scriptfile</key>
 				<string>script.sh</string>
 				<key>subtext</key>
-				<string>~/Repos</string>
+				<string>{var:ReposDirectory}</string>
 				<key>title</key>
 				<string>R Project</string>
 				<key>type</key>
@@ -139,20 +139,22 @@ A convenient interface for opening R projects. It displays your repos that conta
 			<key>note</key>
 			<string>Don't forget to set your Repos directory in the workflow variables! It's defaulted to ~/Repos.</string>
 			<key>xpos</key>
-			<integer>75</integer>
+			<real>75</real>
 			<key>ypos</key>
-			<integer>60</integer>
+			<real>60</real>
 		</dict>
 		<key>8BD1FA23-F49A-48C4-89A8-8BFE57BEE137</key>
 		<dict>
 			<key>note</key>
 			<string>Also, remember to install RStudio. 😉</string>
 			<key>xpos</key>
-			<integer>255</integer>
+			<real>255</real>
 			<key>ypos</key>
-			<integer>60</integer>
+			<real>60</real>
 		</dict>
 	</dict>
+	<key>userconfigurationconfig</key>
+	<array/>
 	<key>variables</key>
 	<dict>
 		<key>ReposDirectory</key>
