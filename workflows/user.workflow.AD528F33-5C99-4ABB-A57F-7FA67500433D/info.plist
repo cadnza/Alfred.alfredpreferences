@@ -199,7 +199,7 @@ source scriptAlfred.sh $AlfredPrefsDirectory</string>
 				<key>scriptfile</key>
 				<string>script.sh</string>
 				<key>subtext</key>
-				<string>~/Repos</string>
+				<string>{var:ReposDirectory}</string>
 				<key>title</key>
 				<string>Visual Studio Code</string>
 				<key>type</key>
@@ -259,6 +259,8 @@ source scriptAlfred.sh $AlfredPrefsDirectory</string>
 				</array>
 				<key>elselabel</key>
 				<string>Other</string>
+				<key>hideelse</key>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.conditional</string>
@@ -330,48 +332,50 @@ Very simple: Shows you your repos and opens the one you select in VSCode. If you
 		<key>2D4D86B7-C792-4719-80E2-24636CE39AB6</key>
 		<dict>
 			<key>xpos</key>
-			<integer>340</integer>
+			<real>340</real>
 			<key>ypos</key>
-			<integer>60</integer>
+			<real>60</real>
 		</dict>
 		<key>44F767AD-534D-4EED-B2BF-9C8F00A2B717</key>
 		<dict>
 			<key>xpos</key>
-			<integer>245</integer>
+			<real>245</real>
 			<key>ypos</key>
-			<integer>95</integer>
+			<real>95</real>
 		</dict>
 		<key>6F935E0D-533D-4E71-A29C-56D67F8FE1DC</key>
 		<dict>
 			<key>xpos</key>
-			<integer>585</integer>
+			<real>585</real>
 			<key>ypos</key>
-			<integer>90</integer>
+			<real>90</real>
 		</dict>
 		<key>AEE5C596-CE3C-4ADB-9432-87409B38AF84</key>
 		<dict>
 			<key>xpos</key>
-			<integer>410</integer>
+			<real>410</real>
 			<key>ypos</key>
-			<integer>10</integer>
+			<real>15</real>
 		</dict>
 		<key>D0BB803B-81E9-4702-9DED-DB8C9547D366</key>
 		<dict>
 			<key>note</key>
 			<string>The default repos directory is ~/Repos. If that's different for you, be sure to update it in the workflow variables (button labeled [x] in the top right).</string>
 			<key>xpos</key>
-			<integer>75</integer>
+			<real>75</real>
 			<key>ypos</key>
-			<integer>75</integer>
+			<real>75</real>
 		</dict>
 		<key>EC82745D-E5E3-4698-9D32-F11C00E621E4</key>
 		<dict>
 			<key>xpos</key>
-			<integer>75</integer>
+			<real>75</real>
 			<key>ypos</key>
-			<integer>295</integer>
+			<real>295</real>
 		</dict>
 	</dict>
+	<key>userconfigurationconfig</key>
+	<array/>
 	<key>variables</key>
 	<dict>
 		<key>ReposDirectory</key>
