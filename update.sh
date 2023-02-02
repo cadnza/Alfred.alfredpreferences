@@ -10,7 +10,7 @@ cd $(git -C $(dirname $0:A) rev-parse --show-toplevel)
 readme=README.md
 
 # Set preferences filename
-prefsName="com.jondayley.alfredWorkflowShowcaseUpdater.plist"
+prefsName="com.cadnza.alfredWorkflowShowcaseUpdater.plist"
 
 # Check whether the preferences file exists
 prefsNeedWritten=$(defaults read $prefsName &> /dev/null && echo 0 || echo 1)

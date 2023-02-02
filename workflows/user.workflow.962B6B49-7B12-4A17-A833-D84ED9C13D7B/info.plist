@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string>com.jondayley.githubclone</string>
+	<string>com.cadnza.githubclone</string>
 	<key>connections</key>
 	<dict>
 		<key>103886B5-72ED-47D0-B9D8-2BA4950836FE</key>

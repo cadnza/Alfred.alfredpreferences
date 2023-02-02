@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string>com.jondayley.alfredSigningSavvyToLink</string>
+	<string>com.cadnza.alfredSigningSavvyToLink</string>
 	<key>connections</key>
 	<dict>
 		<key>264A09D9-DE34-403A-9524-C67F6525811D</key>
@@ -66,8 +66,16 @@
 			<key>config</key>
 			<dict>
 				<key>applescript</key>
-				<string>on alfred_script(q)set text item delimiters of AppleScript to "\""set q to text items of qset q to item 2 of q
-set text item delimiters of AppleScript to "/"set q to text items of qset q to item 3 of q &amp; "/" &amp; item 4 of qset q to "https://www.signingsavvy.com/signs/mp4-large/" &amp; q
+				<string>on alfred_script(q)
+
+set text item delimiters of AppleScript to "\""
+set q to text items of q
+set q to item 2 of q
+
+set text item delimiters of AppleScript to "/"
+set q to text items of q
+set q to item 3 of q &amp; "/" &amp; item 4 of q
+set q to "https://www.signingsavvy.com/signs/mp4-large/" &amp; q
 
 end alfred_script</string>
 				<key>cachescript</key>

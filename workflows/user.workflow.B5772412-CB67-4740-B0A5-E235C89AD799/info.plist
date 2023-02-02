@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string>com.jondayley.alfredOpenInXcode</string>
+	<string>com.cadnza.alfredOpenInXcode</string>
 	<key>connections</key>
 	<dict>
 		<key>1CDBB03B-C85D-411E-B32A-47C82C161A9B</key>

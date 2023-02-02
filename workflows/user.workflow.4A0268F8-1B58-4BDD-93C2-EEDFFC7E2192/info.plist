@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string>com.jondayley.alfredToRemindersNotebook</string>
+	<string>com.cadnza.alfredToRemindersNotebook</string>
 	<key>connections</key>
 	<dict>
 		<key>CA1C9CE6-2721-46D6-A9FC-38EA9367B33A</key>
@@ -53,7 +53,15 @@
 				<key>script</key>
 				<string>set title to "{query}"
 
-set targetList to "Notebook"tell application "Reminders"	tell list targetList		set entry to make new reminder with properties {name:title}	end tellend tellreturn title</string>
+set targetList to "Notebook"
+
+tell application "Reminders"
+	tell list targetList
+		set entry to make new reminder with properties {name:title}
+	end tell
+end tell
+
+return title</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>

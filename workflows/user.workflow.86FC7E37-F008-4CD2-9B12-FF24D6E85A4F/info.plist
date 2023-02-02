@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string>com.jondayley.littleinterestcalculator</string>
+	<string>com.cadnza.littleinterestcalculator</string>
 	<key>connections</key>
 	<dict>
 		<key>085EA1C7-8FAF-4B10-9949-00F700542789</key>

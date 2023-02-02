@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string>com.jondayley.alfredRestartDictation</string>
+	<string>com.cadnza.alfredRestartDictation</string>
 	<key>connections</key>
 	<dict>
 		<key>22499A58-3450-4416-A968-BEB9711B9233</key>
