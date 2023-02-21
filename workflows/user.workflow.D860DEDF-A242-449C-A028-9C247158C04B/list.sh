@@ -11,7 +11,7 @@ which jq &> /dev/null || {
 			"items": [
 				{
 					"title": "jq not found",
-					"subtitle": "Make sure jq is in \\\$PATH.",
+					"subtitle": "Make sure jq is in $PATH.",
 					"arg": "notfound"
 				}
 			]
@@ -27,7 +27,7 @@ which bookmarks &> /dev/null || {
 			"items": [
 				{
 					"title": "Command not found",
-					"subtitle": "Make sure bookmarks is in \\\$PATH.",
+					"subtitle": "Make sure bookmarks is in $PATH.",
 					"arg": "notfound"
 				}
 			]
