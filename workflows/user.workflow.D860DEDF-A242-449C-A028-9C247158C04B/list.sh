@@ -3,6 +3,22 @@
 # Add /usr/local/bin to path
 PATH=/usr/local/bin:$PATH
 
+# Show message if jq isn't installed
+which jq &> /dev/null || {
+	echo -n '
+		{
+			"items":[
+				{
+					"title": "jq not found",
+					"subtitle": "Make sure jq is in \$PATH.",
+					"arg": "notfound"
+				}
+			]
+		}
+	'
+	exit 0
+}
+
 # Show message if bookmarks not installed
 which bookmarks &> /dev/null || {
 	jq -nc \
