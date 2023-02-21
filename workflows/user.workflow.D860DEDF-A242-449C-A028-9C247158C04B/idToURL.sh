@@ -1,7 +1,8 @@
 #!/usr/bin/env zsh
 
-# Add /usr/local/bin to path
+# Add to path
 PATH=/usr/local/bin:$PATH
+PATH=$HOME/.local/bin:$PATH
 
 # Get URL
 bookmarks list -j | jq -r ".[] | select(.id == $id).url"

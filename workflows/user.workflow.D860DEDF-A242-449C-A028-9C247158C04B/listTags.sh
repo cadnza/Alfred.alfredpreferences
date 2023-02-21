@@ -1,7 +1,8 @@
 #!/usr/bin/env zsh
 
-# Add /usr/local/bin to path
+# Add to path
 PATH=/usr/local/bin:$PATH
+PATH=$HOME/.local/bin:$PATH
 
 # List tags
 bookmarks list-tags -j | jq '
