@@ -8,10 +8,10 @@ PATH=$HOME/.local/bin:$PATH
 which jq &> /dev/null || {
 	echo -n '
 		{
-			"items":[
+			"items": [
 				{
 					"title": "jq not found",
-					"subtitle": "Make sure jq is in \$PATH.",
+					"subtitle": "Make sure jq is in \\\$PATH.",
 					"arg": "notfound"
 				}
 			]
@@ -22,11 +22,17 @@ which jq &> /dev/null || {
 
 # Show message if bookmarks not installed
 which bookmarks &> /dev/null || {
-	jq -nc \
-		--arg title "Command not found" \
-		--arg subtitle "Make sure bookmarks is in \$PATH." \
-		--arg arg "notfound" \
-		'{"items":[{"title": $title, "subtitle": $subtitle, "arg": $arg}]}'
+	echo -n '
+		{
+			"items": [
+				{
+					"title": "Command not found",
+					"subtitle": "Make sure bookmarks is in \\\$PATH.",
+					"arg": "notfound"
+				}
+			]
+		}
+	'
 	exit 0
 }
 
