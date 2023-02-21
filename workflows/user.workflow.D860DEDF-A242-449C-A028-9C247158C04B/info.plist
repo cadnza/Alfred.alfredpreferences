@@ -125,7 +125,7 @@
 	<key>createdby</key>
 	<string>Jon Dayley</string>
 	<key>description</key>
-	<string>Interfaces with [bookmarks](github.com/cadnza/bookmarks)</string>
+	<string>Opens bookmarks created with [bookmarks](github.com/cadnza/bookmarks)</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
@@ -467,7 +467,20 @@
 		</dict>
 	</array>
 	<key>readme</key>
-	<string></string>
+	<string># About
+
+Tiny workflow to open your bookmarks.
+
+# Dependencies
+
+- jq
+- [bookmarks](https://github.com/cadnza/bookmarks)
+
+# Versions
+
+## v1.0.0
+
+- First release</string>
 	<key>uidata</key>
 	<dict>
 		<key>20885357-EA8E-4205-9F48-016EB023E576</key>
@@ -536,6 +549,8 @@
 	</dict>
 	<key>userconfigurationconfig</key>
 	<array/>
+	<key>version</key>
+	<string>1.0.0</string>
 	<key>webaddress</key>
 	<string>https://github.com/cadnza</string>
 </dict>
