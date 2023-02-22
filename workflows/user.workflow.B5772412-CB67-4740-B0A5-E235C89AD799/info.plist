@@ -106,7 +106,20 @@ source script.sh $ReposDirectory</string>
 		</dict>
 	</array>
 	<key>readme</key>
-	<string></string>
+	<string># About
+
+Xcode project opener.
+
+# Dependencies
+
+- Xcode
+- A directory of repos (or a place where your Xcode projects live)
+
+# Versions
+
+## v1.0.0
+
+- First release</string>
 	<key>uidata</key>
 	<dict>
 		<key>1CDBB03B-C85D-411E-B32A-47C82C161A9B</key>
@@ -132,7 +145,7 @@ source script.sh $ReposDirectory</string>
 		<string>~/Repos</string>
 	</dict>
 	<key>version</key>
-	<string></string>
+	<string>1.0.0</string>
 	<key>webaddress</key>
 	<string>https://github.com/cadnza</string>
 </dict>
