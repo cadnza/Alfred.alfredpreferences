@@ -13,8 +13,8 @@ json=""
 ls $dirRepos | while read -r repo
 do
 	fullpath=$dirRepos/$repo
-	filterpattern="\.xcodeproj$"
-	candidates=$(ls -1 $fullpath | grep -i $filterpattern)
+	filterpattern="(\.xcodeproj$|package.swift)"
+	candidates=$(ls -1 $fullpath | grep -Ei $filterpattern)
 	hasRproj=$(echo $candidates | grep -c .)
 	[ $hasRproj = 0 ] && continue
 	arg=$fullpath/$(echo $candidates | sed -n 1p)
