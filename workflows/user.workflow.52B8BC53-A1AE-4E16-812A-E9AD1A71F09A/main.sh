@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env sh
 
 # Capture screen and exit on cancel
 f=$(./capture.sh) || exit 0
@@ -8,7 +8,7 @@ final=$(./ocr.sh $f)
 succeeded=$?
 
 # Show notification and exit on failure
-[[ $succeeded = 1 ]] && {
+[ $succeeded = 1 ] && {
 	osascript -e "display alert \"Tesseract Not Configured\" message \"Please install the tesseract  with the 'rus' engine.\" as critical"
 	exit 1
 }

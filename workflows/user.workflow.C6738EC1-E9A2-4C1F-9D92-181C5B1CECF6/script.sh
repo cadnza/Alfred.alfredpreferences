@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env sh
 
 # Add /usr/local/bin to path
 PATH=/usr/local/bin:$PATH

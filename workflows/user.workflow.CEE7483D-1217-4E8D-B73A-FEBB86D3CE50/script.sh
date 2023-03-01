@@ -1,14 +1,14 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env sh
 
 # Add /usr/local/bin to path
 PATH=/usr/local/bin:$PATH
 
 # Make workflow data directory
-[[ -d $alfred_workflow_data ]] || mkdir $alfred_workflow_data
+[ -d $alfred_workflow_data ] || mkdir $alfred_workflow_data
 
 # Search for part
 ./partsearch.R $alfred_workflow_data $1
-[[ $? = 127 ]] && {
+[ $? = 127 ] && {
 	rMessage=$(
 		jq -nc \
 			--arg link "https://www.r-project.org/" \

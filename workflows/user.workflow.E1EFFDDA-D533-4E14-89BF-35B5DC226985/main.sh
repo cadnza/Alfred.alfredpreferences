@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env sh
 
 # Details here:
 # https://developer.apple.com/forums/thread/651829?page=4

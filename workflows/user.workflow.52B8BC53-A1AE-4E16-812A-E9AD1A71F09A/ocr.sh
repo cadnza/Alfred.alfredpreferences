@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env sh
 
 # Run OCR
 result=$(tesseract $1 - -l rus 2> /dev/null) || exit 1

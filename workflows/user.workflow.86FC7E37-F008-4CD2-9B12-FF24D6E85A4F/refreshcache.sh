@@ -1,10 +1,10 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env sh
 
 # Set cache file
 f=$alfred_workflow_cache/$cachefilename
 
 # Exit if cache file doesn't exist
-[[ -f $f ]] || exit 0
+[ -f "$f" ] || exit 0
 
 # Convert wait minutes to seconds
 cachelifespanseconds=$(($cachelifespanminutes*60))
