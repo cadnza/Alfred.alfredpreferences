@@ -36,7 +36,7 @@ json="${json:1}"
 
 # Frame final JSON
 final="{\"items\": [$json]}"
-echo -n $final
+printf "%s" "$final"
 
 # Exit
 exit 0

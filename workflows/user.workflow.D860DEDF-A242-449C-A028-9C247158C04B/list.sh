@@ -6,7 +6,7 @@ PATH=$HOME/.local/bin:$PATH
 
 # Show message if jq isn't installed
 which jq &> /dev/null || {
-	echo -n '
+	printf "%s" '
 		{
 			"items": [
 				{
@@ -22,7 +22,7 @@ which jq &> /dev/null || {
 
 # Show message if bookmarks not installed
 which bookmarks &> /dev/null || {
-	echo -n '
+	printf "%s" '
 		{
 			"items": [
 				{
