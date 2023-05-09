@@ -1,7 +1,8 @@
 #!/usr/bin/env sh
 
-# Add /usr/local/bin to path
+# Add to path
 PATH=/usr/local/bin:$PATH
+PATH=/opt/homebrew/bin:$PATH
 
 # Get repo directory
 dirRepos=$1
