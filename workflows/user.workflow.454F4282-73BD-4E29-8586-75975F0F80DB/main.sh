@@ -9,7 +9,20 @@ sessionName=com.cadnza.alfredManPageOpener.cacheRoutine
 # Show options if cached or notice if not
 cacheFile="$alfred_workflow_cache/cache.json"
 [ -f $cacheFile ] && cat $cacheFile || {
-	#TEMP
+	final=$(
+		echo '
+			{"items":
+				[
+					{
+						"title": "Caching man pages, please wait...",
+						"subtitle": "This only needs to be done once.",
+						"valid": false
+					}
+				]
+			}
+		' | jq
+	)
+	echo -n $final
 }
 
 # Exit
