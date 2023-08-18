@@ -64,7 +64,7 @@
 				<key>scriptfile</key>
 				<string>main.sh</string>
 				<key>subtext</key>
-				<string></string>
+				<string>View man page in Terminal</string>
 				<key>title</key>
 				<string>Open man page</string>
 				<key>type</key>
