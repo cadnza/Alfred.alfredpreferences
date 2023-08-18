@@ -1,5 +1,8 @@
 #!/usr/bin/env zsh
 
+# Start timer
+tStart="$(date +%s)"
+
 # Initialize JSON
 final=$(echo '[]' | jq)
 
@@ -56,6 +59,11 @@ final=$(echo $final | jq '{items: .}')
 # Save JSON file
 destJSON="$alfred_workflow_cache/cache.json"
 echo $final > $destJSON
+
+# Stop timer and report time
+tEnd="$(date +%s)"
+tTotal=$[ ${tEnd} - ${tStart} ]
+echo $tTotal >> "$alfred_workflow_cache/time.txt"
 
 # Exit
 exit 0
