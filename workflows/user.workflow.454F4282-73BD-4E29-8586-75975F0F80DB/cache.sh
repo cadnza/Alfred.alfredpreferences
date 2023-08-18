@@ -67,5 +67,8 @@ tEnd="$(date +%s)"
 tTotal=$[ ${tEnd} - ${tStart} ]
 echo $tTotal >> "$alfred_workflow_cache/time.txt"
 
+# Send notification through Alfred
+open "alfred://runtrigger/com.cadnza.alfredManPageOpener/com.cadnza.alfredManPageOpener.doneCaching"
+
 # Exit
 exit 0

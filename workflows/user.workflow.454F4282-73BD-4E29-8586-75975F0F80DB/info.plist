@@ -6,11 +6,37 @@
 	<string>com.cadnza.alfredManPageOpener</string>
 	<key>connections</key>
 	<dict>
+		<key>10BEEBE6-4517-4D60-A9AC-B9969DEFB2D5</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>3C565C17-5A62-4018-8FF1-29F8409A85CF</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>24705789-16A1-42BF-87F2-329DF904EFA8</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>7398DF10-A02C-493D-9CCB-74BE2C0AA551</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>3C565C17-5A62-4018-8FF1-29F8409A85CF</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C15A5E6F-6A34-4D3F-B6FA-F84C90E83893</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -285,17 +311,85 @@
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>tasksettings</key>
+				<dict>
+					<key>out_format</key>
+					<string>%FT%T%z</string>
+				</dict>
+				<key>taskuid</key>
+				<string>com.alfredapp.automation.core/date-manipulation/time.current</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.automation.task</string>
+			<key>uid</key>
+			<string>3C565C17-5A62-4018-8FF1-29F8409A85CF</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Man pages cached</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>C15A5E6F-6A34-4D3F-B6FA-F84C90E83893</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>availableviaurlhandler</key>
+				<true/>
+				<key>triggerid</key>
+				<string>com.cadnza.alfredManPageOpener.doneCaching</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>10BEEBE6-4517-4D60-A9AC-B9969DEFB2D5</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
 	<key>uidata</key>
 	<dict>
+		<key>10BEEBE6-4517-4D60-A9AC-B9969DEFB2D5</key>
+		<dict>
+			<key>xpos</key>
+			<real>70</real>
+			<key>ypos</key>
+			<real>350</real>
+		</dict>
 		<key>24705789-16A1-42BF-87F2-329DF904EFA8</key>
 		<dict>
 			<key>xpos</key>
 			<real>70</real>
 			<key>ypos</key>
 			<real>30</real>
+		</dict>
+		<key>3C565C17-5A62-4018-8FF1-29F8409A85CF</key>
+		<dict>
+			<key>xpos</key>
+			<real>270</real>
+			<key>ypos</key>
+			<real>350</real>
 		</dict>
 		<key>6C7E8343-087F-462F-ABD9-B128014092F2</key>
 		<dict>
@@ -317,6 +411,13 @@
 			<real>695</real>
 			<key>ypos</key>
 			<real>260</real>
+		</dict>
+		<key>C15A5E6F-6A34-4D3F-B6FA-F84C90E83893</key>
+		<dict>
+			<key>xpos</key>
+			<real>460</real>
+			<key>ypos</key>
+			<real>350</real>
 		</dict>
 		<key>CE1B9A09-4453-4D70-937D-8A93E30739DE</key>
 		<dict>
