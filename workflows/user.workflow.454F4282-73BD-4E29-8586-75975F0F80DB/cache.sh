@@ -32,6 +32,7 @@ do
 			'
 				. |= . + [
 					{
+						uid: $page,
 						title: $pageNameFull,
 						subtitle: $mpath,
 						arg: $pageName,
@@ -52,7 +53,7 @@ done
 
 # Finalize JSON
 final=$(echo $final | jq ".|=sort_by(.catnumber,.title)" | jq "map(del(.catnumber))" )
-final=$(echo $final | jq '{items: .}')
+final=$(echo $final | jq '{skipknowledge: true, items: .}')
 
 # Create workflow cache if needed
 [ -d $alfred_workflow_cache ] || mkdir $alfred_workflow_cache
