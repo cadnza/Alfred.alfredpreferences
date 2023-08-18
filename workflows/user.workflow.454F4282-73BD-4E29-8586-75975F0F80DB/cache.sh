@@ -12,8 +12,8 @@ manpathsRaw=$(cat /etc/man.conf | grep "^MANPATH")
 # Build JSON by parsing available man pages
 echo $manpathsRaw | while read -r manpathRaw
 do
-	manpath=$(echo $manpathRaw | sed -E 's/^MANPATH[[:space:]]//g')
-	[ -d $manpath ] || continue
+	manpathOriginal=$(echo $manpathRaw | sed -E 's/^MANPATH[[:space:]]//g')
+	[ -d $manpathOriginal ] && manpath=$(readlink -f $manpathOriginal) || continue
 	pages=$(find $manpath -mindepth 1 -type f; find $manpath -mindepth 1 -type l)
 	pages=$(echo $pages | grep -v "\.md$")
 	echo $pages | while read -r page
