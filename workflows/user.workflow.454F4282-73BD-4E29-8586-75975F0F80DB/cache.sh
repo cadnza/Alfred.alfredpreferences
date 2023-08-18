@@ -50,7 +50,6 @@ final=$(echo $final | jq '{items: .}')
 
 # Save JSON file
 destJSON="$alfred_workflow_cache/cache.json"
-echo $destJSON > DESTINATION #TEMP
 echo $final > $destJSON
 
 # Exit
