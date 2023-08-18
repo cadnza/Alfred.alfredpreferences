@@ -11,7 +11,7 @@ echo $manpathsRaw | while read -r manpathRaw
 do
 	manpath=$(echo $manpathRaw | sed -E 's/^MANPATH[[:space:]]//g')
 	[ -d $manpath ] || continue
-	pages=$(find $manpath -mindepth 1 -type f)
+	pages=$(find $manpath -mindepth 1 -type f; find $manpath -mindepth 1 -type l)
 	echo $pages | while read -r page
 	do
 		pageName="$(basename $page | sed "s/\.[^\.]*$//g")"
