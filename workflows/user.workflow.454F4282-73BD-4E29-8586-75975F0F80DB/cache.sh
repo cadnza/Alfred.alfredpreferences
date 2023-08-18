@@ -37,7 +37,8 @@ do
 						},
 						type: "default",
 						text: $pageName,
-						quicklookurl: $page
+						quicklookurl: $page,
+						catnumber: $categoryNumber
 					}
 				]
 			'
@@ -46,6 +47,7 @@ do
 done
 
 # Finalize JSON
+final=$(echo $final | jq ".|=sort_by(.catnumber,.title)" | jq "map(del(.catnumber))" )
 final=$(echo $final | jq '{items: .}')
 
 # Create workflow cache if needed
