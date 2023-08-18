@@ -74,7 +74,7 @@
 			<key>enabled</key>
 			<true/>
 			<key>keyword</key>
-			<string>man</string>
+			<string>exman</string>
 			<key>text</key>
 			<string>Search external man pages for {query}</string>
 			<key>url</key>
