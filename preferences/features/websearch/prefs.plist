@@ -178,15 +178,13 @@
 		<key>CEAC8C88-BF5F-4A80-9F43-C947EA46B249</key>
 		<dict>
 			<key>enabled</key>
-			<true/>
+			<false/>
 			<key>keyword</key>
 			<string>sav</string>
 			<key>text</key>
 			<string>Search SigningSavvy for '{query}'</string>
 			<key>url</key>
 			<string>https://www.signingsavvy.com/sign/{query}</string>
-			<key>utf8</key>
-			<true/>
 		</dict>
 		<key>D0CE48F2-F23F-4623-87CA-6D1AC4E29570</key>
 		<dict>
@@ -238,17 +236,6 @@
 			<key>url</key>
 			<string>https://realm.github.io/SwiftLint/{query}.html</string>
 		</dict>
-		<key>EDBE4DB1-E66D-49BF-B1FB-F2FEC241A155</key>
-		<dict>
-			<key>enabled</key>
-			<true/>
-			<key>keyword</key>
-			<string>man</string>
-			<key>text</key>
-			<string>Search native man pages for {query}</string>
-			<key>url</key>
-			<string>x-man-page://{query}</string>
-		</dict>
 		<key>F0C846CC-AF7F-46F1-B59B-BBFF4B424C59</key>
 		<dict>
 			<key>enabled</key>
@@ -276,7 +263,5 @@
 			<true/>
 		</dict>
 	</dict>
-	<key>onlyShowEnabledInPrefs</key>
-	<true/>
 </dict>
 </plist>
