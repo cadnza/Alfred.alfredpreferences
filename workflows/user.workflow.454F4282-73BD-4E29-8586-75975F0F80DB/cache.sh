@@ -48,6 +48,9 @@ done
 # Finalize JSON
 final=$(echo $final | jq '{items: .}')
 
+# Create workflow cache if needed
+[ -d $alfred_workflow_cache ] || mkdir $alfred_workflow_cache
+
 # Save JSON file
 destJSON="$alfred_workflow_cache/cache.json"
 echo $final > $destJSON
