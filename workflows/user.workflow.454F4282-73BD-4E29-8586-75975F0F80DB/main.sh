@@ -15,7 +15,7 @@ cacheFile="$alfred_workflow_cache/cache.json"
 				[
 					{
 						"title": "Caching man pages, please wait...",
-						"subtitle": "This only needs to be done once.",
+						"subtitle": "This initial caching only happens once.",
 						"valid": false
 					}
 				]
