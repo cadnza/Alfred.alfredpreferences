@@ -19,6 +19,59 @@
 				<false/>
 			</dict>
 		</array>
+		<key>6C7E8343-087F-462F-ABD9-B128014092F2</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F321C0B9-9945-402A-A28E-550AFF536F21</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>F321C0B9-9945-402A-A28E-550AFF536F21</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>CE1B9A09-4453-4D70-937D-8A93E30739DE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>0CABA029-48FF-41AD-93BB-5D751EB33655</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>B9FBE6FC-268C-4DB1-A816-29D99717D45C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>B8677304-0025-412A-A9F6-CEC599E0E064</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>F53D492B-30D6-4812-B7D1-01448898DE8C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>6C7E8343-087F-462F-ABD9-B128014092F2</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 	</dict>
 	<key>createdby</key>
 	<string>Jon Dayley</string>
@@ -100,6 +153,138 @@
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>The old cache will still work in the meantime.</string>
+				<key>title</key>
+				<string>Recaching man pages</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>CE1B9A09-4453-4D70-937D-8A93E30739DE</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string></string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>recache.sh</string>
+				<key>type</key>
+				<integer>8</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>6C7E8343-087F-462F-ABD9-B128014092F2</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>recache man</string>
+				<key>subtext</key>
+				<string>Takes some time</string>
+				<key>text</key>
+				<string>Recache man pages</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>F53D492B-30D6-4812-B7D1-01448898DE8C</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string></string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>0</string>
+						<key>outputlabel</key>
+						<string>Started recache</string>
+						<key>uid</key>
+						<string>0CABA029-48FF-41AD-93BB-5D751EB33655</string>
+					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string></string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>1</string>
+						<key>outputlabel</key>
+						<string>Recache already in progress</string>
+						<key>uid</key>
+						<string>B8677304-0025-412A-A9F6-CEC599E0E064</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>else</string>
+				<key>hideelse</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>F321C0B9-9945-402A-A28E-550AFF536F21</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>The man pages are already being recached.</string>
+				<key>title</key>
+				<string>Recache already in progress</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>B9FBE6FC-268C-4DB1-A816-29D99717D45C</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
@@ -112,12 +297,47 @@
 			<key>ypos</key>
 			<real>30</real>
 		</dict>
+		<key>6C7E8343-087F-462F-ABD9-B128014092F2</key>
+		<dict>
+			<key>xpos</key>
+			<real>270</real>
+			<key>ypos</key>
+			<real>185</real>
+		</dict>
 		<key>7398DF10-A02C-493D-9CCB-74BE2C0AA551</key>
 		<dict>
 			<key>xpos</key>
 			<real>270</real>
 			<key>ypos</key>
 			<real>30</real>
+		</dict>
+		<key>B9FBE6FC-268C-4DB1-A816-29D99717D45C</key>
+		<dict>
+			<key>xpos</key>
+			<real>695</real>
+			<key>ypos</key>
+			<real>260</real>
+		</dict>
+		<key>CE1B9A09-4453-4D70-937D-8A93E30739DE</key>
+		<dict>
+			<key>xpos</key>
+			<real>695</real>
+			<key>ypos</key>
+			<real>110</real>
+		</dict>
+		<key>F321C0B9-9945-402A-A28E-550AFF536F21</key>
+		<dict>
+			<key>xpos</key>
+			<real>460</real>
+			<key>ypos</key>
+			<real>205</real>
+		</dict>
+		<key>F53D492B-30D6-4812-B7D1-01448898DE8C</key>
+		<dict>
+			<key>xpos</key>
+			<real>70</real>
+			<key>ypos</key>
+			<real>185</real>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
