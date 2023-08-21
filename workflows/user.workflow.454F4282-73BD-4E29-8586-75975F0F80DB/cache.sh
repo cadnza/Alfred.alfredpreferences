@@ -15,7 +15,7 @@ do
 	manpathOriginal=$(echo $manpathRaw | sed -E 's/^MANPATH[[:space:]]//g')
 	[ -d $manpathOriginal ] && manpath=$(readlink -f $manpathOriginal) || continue
 	pages=$(find $manpath -mindepth 1 -type f; find $manpath -mindepth 1 -type l)
-	pages=$(echo $pages | grep -Ev "(\.md$|\.pdf$)")
+	pages=$(echo $pages | grep -Ev "(\.md$|\.pdf$|\.gz$)")
 	echo $pages | while read -r page
 	do
 		pageName="$(basename $page | sed "s/\.[^\.]*$//g")"
