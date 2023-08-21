@@ -8,6 +8,10 @@ Light tool for opening man pages in Terminal. Needs recaching every so often; ru
 
 # Versions
 
+## v1.0.1
+
+- Fixed a couple of bugs
+
 ## v1.0.0
 
 - First release
