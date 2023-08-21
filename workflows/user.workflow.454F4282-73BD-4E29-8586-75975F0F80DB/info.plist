@@ -6,6 +6,19 @@
 	<string>com.cadnza.alfredManPageOpener</string>
 	<key>connections</key>
 	<dict>
+		<key>07652596-3418-4F4A-97A5-65C3616842EB</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E08745D2-B6DD-4B76-B1DE-81301EB34856</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>10BEEBE6-4517-4D60-A9AC-B9969DEFB2D5</key>
 		<array>
 			<dict>
@@ -23,7 +36,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>7398DF10-A02C-493D-9CCB-74BE2C0AA551</string>
+				<string>07652596-3418-4F4A-97A5-65C3616842EB</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -112,6 +125,21 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>tasksettings</key>
+				<dict/>
+				<key>taskuid</key>
+				<string>com.alfredapp.automation.core/text-processing/text.encode.percent</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.automation.task</string>
+			<key>uid</key>
+			<string>07652596-3418-4F4A-97A5-65C3616842EB</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>alfredfiltersresults</key>
 				<true/>
 				<key>alfredfiltersresultsmatchmode</key>
@@ -161,23 +189,25 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>browser</key>
-				<string></string>
-				<key>skipqueryencode</key>
+				<key>concurrently</key>
 				<false/>
-				<key>skipvarencode</key>
-				<false/>
-				<key>spaces</key>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>open "x-man-page://$1" -a Terminal</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
 				<string></string>
-				<key>url</key>
-				<string>x-man-page://{query}</string>
+				<key>type</key>
+				<integer>11</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
+			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>7398DF10-A02C-493D-9CCB-74BE2C0AA551</string>
+			<string>E08745D2-B6DD-4B76-B1DE-81301EB34856</string>
 			<key>version</key>
-			<integer>1</integer>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -382,6 +412,13 @@ Light tool for opening man pages in Terminal. Needs recaching every so often; ru
 - First release</string>
 	<key>uidata</key>
 	<dict>
+		<key>07652596-3418-4F4A-97A5-65C3616842EB</key>
+		<dict>
+			<key>xpos</key>
+			<real>270</real>
+			<key>ypos</key>
+			<real>30</real>
+		</dict>
 		<key>10BEEBE6-4517-4D60-A9AC-B9969DEFB2D5</key>
 		<dict>
 			<key>xpos</key>
@@ -410,13 +447,6 @@ Light tool for opening man pages in Terminal. Needs recaching every so often; ru
 			<key>ypos</key>
 			<real>185</real>
 		</dict>
-		<key>7398DF10-A02C-493D-9CCB-74BE2C0AA551</key>
-		<dict>
-			<key>xpos</key>
-			<real>270</real>
-			<key>ypos</key>
-			<real>30</real>
-		</dict>
 		<key>B9FBE6FC-268C-4DB1-A816-29D99717D45C</key>
 		<dict>
 			<key>xpos</key>
@@ -437,6 +467,13 @@ Light tool for opening man pages in Terminal. Needs recaching every so often; ru
 			<real>695</real>
 			<key>ypos</key>
 			<real>110</real>
+		</dict>
+		<key>E08745D2-B6DD-4B76-B1DE-81301EB34856</key>
+		<dict>
+			<key>xpos</key>
+			<real>460</real>
+			<key>ypos</key>
+			<real>30</real>
 		</dict>
 		<key>F321C0B9-9945-402A-A28E-550AFF536F21</key>
 		<dict>
