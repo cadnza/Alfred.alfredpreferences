@@ -121,6 +121,17 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>A972902D-8740-4CF2-A9DC-92DC9D4EEECF</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>pub</string>
+			<key>text</key>
+			<string>Search pub.dev for '{query}'</string>
+			<key>url</key>
+			<string>https://pub.dev/packages?q={query}</string>
+		</dict>
 		<key>AC64DCCB-C281-4459-AD8A-19C1EE7AB368</key>
 		<dict>
 			<key>enabled</key>
