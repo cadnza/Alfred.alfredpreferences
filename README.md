@@ -8,6 +8,7 @@ My [settings](https://www.alfredapp.com/help/advanced/) and [workflows](https://
 
 | | Workflow | Version | Author | Description | Link |
 |-|-|-|-|-|-|
+| <img src="images/com.cadnza.openCaptivePortal.png" width="100"></img> | **Open Captive Portal** |  | [Jon Dayley](https://github.com/cadnza) | Opens captive portals when macOS fails to | [Download](exports/com.cadnza.openCaptivePortal.alfredworkflow) |
 | <img src="images/com.cadnza.alfredRestartDictation.png" width="100"></img> | **Restart Dictation** | `1.0.0` | [Jon Dayley](https://github.com/cadnza) | Restarts the dictation service<br/>[*More info*](details/com.cadnza.alfredRestartDictation.md) | [Download](exports/com.cadnza.alfredRestartDictation.alfredworkflow) |
 | <img src="images/com.cadnza.alfredManPageOpener.png" width="100"></img> | **Man Page Opener** | `1.0.1` | [Jon Dayley](https://github.com/cadnza) | Opens man pages in Terminal<br/>[*More info*](details/com.cadnza.alfredManPageOpener.md) | [Download](exports/com.cadnza.alfredManPageOpener.alfredworkflow) |
 | <img src="images/com.cadnza.alfredToRemindersNotebook.png" width="100"></img> | **To Reminders notebook** | `1.0.0` | [Jon Dayley](https://github.com/cadnza) | Captures text in a Reminders list<br/>[*More info*](details/com.cadnza.alfredToRemindersNotebook.md) | [Download](exports/com.cadnza.alfredToRemindersNotebook.alfredworkflow) |
