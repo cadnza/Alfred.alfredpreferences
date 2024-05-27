@@ -6,7 +6,7 @@
 	<true/>
 	<key>fallbacks</key>
 	<array>
-		<string>features.websearch.duckduckgo.fallback</string>
+		<string>features.websearch.google.fallback</string>
 	</array>
 </dict>
 </plist>
