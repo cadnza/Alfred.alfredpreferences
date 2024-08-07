@@ -263,15 +263,13 @@
 		<key>FA29047C-58D1-40F5-ACB9-B40B392A855F</key>
 		<dict>
 			<key>enabled</key>
-			<true/>
+			<false/>
 			<key>keyword</key>
 			<string>images</string>
 			<key>text</key>
 			<string>DuckDuckGo for images of '{query}'</string>
 			<key>url</key>
 			<string>https://duckduckgo.com/?q={query}&amp;iax=images&amp;ia=images</string>
-			<key>utf8</key>
-			<true/>
 		</dict>
 	</dict>
 </dict>
