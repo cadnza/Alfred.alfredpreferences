@@ -70,7 +70,7 @@ do
 			'
 	)"
 
-done <<< "$(find . -type d -mindepth 1 -maxdepth 1)"
+done <<< "$(find ~+ -type d -mindepth 1 -maxdepth 1)"
 
 # Echo result
 echo "$final"
