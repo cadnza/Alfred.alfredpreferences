@@ -33,7 +33,7 @@ do
 			--arg uid "$dirSticky" \
 			--arg title "$firstLine" \
 			--arg subtitle "$(echo "$txtStickyTrimmed" | sed '2q;d')" \
-			--arg arg "$fTxt" \
+			--arg arg "$dirSticky" \
 			--arg iconPath "$fIcon" \
 			--arg match "$txtStickyTrimmed" \
 			--arg autocomplete "$firstLine" \
