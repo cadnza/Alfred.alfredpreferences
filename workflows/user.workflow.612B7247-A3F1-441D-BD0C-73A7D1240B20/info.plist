@@ -5,7 +5,23 @@
 	<key>bundleid</key>
 	<string>com.cadnza.alfredStickies</string>
 	<key>connections</key>
-	<dict/>
+	<dict>
+		<key>498A1B8E-DD0A-4FDE-B5AF-84F921D0F4D6</key>
+		<array/>
+		<key>A0B5A1A8-536B-42FF-B3C8-36C5B683B1D7</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>498A1B8E-DD0A-4FDE-B5AF-84F921D0F4D6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
 	<key>createdby</key>
 	<string>Jon Dayley</string>
 	<key>description</key>
@@ -65,11 +81,41 @@
 			<key>version</key>
 			<integer>3</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string></string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>open.sh</string>
+				<key>type</key>
+				<integer>8</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>498A1B8E-DD0A-4FDE-B5AF-84F921D0F4D6</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
 	<key>uidata</key>
 	<dict>
+		<key>498A1B8E-DD0A-4FDE-B5AF-84F921D0F4D6</key>
+		<dict>
+			<key>xpos</key>
+			<real>240</real>
+			<key>ypos</key>
+			<real>55</real>
+		</dict>
 		<key>A0B5A1A8-536B-42FF-B3C8-36C5B683B1D7</key>
 		<dict>
 			<key>xpos</key>
