@@ -4,5 +4,7 @@
 <dict>
 	<key>defaultscheme</key>
 	<integer>1</integer>
+	<key>historyExpiry</key>
+	<integer>0</integer>
 </dict>
 </plist>
