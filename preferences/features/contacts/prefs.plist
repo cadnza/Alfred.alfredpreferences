@@ -12,6 +12,16 @@
 			<key>uid</key>
 			<string>alfred.contact.field.phone</string>
 		</dict>
+		<dict>
+			<key>action</key>
+			<string>9E41CA76-84F5-4CB2-A250-30E89F921633</string>
+			<key>mods</key>
+			<integer>1179648</integer>
+			<key>schemeurl</key>
+			<string>tel:{query}</string>
+			<key>uid</key>
+			<string>alfred.contact.field.phone</string>
+		</dict>
 	</array>
 	<key>showJobTitle</key>
 	<true/>
