@@ -154,9 +154,9 @@
 			<key>keyword</key>
 			<string>chat</string>
 			<key>text</key>
-			<string>Ask ChatGPT "{query}"</string>
+			<string>Ask ChatGPT "Hey ChatGPT, {query}"</string>
 			<key>url</key>
-			<string>https://chat.openai.com/?q={query}</string>
+			<string>https://chat.openai.com/?q=Hey%20ChatGPT%2C%20{query}</string>
 		</dict>
 		<key>B0F9A6E9-9A67-48CD-A3BB-CE8AA0912289</key>
 		<dict>
