@@ -82,6 +82,31 @@
 				<false/>
 			</dict>
 		</array>
+		<key>5E7A87F3-2F89-4B5A-B04F-6E801E2DFE20</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F797B525-3B1E-40DF-A8B2-F4383AE5B7B3</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>0EA1C4CC-39F8-4402-A9D9-A6D463C05C90</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>20885357-EA8E-4205-9F48-016EB023E576</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>7471FA0E-3A75-4995-80F8-F2594D9DFC6B</key>
 		<array>
 			<dict>
@@ -112,7 +137,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>20885357-EA8E-4205-9F48-016EB023E576</string>
+				<string>5E7A87F3-2F89-4B5A-B04F-6E801E2DFE20</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -321,6 +346,21 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)	tell application "QuickTime Player"		open URL q	end tellend alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>F797B525-3B1E-40DF-A8B2-F4383AE5B7B3</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -344,21 +384,32 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>browser</key>
-				<string></string>
-				<key>skipqueryencode</key>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string></string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>4</integer>
+						<key>matchstring</key>
+						<string>\.m3u8</string>
+						<key>outputlabel</key>
+						<string>m3u8</string>
+						<key>uid</key>
+						<string>0EA1C4CC-39F8-4402-A9D9-A6D463C05C90</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>else</string>
+				<key>hideelse</key>
 				<false/>
-				<key>skipvarencode</key>
-				<false/>
-				<key>spaces</key>
-				<string></string>
-				<key>url</key>
-				<string>{query}</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
+			<string>alfred.workflow.utility.conditional</string>
 			<key>uid</key>
-			<string>20885357-EA8E-4205-9F48-016EB023E576</string>
+			<string>5E7A87F3-2F89-4B5A-B04F-6E801E2DFE20</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -408,6 +459,27 @@
 			<string>F56F0935-6ABD-42BD-A4D5-6382F3D75CF7</string>
 			<key>version</key>
 			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>skipqueryencode</key>
+				<false/>
+				<key>skipvarencode</key>
+				<false/>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>20885357-EA8E-4205-9F48-016EB023E576</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -490,9 +562,9 @@ Tiny workflow to open your bookmarks.
 		<key>20885357-EA8E-4205-9F48-016EB023E576</key>
 		<dict>
 			<key>xpos</key>
-			<real>525</real>
+			<real>630</real>
 			<key>ypos</key>
-			<real>190</real>
+			<real>325</real>
 		</dict>
 		<key>4550B9F5-4299-4E17-A4B1-CCD282C3F7DA</key>
 		<dict>
@@ -507,6 +579,13 @@ Tiny workflow to open your bookmarks.
 			<real>235</real>
 			<key>ypos</key>
 			<real>75</real>
+		</dict>
+		<key>5E7A87F3-2F89-4B5A-B04F-6E801E2DFE20</key>
+		<dict>
+			<key>xpos</key>
+			<real>530</real>
+			<key>ypos</key>
+			<real>210</real>
 		</dict>
 		<key>7471FA0E-3A75-4995-80F8-F2594D9DFC6B</key>
 		<dict>
@@ -549,6 +628,13 @@ Tiny workflow to open your bookmarks.
 			<real>355</real>
 			<key>ypos</key>
 			<real>325</real>
+		</dict>
+		<key>F797B525-3B1E-40DF-A8B2-F4383AE5B7B3</key>
+		<dict>
+			<key>xpos</key>
+			<real>630</real>
+			<key>ypos</key>
+			<real>175</real>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
