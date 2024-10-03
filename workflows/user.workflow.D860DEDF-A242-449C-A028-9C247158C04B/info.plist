@@ -152,7 +152,7 @@
 	<key>description</key>
 	<string>Opens bookmarks created with [bookmarks](github.com/cadnza/bookmarks)</string>
 	<key>disabled</key>
-	<false/>
+	<true/>
 	<key>name</key>
 	<string>Bookmarks</string>
 	<key>objects</key>
