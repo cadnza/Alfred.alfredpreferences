@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 
 # Set Steam games directory
 gamesDir="$HOME/Library/Application Support/Steam/steamapps/common"
@@ -16,7 +16,7 @@ gamesDir="$HOME/Library/Application Support/Steam/steamapps/common"
 			]
 		}'
 	)
-	echo $final
+	echo "$final"
 	exit 0
 }
 
@@ -24,19 +24,14 @@ gamesDir="$HOME/Library/Application Support/Steam/steamapps/common"
 final=$(echo '[]' | jq)
 
 # Build JSON
-find $gamesDir \
-	-mindepth 2 \
-	-maxdepth 2 \
-	-type d \
-	-name "*.app" \
-	| while read -r f
+while read -r f
 do
 	final=$(
-		echo $final | \
+		echo "$final" | \
 		jq \
-		--arg title "$(basename $f | sed 's/\.app$//g')" \
-		--arg original $f \
-		--arg identifier "$(mdls -r $f -attr kMDItemCFBundleIdentifier)" \
+		--arg title "$(basename "$f" | sed 's/\.app$//g')" \
+		--arg original "$f" \
+		--arg identifier "$(mdls -r "$f" -attr kMDItemCFBundleIdentifier)" \
 		'
 			. |= . + [
 				{
@@ -54,13 +49,19 @@ do
 			]
 		'
 	)
-done
+done <<< "$(
+	find "$gamesDir" \
+		-mindepth 2 \
+		-maxdepth 2 \
+		-type d \
+		-name "*.app"
+)"
 
 # Finalize JSON
-final=$(echo $final | jq '{items: .}')
+final=$(echo "$final" | jq '{items: .}')
 
 # Return
-echo -n $final
+echo -n "$final"
 
 # Exit
 exit 0
