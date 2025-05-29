@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 # Add to path
 PATH=/usr/local/bin:$PATH
@@ -11,12 +11,12 @@ dirRepos=$1
 json=""
 
 # Open main loop through repos
-allRepos=$(eval $(echo ls -d $(echo $dirRepos | sed 's/\/*$//')/\*/))
-echo $allRepos | while read -r repoRaw
+allRepos=$(eval "$(echo ls -d "$(echo "$dirRepos" | sed 's/\/*$//')"/\*/)")
+while read -r repoRaw
 do
 	newItem=$(
 		jq -nc \
-			--arg repo "$(basename $repoRaw)" \
+			--arg repo "$(basename "$repoRaw")" \
 			--arg fullpath "$repoRaw" \
 			'{
 				"title": $repo,
@@ -29,8 +29,8 @@ do
 				"quicklookurl": $fullpath
 			}'
 	)
-	json=$json,$newItem
-done
+	json="$json,$newItem"
+done < <(echo "$allRepos")
 
 # Remove leading comma
 json="${json:1}"

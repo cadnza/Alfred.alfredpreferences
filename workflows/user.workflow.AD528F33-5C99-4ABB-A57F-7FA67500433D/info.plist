@@ -44,8 +44,34 @@
 				<false/>
 			</dict>
 		</array>
+		<key>484DFE33-2719-466A-9343-89FEA0206698</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>44F767AD-534D-4EED-B2BF-9C8F00A2B717</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>6F935E0D-533D-4E71-A29C-56D67F8FE1DC</key>
 		<array/>
+		<key>A44FB821-EAC0-404F-BCCF-B98AA0191F2C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>44F767AD-534D-4EED-B2BF-9C8F00A2B717</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>AEE5C596-CE3C-4ADB-9432-87409B38AF84</key>
 		<array>
 			<dict>
@@ -63,7 +89,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>44F767AD-534D-4EED-B2BF-9C8F00A2B717</string>
+				<string>484DFE33-2719-466A-9343-89FEA0206698</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -77,6 +103,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>6F935E0D-533D-4E71-A29C-56D67F8FE1DC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>F8ED1979-E0AC-4D2A-9F29-A571570B4B88</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A44FB821-EAC0-404F-BCCF-B98AA0191F2C</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -193,17 +232,17 @@ source scriptAlfred.sh $AlfredPrefsDirectory</string>
 				<key>runningsubtext</key>
 				<string>Getting repos…</string>
 				<key>script</key>
-				<string>source script.sh $ReposDirectory</string>
+				<string>./script.sh "$ReposDirectory"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
-				<string>script.sh</string>
+				<string></string>
 				<key>subtext</key>
 				<string>{var:ReposDirectory}</string>
 				<key>title</key>
 				<string>Visual Studio Code</string>
 				<key>type</key>
-				<integer>5</integer>
+				<integer>0</integer>
 				<key>withspace</key>
 				<true/>
 			</dict>
@@ -222,13 +261,13 @@ source scriptAlfred.sh $AlfredPrefsDirectory</string>
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>code $1</string>
+				<string>"$codeexec" "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
 				<string></string>
 				<key>type</key>
-				<integer>5</integer>
+				<integer>0</integer>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
@@ -266,6 +305,95 @@ source scriptAlfred.sh $AlfredPrefsDirectory</string>
 			<string>alfred.workflow.utility.conditional</string>
 			<key>uid</key>
 			<string>44F767AD-534D-4EED-B2BF-9C8F00A2B717</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{query}</string>
+				<key>passthroughargument</key>
+				<true/>
+				<key>variables</key>
+				<dict>
+					<key>codeexec</key>
+					<string>code</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>484DFE33-2719-466A-9343-89FEA0206698</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<true/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>insiders</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Getting repos...</string>
+				<key>script</key>
+				<string>./script.sh "$ReposDirectory"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>{var:ReposDirectory}</string>
+				<key>title</key>
+				<string>Visual Studio Code - Insiders</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>F8ED1979-E0AC-4D2A-9F29-A571570B4B88</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{query}</string>
+				<key>passthroughargument</key>
+				<true/>
+				<key>variables</key>
+				<dict>
+					<key>codeexec</key>
+					<string>code-insiders</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>A44FB821-EAC0-404F-BCCF-B98AA0191F2C</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -332,28 +460,42 @@ Very simple: Shows you your repos and opens the one you select in VSCode. If you
 		<key>2D4D86B7-C792-4719-80E2-24636CE39AB6</key>
 		<dict>
 			<key>xpos</key>
-			<real>340</real>
+			<real>450</real>
 			<key>ypos</key>
 			<real>60</real>
 		</dict>
 		<key>44F767AD-534D-4EED-B2BF-9C8F00A2B717</key>
 		<dict>
 			<key>xpos</key>
-			<real>245</real>
+			<real>355</real>
 			<key>ypos</key>
 			<real>95</real>
+		</dict>
+		<key>484DFE33-2719-466A-9343-89FEA0206698</key>
+		<dict>
+			<key>xpos</key>
+			<real>240</real>
+			<key>ypos</key>
+			<real>120</real>
 		</dict>
 		<key>6F935E0D-533D-4E71-A29C-56D67F8FE1DC</key>
 		<dict>
 			<key>xpos</key>
-			<real>585</real>
+			<real>695</real>
 			<key>ypos</key>
 			<real>90</real>
+		</dict>
+		<key>A44FB821-EAC0-404F-BCCF-B98AA0191F2C</key>
+		<dict>
+			<key>xpos</key>
+			<real>240</real>
+			<key>ypos</key>
+			<real>345</real>
 		</dict>
 		<key>AEE5C596-CE3C-4ADB-9432-87409B38AF84</key>
 		<dict>
 			<key>xpos</key>
-			<real>410</real>
+			<real>520</real>
 			<key>ypos</key>
 			<real>15</real>
 		</dict>
@@ -364,14 +506,21 @@ Very simple: Shows you your repos and opens the one you select in VSCode. If you
 			<key>xpos</key>
 			<real>75</real>
 			<key>ypos</key>
-			<real>75</real>
+			<real>90</real>
 		</dict>
 		<key>EC82745D-E5E3-4698-9D32-F11C00E621E4</key>
 		<dict>
 			<key>xpos</key>
 			<real>75</real>
 			<key>ypos</key>
-			<real>295</real>
+			<real>440</real>
+		</dict>
+		<key>F8ED1979-E0AC-4D2A-9F29-A571570B4B88</key>
+		<dict>
+			<key>xpos</key>
+			<real>75</real>
+			<key>ypos</key>
+			<real>315</real>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
