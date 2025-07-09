@@ -2,13 +2,13 @@
 
 # Screenshot to temporary file
 f=$(mktemp)
-screencapture -ix $f
+screencapture -ix "$f"
 
 # Exit on zero-size file
-[ -s $f ] || exit 1
+[ -s "$f" ] || exit 1
 
 # Return file
-echo $f
+echo "$f"
 
 # Exit
 exit 0
