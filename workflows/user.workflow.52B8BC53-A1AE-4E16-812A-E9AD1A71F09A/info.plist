@@ -51,7 +51,7 @@
 	<key>description</key>
 	<string>Copies Russian text to the clipboard</string>
 	<key>disabled</key>
-	<true/>
+	<false/>
 	<key>name</key>
 	<string>Russian Copy</string>
 	<key>objects</key>
@@ -185,7 +185,27 @@ Nice little utility for copying Russian text via OCR. Just invoke the keystroke,
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
-	<array/>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<false/>
+				<key>required</key>
+				<false/>
+				<key>text</key>
+				<string>Enable lowercasing</string>
+			</dict>
+			<key>description</key>
+			<string>If checked, everything copied gets lowercased.</string>
+			<key>label</key>
+			<string>Lowercase</string>
+			<key>type</key>
+			<string>checkbox</string>
+			<key>variable</key>
+			<string>lowercase</string>
+		</dict>
+	</array>
 	<key>version</key>
 	<string>1.0.0</string>
 	<key>webaddress</key>
