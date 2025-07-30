@@ -10,7 +10,7 @@ from typing import Any, Dict
 
 # Get crate source directory
 d_src = Path(
-    "/Users/cadnza/.cargo/registry/src"
+    f"{os.getenv("HOME")}/.cargo/registry/src"
 )
 d_crates = Path(
     d_src / [
