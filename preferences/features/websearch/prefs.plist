@@ -30,6 +30,17 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>4CF1E08E-1860-49EF-8A17-136137218DAE</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>crate</string>
+			<key>text</key>
+			<string>Search Docs.rs for `{query}`</string>
+			<key>url</key>
+			<string>https://docs.rs/{query}</string>
+		</dict>
 		<key>5B508A4E-5799-43E6-9F9A-6B15E5312768</key>
 		<dict>
 			<key>enabled</key>
