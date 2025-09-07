@@ -10,7 +10,7 @@ from typing import Any, Dict
 
 # Get crate source directory
 d_src = Path(
-    f"{os.getenv("HOME")}/.cargo/registry/src"
+    f"{os.getenv('HOME')}/.cargo/registry/src"
 )
 d_crates = Path(
     d_src / [
@@ -28,11 +28,11 @@ def parse_toml(path: Path) -> Dict[str, Any]:
     with open(path, "rb") as f:
         data = tomllib.load(f)
         pkg = data["package"]
-        url = f"https://docs.rs/{pkg["name"]}/{pkg["version"]}"
+        url = f"https://docs.rs/{pkg['name']}/{pkg['version']}"
         return {
             "uid": pkg["name"] + pkg["version"],
             "title": pkg["name"],
-            "subtitle": f"{pkg["version"]} - {pkg["description"]}",
+            "subtitle": f"{pkg['version']} - {pkg['description']}",
             "arg": url,
             "icon": {
                 "path": "icon.png"
