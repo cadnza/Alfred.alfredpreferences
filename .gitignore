@@ -1,3 +1,4 @@
 .DS_Store
 /preferences/local/
 */*-LOCAL/*
+workflows/*/common
