@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Symlinks an item at runtime and tracks its reference such that it gets relinked when the destination changes.
+# Symlinks an item at runtime and tracks its reference such that it gets relinked when the destination changes
 
 set -e
 
