@@ -46,6 +46,4 @@ should_relink=0
     # Write path to cache
     echo "$path" >"$f_cache"
 
-    echo RELINKED >&2 # TODO: Remove
-
 }
