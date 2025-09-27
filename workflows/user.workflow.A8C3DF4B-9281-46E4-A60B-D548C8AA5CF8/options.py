@@ -87,12 +87,10 @@ output: ScriptFilterJson = {
         {
             "title": repo.name,
             "subtitle": str(repo),
-            "arg": [
-                str(repo),
-                "is_alfred"
-                if repo.name == "Alfred.alfredpreferences"
-                else "not_alfred",
-            ],
+            "arg": str(repo),
+            "variables": {
+                "is_alfred": "1" if repo.name == "Alfred.alfredpreferences" else "0",
+            },
             "icon": {"path": str(repo), "type": "fileicon"},
         }
         for repo in repos
