@@ -2,3 +2,4 @@
 /preferences/local/
 */*-LOCAL/*
 workflows/*/common
+__pycache__/
