@@ -22,7 +22,7 @@ class _IconFileIcon(TypedDict):
 class _IconFileType(TypedDict):
     """An icon of a filetype given by a UTI (Uniform Type Identifier)."""
 
-    path: str
+    path: Path
     type: Literal["filetype"]
 
 
