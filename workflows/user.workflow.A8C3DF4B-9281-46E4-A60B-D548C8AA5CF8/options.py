@@ -12,7 +12,7 @@ from common.write import err
 from universal import EditorId
 
 # Define usage string and exit function
-usage = f"options.py [{'|'.join(get_args(EditorId))}]"
+usage = f"options.py DIRECTORY [{'|'.join(get_args(EditorId))}]"
 
 
 def stop() -> NoReturn:
