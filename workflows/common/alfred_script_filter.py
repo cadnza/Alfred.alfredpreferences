@@ -2,27 +2,26 @@
 
 import json
 import sys
-from pathlib import Path
 from typing import Literal, NoReturn, NotRequired, TypedDict, Union
 
 
 class _IconNoType(TypedDict):
     """An icon without a type."""
 
-    path: Path
+    path: str
 
 
 class _IconFileIcon(TypedDict):
     """An icon defaulting to the icon of a filepath."""
 
-    path: Path
+    path: str
     type: Literal["fileicon"]
 
 
 class _IconFileType(TypedDict):
     """An icon of a filetype given by a UTI (Uniform Type Identifier)."""
 
-    path: Path
+    path: str
     type: Literal["filetype"]
 
 
@@ -84,8 +83,8 @@ class _Action(TypedDict):
 
     text: NotRequired[Union[str, list[str]]]
     url: NotRequired[str]
-    tile: NotRequired[Path]
-    auto: NotRequired[Union[str, list[str], Path]]
+    tile: NotRequired[str]
+    auto: NotRequired[Union[str, list[str]]]
 
 
 class _Text(TypedDict):
@@ -117,7 +116,7 @@ class _Item(TypedDict):
     mods: NotRequired[list[_Mod]]
     action: NotRequired[Union[str, list[str], _Action]]
     text: NotRequired[_Text]
-    quicklookurl: NotRequired[Union[str, Path]]
+    quicklookurl: NotRequired[str]
     variables: NotRequired[_Variables]
 
 
