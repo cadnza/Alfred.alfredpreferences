@@ -9,7 +9,7 @@ from typing import NoReturn, cast, get_args
 
 from common.alfred_script_filter import ScriptFilterJson, send
 from common.write import err
-from utility import EditorId
+from utility import EditorId, RepoModifier
 
 # Define usage string and exit function
 usage = f"options.py DIRECTORY [{'|'.join(get_args(EditorId))}]"
@@ -77,6 +77,11 @@ match id_editor:
             )
 
 
+def repo_modifier(x: RepoModifier) -> RepoModifier:
+    """Return a repo modifier (for type checking)."""
+    return x
+
+
 # Prepare Alfred output
 repos = [repo for repo in [Path(p) for p in Path.iterdir(dir_repos)] if repo.is_dir()]
 output: ScriptFilterJson = {
@@ -89,7 +94,13 @@ output: ScriptFilterJson = {
             "subtitle": str(repo),
             "arg": str(repo),
             "variables": {
-                "is_alfred": "1" if repo.name == "Alfred.alfredpreferences" else "0",
+                "repo_modifiers": ",".join(
+                    [
+                        repo_modifier("alfred")
+                        if repo.name == "Alfred.alfredpreferences"
+                        else repo_modifier("none"),
+                    ],
+                ),
             },
             "icon": {"path": str(repo), "type": "fileicon"},
         }

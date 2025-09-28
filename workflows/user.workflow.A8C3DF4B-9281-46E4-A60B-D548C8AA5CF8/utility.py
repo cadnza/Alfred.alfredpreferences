@@ -10,3 +10,8 @@ EditorId = Literal[
     "zed",  # Zed
     "xc",  # Xcode
 ]
+
+RepoModifier = Literal[
+    "alfred",
+    "none",
+]
