@@ -5,26 +5,15 @@
 import re
 import sys
 from pathlib import Path
-from typing import NoReturn, cast, get_args
+from typing import cast, get_args
 
 from common.alfred_script_filter import ScriptFilterJson, send
+from common.usage import usage
 from common.write import err
 from utility import REPO_MODIFIERS_SEPARATOR, EditorId, RepoModifier
 
 # Define usage string and exit function
-usage = f"options.py DIRECTORY [{'|'.join(get_args(EditorId))}]"
-
-
-def stop() -> NoReturn:
-    """Print usage and exit."""
-    err(usage)
-    sys.exit(1)
-
-
-# Validate argument count
-n_args = 3
-if len(sys.argv) != n_args:
-    stop()
+usage, stop = usage(f"options.py DIRECTORY [{'|'.join(get_args(EditorId))}]", 2)
 
 # Assign ad validate directory argument
 dir_repos = Path(sys.argv[1])
