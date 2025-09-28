@@ -44,7 +44,13 @@ match id_editor:
             check=True,
         )
     case "insiders":
-        pass  # TODO: Implement
+        subprocess.run(  # noqa: S603
+            [
+                "/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/bin/code",  # noqa: E501
+                repo,
+            ],
+            check=True,
+        )
     case "rstudio":
         pass  # TODO: Implement
     case "positron":
