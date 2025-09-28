@@ -7,15 +7,13 @@ import sys
 from typing import cast, get_args
 
 from common.validation import one_of, usage, zero_or_many_of
-from common.write import err
 from utility import REPO_MODIFIERS_SEPARATOR, EditorId, RepoModifier
-
-err(sys.argv)
 
 # Define usage string and exit function
 usage, stop = usage(
-    f"{one_of(EditorId)} {zero_or_many_of(RepoModifier)} REPO",
-    3,
+    one_of(EditorId),
+    zero_or_many_of(RepoModifier),
+    "REPO",
 )
 
 # Assign editor ID argument

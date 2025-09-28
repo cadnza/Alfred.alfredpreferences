@@ -13,7 +13,7 @@ from common.write import err
 from utility import REPO_MODIFIERS_SEPARATOR, EditorId, RepoModifier
 
 # Define usage string and exit function
-usage, stop = usage(f"DIRECTORY {one_of(EditorId)}", 2)
+usage, stop = usage("DIRECTORY", one_of(EditorId))
 
 # Assign ad validate directory argument
 dir_repos = Path(sys.argv[1])

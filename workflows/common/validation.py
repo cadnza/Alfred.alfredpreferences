@@ -13,15 +13,17 @@ from .write import err
 
 
 def usage(
-    string: str,
-    n_args_expected: int,
+    *args: str,
+    # n_args_expected: int,
 ) -> tuple[str, Callable[[], NoReturn]]:
     """Return a usage string and a function meant to show it and exit."""
-    string_updated = f"{Path(sys.argv[0]).name} {string}"
+    string_updated = f"{Path(sys.argv[0]).name} {' '.join(args)}"
 
     def show_usage_and_exit() -> NoReturn:
         err(string_updated)
         sys.exit(1)
+
+    n_args_expected = len(args)
 
     if len(sys.argv) != n_args_expected + 1:
         show_usage_and_exit()
