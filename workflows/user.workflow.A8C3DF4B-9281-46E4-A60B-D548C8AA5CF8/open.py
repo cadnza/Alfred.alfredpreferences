@@ -47,11 +47,11 @@ match id_editor:
         )
     case "insiders":
         pass  # TODO: Implement
-    case "rs":
+    case "rstudio":
         pass  # TODO: Implement
-    case "pt":
+    case "positron":
         pass  # TODO: Implement
     case "zed":
         pass  # TODO: Implement
-    case "xc":
+    case "xcode":
         pass  # TODO: Implement

@@ -36,9 +36,9 @@ match id_editor:
         filter_repo = lambda x: True  # noqa: ARG005
     case "insiders":
         filter_repo = lambda x: True  # noqa: ARG005
-    case "pt":
+    case "positron":
         filter_repo = lambda x: True  # noqa: ARG005
-    case "rs":
+    case "rstudio":
 
         def filter_repo(x: Path) -> bool:  # noqa: D103
             return bool(
@@ -50,7 +50,7 @@ match id_editor:
             )
     case "zed":
         filter_repo = lambda x: True  # noqa: ARG005
-    case "xc":
+    case "xcode":
 
         def filter_repo(x: Path) -> bool:  # noqa: D103
             return bool(

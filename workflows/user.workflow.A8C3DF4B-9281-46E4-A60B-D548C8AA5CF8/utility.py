@@ -5,10 +5,10 @@ from typing import Literal
 EditorId = Literal[
     "code",  # Visual Studio Code
     "insiders",  # Visual Studio Code - Insiders
-    "pt",  # Positron
-    "rs",  # RStudio
+    "positron",  # Positron
+    "rstudio",  # RStudio
     "zed",  # Zed
-    "xc",  # Xcode
+    "xcode",  # Xcode
 ]
 """
 An ID representing a specific editor.
