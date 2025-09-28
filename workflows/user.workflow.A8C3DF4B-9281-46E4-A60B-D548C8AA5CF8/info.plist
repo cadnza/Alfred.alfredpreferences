@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.cadnza.alfredOpenRepo</string>
+	<key>connections</key>
+	<dict>
+		<key>5BB39F00-618B-4AE1-8CFB-78F9BC1B56B4</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>45EABA07-AE80-4062-8A3E-D025EAEB35B5</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Jon Dayley</string>
+	<key>description</key>
+	<string>Opens a repo in a given editor</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Open Repo</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>./open.py "$id_editor" "$repo_modifiers" "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>45EABA07-AE80-4062-8A3E-D025EAEB35B5</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<true/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>testing</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>{var:PLEASE_WAIT_SUBTEXT}</string>
+				<key>script</key>
+				<string>[ -d common ] || ln -s "$(realpath ../common)" .
+./common/link.sh 5BB39F00-618B-4AE1-8CFB-78F9BC1B56B4.png "/Applications/Visual Studio Code.app/Contents/Resources/Code.icns"
+./options.py "$REPOS_DIRECTORY" code</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>{var:REPOS_DIRECTORY}</string>
+				<key>title</key>
+				<string>{var:PLACEHOLDER_SUBTEXT_PREFIX} Visual Studio Code</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>5BB39F00-618B-4AE1-8CFB-78F9BC1B56B4</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>45EABA07-AE80-4062-8A3E-D025EAEB35B5</key>
+		<dict>
+			<key>xpos</key>
+			<real>275</real>
+			<key>ypos</key>
+			<real>40</real>
+		</dict>
+		<key>5BB39F00-618B-4AE1-8CFB-78F9BC1B56B4</key>
+		<dict>
+			<key>xpos</key>
+			<real>45</real>
+			<key>ypos</key>
+			<real>40</real>
+		</dict>
+	</dict>
+	<key>userconfigurationconfig</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string></string>
+				<key>filtermode</key>
+				<integer>1</integer>
+				<key>placeholder</key>
+				<string>Directory</string>
+				<key>required</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>A directory holding code repos</string>
+			<key>label</key>
+			<string>Repos directory</string>
+			<key>type</key>
+			<string>filepicker</string>
+			<key>variable</key>
+			<string>REPOS_DIRECTORY</string>
+		</dict>
+	</array>
+	<key>variables</key>
+	<dict>
+		<key>PLACEHOLDER_SUBTEXT_PREFIX</key>
+		<string>Open in</string>
+		<key>PLEASE_WAIT_SUBTEXT</key>
+		<string>Getting repos...</string>
+	</dict>
+	<key>version</key>
+	<string></string>
+	<key>webaddress</key>
+	<string>https://github.com/cadnza</string>
+</dict>
+</plist>
