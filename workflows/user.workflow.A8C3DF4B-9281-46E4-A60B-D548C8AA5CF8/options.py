@@ -9,7 +9,7 @@ from typing import NoReturn, cast, get_args
 
 from common.alfred_script_filter import ScriptFilterJson, send
 from common.write import err
-from universal import EditorId
+from utility import EditorId
 
 # Define usage string and exit function
 usage = f"options.py DIRECTORY [{'|'.join(get_args(EditorId))}]"
