@@ -9,7 +9,7 @@ from typing import NoReturn, cast, get_args
 
 from common.alfred_script_filter import ScriptFilterJson, send
 from common.write import err
-from utility import EditorId, RepoModifier
+from utility import REPO_MODIFIERS_SEPARATOR, EditorId, RepoModifier
 
 # Define usage string and exit function
 usage = f"options.py DIRECTORY [{'|'.join(get_args(EditorId))}]"
@@ -94,7 +94,7 @@ output: ScriptFilterJson = {
             "subtitle": str(repo),
             "arg": str(repo),
             "variables": {
-                "repo_modifiers": ",".join(
+                "repo_modifiers": REPO_MODIFIERS_SEPARATOR.join(
                     [
                         repo_modifier("alfred")
                         if repo.name == "Alfred.alfredpreferences"
