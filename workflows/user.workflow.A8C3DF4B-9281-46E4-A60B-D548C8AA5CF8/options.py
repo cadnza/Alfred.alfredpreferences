@@ -81,7 +81,6 @@ output: ScriptFilterJson = {
         {
             "title": repo.name,
             "subtitle": str(repo),
-            "arg": str(repo),
             "variables": {
                 "repo_modifiers": REPO_MODIFIERS_SEPARATOR.join(
                     [
@@ -90,6 +89,7 @@ output: ScriptFilterJson = {
                         else repo_modifier("none"),
                     ],
                 ),
+                "repo": str(repo),
             },
             "icon": {"path": str(repo), "type": "fileicon"},
         }

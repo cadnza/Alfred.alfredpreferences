@@ -38,7 +38,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>./open.py "$id_editor" "$repo_modifiers" "$1"</string>
+				<string>./open.py "$id_editor" "$repo_modifiers" "$repo"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
