@@ -91,7 +91,7 @@
 				<key>subtext</key>
 				<string>{var:REPOS_DIRECTORY}</string>
 				<key>title</key>
-				<string>{var:PLACEHOLDER_SUBTEXT_PREFIX} Visual Studio Code</string>
+				<string>{var:PLACEHOLDER_SUBTEXT_PREFIX}Visual Studio Code{var:PLACEHOLDER_SUBTEXT_POSTFIX}</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
@@ -150,8 +150,10 @@
 	</array>
 	<key>variables</key>
 	<dict>
+		<key>PLACEHOLDER_SUBTEXT_POSTFIX</key>
+		<string></string>
 		<key>PLACEHOLDER_SUBTEXT_PREFIX</key>
-		<string>Open in</string>
+		<string>Open in </string>
 		<key>PLEASE_WAIT_SUBTEXT</key>
 		<string>Getting repos...</string>
 	</dict>
