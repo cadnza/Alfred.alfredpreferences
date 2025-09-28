@@ -6,7 +6,6 @@ EditorId = Literal[
     "code",  # Visual Studio Code
     "insiders",  # Visual Studio Code - Insiders
     "positron",  # Positron
-    "rstudio",  # RStudio
     "zed",  # Zed
     "xcode",  # Xcode
 ]

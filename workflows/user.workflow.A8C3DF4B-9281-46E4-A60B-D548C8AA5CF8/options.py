@@ -38,16 +38,15 @@ match id_editor:
         filter_repo = lambda x: True  # noqa: ARG005
     case "positron":
         filter_repo = lambda x: True  # noqa: ARG005
-    case "rstudio":
-
-        def filter_repo(x: Path) -> bool:  # noqa: D103
-            return bool(
-                [
-                    p
-                    for p in x.iterdir()
-                    if re.search(r"\.rproj$", str(p), re.IGNORECASE)
-                ],
-            )
+    # case "rstudio":
+    #     def filter_repo(x: Path) -> bool:
+    #         return bool(
+    #             [
+    #                 p
+    #                 for p in x.iterdir()
+    #                 if re.search(r"\.rproj$", str(p), re.IGNORECASE)
+    #             ],
+    #         )
     case "zed":
         filter_repo = lambda x: True  # noqa: ARG005
     case "xcode":

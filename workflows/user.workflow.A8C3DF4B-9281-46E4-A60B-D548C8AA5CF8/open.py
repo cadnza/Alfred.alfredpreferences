@@ -51,11 +51,29 @@ match id_editor:
             ],
             check=True,
         )
-    case "rstudio":
-        pass  # TODO: Implement
     case "positron":
-        pass  # TODO: Implement
+        subprocess.run(  # noqa: S603
+            [
+                "/Applications/Positron.app/Contents/Resources/app/bin/code",
+                repo,
+            ],
+            check=True,
+        )
     case "zed":
-        pass  # TODO: Implement
+        subprocess.run(  # noqa: S603
+            [
+                "/Applications/Zed.app/Contents/MacOS/cli",
+                repo,
+            ],
+            check=True,
+        )
     case "xcode":
-        pass  # TODO: Implement
+        subprocess.run(  # noqa: S603
+            [
+                "/usr/bin/open",
+                "-a",
+                "/Applications/Xcode.app",
+                repo,
+            ],
+            check=True,
+        )
