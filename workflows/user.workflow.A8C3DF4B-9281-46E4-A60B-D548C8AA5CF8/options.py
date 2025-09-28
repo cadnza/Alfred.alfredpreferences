@@ -8,12 +8,12 @@ from pathlib import Path
 from typing import cast, get_args
 
 from common.alfred_script_filter import ScriptFilterJson, send
-from common.usage import usage
+from common.usage import one_of, usage
 from common.write import err
 from utility import REPO_MODIFIERS_SEPARATOR, EditorId, RepoModifier
 
 # Define usage string and exit function
-usage, stop = usage(f"options.py DIRECTORY [{'|'.join(get_args(EditorId))}]", 2)
+usage, stop = usage(f"DIRECTORY {one_of(EditorId)}", 2)
 
 # Assign ad validate directory argument
 dir_repos = Path(sys.argv[1])
