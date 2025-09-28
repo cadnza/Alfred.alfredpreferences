@@ -10,7 +10,7 @@ from common.validation import one_of, usage, zero_or_many_of
 from utility import REPO_MODIFIERS_SEPARATOR, EditorId, RepoModifier
 
 # Define usage string and exit function
-usage, stop = usage(
+u, stop = usage(
     one_of(EditorId),
     zero_or_many_of(RepoModifier),
     "REPO",
