@@ -6,7 +6,7 @@ import subprocess
 import sys
 from typing import cast, get_args
 
-from common.usage import one_of, usage, zero_or_many_of
+from common.validation import one_of, usage, zero_or_many_of
 from common.write import err
 from utility import REPO_MODIFIERS_SEPARATOR, EditorId, RepoModifier
 

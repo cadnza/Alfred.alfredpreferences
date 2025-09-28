@@ -8,7 +8,7 @@ from pathlib import Path
 from typing import cast, get_args
 
 from common.alfred_script_filter import ScriptFilterJson, send
-from common.usage import one_of, usage
+from common.validation import one_of, usage
 from common.write import err
 from utility import REPO_MODIFIERS_SEPARATOR, EditorId, RepoModifier
 
