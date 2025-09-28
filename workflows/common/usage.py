@@ -24,11 +24,11 @@ def usage(
     return (string_updated, show_usage_and_exit)
 
 
-def one_of(t: Any) -> str:
+def one_of(t: Any) -> str:  # noqa: ANN401
     """Return type variants as a one-of string for usage."""
     return f"[{'|'.join(get_args(t))}]"
 
 
-def zero_or_many_of(t: Any) -> str:
+def zero_or_many_of(t: Any) -> str:  # noqa: ANN401
     """Return type variants as a zero-or-many-of string for usage."""
     return f"[{','.join(get_args(t))}]"
