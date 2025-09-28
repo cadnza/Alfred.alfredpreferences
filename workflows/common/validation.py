@@ -2,7 +2,12 @@
 
 import sys
 from pathlib import Path
-from typing import Any, Callable, NoReturn, get_args
+from typing import (
+    Any,
+    Callable,
+    NoReturn,
+    get_args,
+)
 
 from .write import err
 
