@@ -9,6 +9,7 @@ class _IconNoType(TypedDict):
     """An icon without a type."""
 
     path: str
+    type: NotRequired[Literal[""]]
 
 
 class _IconFileIcon(TypedDict):
