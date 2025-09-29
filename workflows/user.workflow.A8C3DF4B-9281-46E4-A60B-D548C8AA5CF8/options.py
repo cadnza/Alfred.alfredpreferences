@@ -157,7 +157,6 @@ output: ScriptFilterJson = {
                     },
                     if_alfred_workflow=lambda: {
                         "path": str(repo / "icon.png"),  # noqa: B023
-                        "type": "",
                     },
                 ),
             ),
