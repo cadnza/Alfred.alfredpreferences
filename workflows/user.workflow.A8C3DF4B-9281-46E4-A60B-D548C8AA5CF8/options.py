@@ -106,6 +106,7 @@ output: ScriptFilterJson = {
     },
     "items": [
         {
+            "uid": str(repo),
             "title": condition_on_alfred(
                 if_vanilla_repo=repo.name,
                 if_alfred_workflow=get_workflow_plist_value,
