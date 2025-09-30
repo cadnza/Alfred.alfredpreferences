@@ -186,13 +186,13 @@
 				<array>
 					<dict>
 						<key>inputstring</key>
-						<string>{var:ALFRED_REPO_NAME}</string>
+						<string>{var:repoName}</string>
 						<key>matchcasesensitive</key>
 						<true/>
 						<key>matchmode</key>
 						<integer>0</integer>
 						<key>matchstring</key>
-						<string>Alfred.preferences</string>
+						<string>{var:ALFRED_REPO_NAME}</string>
 						<key>outputlabel</key>
 						<string>alfred</string>
 						<key>uid</key>
@@ -551,7 +551,7 @@
 	<key>variables</key>
 	<dict>
 		<key>ALFRED_REPO_NAME</key>
-		<string>Alfred.preferences</string>
+		<string>Alfred.alfredpreferences</string>
 		<key>PLACEHOLDER_SUBTEXT_POSTFIX</key>
 		<string></string>
 		<key>PLACEHOLDER_SUBTEXT_PREFIX</key>

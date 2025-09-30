@@ -2,6 +2,7 @@
 
 """Provides options to Alfred."""
 
+import os
 import re
 import sys
 from pathlib import Path
@@ -71,7 +72,7 @@ match id_editor:
 
 
 # Decide whether this is the Alfred folder
-is_alfred = dir_repos.name == "Alfred.alfredpreferences"
+is_alfred = dir_repos.name == os.environ["ALFRED_REPO_NAME"]
 
 P = ParamSpec("P")
 T = TypeVar("T")
@@ -97,7 +98,6 @@ repos = (
     if is_alfred
     else [repo for repo in [Path(p) for p in Path.iterdir(dir_repos)] if repo.is_dir()]
 )
-
 
 # Prepare Alfred output
 output: ScriptFilterJson = {
