@@ -333,7 +333,7 @@
 				<key>script</key>
 				<string>[ -d common ] || ln -s "$(realpath ../common)" .
 ./common/link.sh EBE331B8-3E3E-46D9-8E4D-269D4E13C10D.png "/System/Volumes/Data/Applications/Visual Studio Code - Insiders.app/Contents/Resources/Code - Insiders.icns"
-./options.py "$REPOS_DIRECTORY" code</string>
+./options.py "$REPOS_DIRECTORY" insiders</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -384,7 +384,7 @@
 				<key>script</key>
 				<string>[ -d common ] || ln -s "$(realpath ../common)" .
 ./common/link.sh A9E2CEB4-2BE0-49A1-90CE-F26BAABA8A35.png "/System/Volumes/Data/Applications/Zed.app/Contents/Resources/Zed.icns"
-./options.py "$REPOS_DIRECTORY" code</string>
+./options.py "$REPOS_DIRECTORY" zed</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -435,7 +435,7 @@
 				<key>script</key>
 				<string>[ -d common ] || ln -s "$(realpath ../common)" .
 ./common/link.sh 9C591B63-703B-4CD4-8C38-6DCDBF6C0AB7.png "/Applications/Positron.app/Contents/Resources/Positron.icns"
-./options.py "$REPOS_DIRECTORY" code</string>
+./options.py "$REPOS_DIRECTORY" positron</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -486,7 +486,7 @@
 				<key>script</key>
 				<string>[ -d common ] || ln -s "$(realpath ../common)" .
 ./common/link.sh 9587F691-4F03-4681-8E6A-44E8CFB54D4E.png "/Applications/Xcode.app/Contents/Resources/Xcode.icns"
-./options.py "$REPOS_DIRECTORY" code</string>
+./options.py "$REPOS_DIRECTORY" xcode</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
