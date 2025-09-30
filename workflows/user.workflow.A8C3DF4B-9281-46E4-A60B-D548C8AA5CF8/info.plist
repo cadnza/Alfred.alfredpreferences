@@ -341,7 +341,7 @@
 				<key>subtext</key>
 				<string>{var:REPOS_DIRECTORY}</string>
 				<key>title</key>
-				<string>{var:PLACEHOLDER_SUBTEXT_PREFIX}Visual Studio Code{var:PLACEHOLDER_SUBTEXT_POSTFIX}</string>
+				<string>{var:PLACEHOLDER_SUBTEXT_PREFIX}Visual Studio Code - Insiders{var:PLACEHOLDER_SUBTEXT_POSTFIX}</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
@@ -392,7 +392,7 @@
 				<key>subtext</key>
 				<string>{var:REPOS_DIRECTORY}</string>
 				<key>title</key>
-				<string>{var:PLACEHOLDER_SUBTEXT_PREFIX}Visual Studio Code{var:PLACEHOLDER_SUBTEXT_POSTFIX}</string>
+				<string>{var:PLACEHOLDER_SUBTEXT_PREFIX}Zed{var:PLACEHOLDER_SUBTEXT_POSTFIX}</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
@@ -443,7 +443,7 @@
 				<key>subtext</key>
 				<string>{var:REPOS_DIRECTORY}</string>
 				<key>title</key>
-				<string>{var:PLACEHOLDER_SUBTEXT_PREFIX}Visual Studio Code{var:PLACEHOLDER_SUBTEXT_POSTFIX}</string>
+				<string>{var:PLACEHOLDER_SUBTEXT_PREFIX}Positron{var:PLACEHOLDER_SUBTEXT_POSTFIX}</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
@@ -494,7 +494,7 @@
 				<key>subtext</key>
 				<string>{var:REPOS_DIRECTORY}</string>
 				<key>title</key>
-				<string>{var:PLACEHOLDER_SUBTEXT_PREFIX}Visual Studio Code{var:PLACEHOLDER_SUBTEXT_POSTFIX}</string>
+				<string>{var:PLACEHOLDER_SUBTEXT_PREFIX}Xcode{var:PLACEHOLDER_SUBTEXT_POSTFIX}</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
