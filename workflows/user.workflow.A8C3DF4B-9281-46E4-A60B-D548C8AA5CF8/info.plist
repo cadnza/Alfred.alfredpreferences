@@ -93,6 +93,57 @@
 				<key>argumenttrimmode</key>
 				<integer>0</integer>
 				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>code</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>{var:PLEASE_WAIT_SUBTEXT}</string>
+				<key>script</key>
+				<string>[ -d common ] || ln -s "$(realpath ../common)" .
+./common/link.sh 5BB39F00-618B-4AE1-8CFB-78F9BC1B56B4.png "/Applications/Visual Studio Code.app/Contents/Resources/Code.icns"
+./options.py "$REPOS_DIRECTORY" code</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>{var:REPOS_DIRECTORY}</string>
+				<key>title</key>
+				<string>{var:PLACEHOLDER_SUBTEXT_PREFIX}Visual Studio Code{var:PLACEHOLDER_SUBTEXT_POSTFIX}</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>5BB39F00-618B-4AE1-8CFB-78F9BC1B56B4</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<true/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
 				<integer>2</integer>
 				<key>escaping</key>
 				<integer>102</integer>
@@ -125,6 +176,129 @@
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
 			<string>52D8A25D-EECE-4CD9-BE57-B0600D53FE5C</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:ALFRED_REPO_NAME}</string>
+						<key>matchcasesensitive</key>
+						<true/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string>Alfred.preferences</string>
+						<key>outputlabel</key>
+						<string>alfred</string>
+						<key>uid</key>
+						<string>FC8447AA-8C0B-47A6-A030-ED51499E6016</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>no alfred</string>
+				<key>hideelse</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>7492476F-E800-4942-B9BF-469CDE066EB7</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>3A8CE97A-CDFC-4FC7-B14C-B545C7E28678</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>./open.py "$id_editor" "$repo"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>45EABA07-AE80-4062-8A3E-D025EAEB35B5</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<true/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>code</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>{var:PLEASE_WAIT_SUBTEXT}</string>
+				<key>script</key>
+				<string>[ -d common ] || ln -s "$(realpath ../common)" .
+./common/link.sh 5BB39F00-618B-4AE1-8CFB-78F9BC1B56B4.png "/Applications/Visual Studio Code.app/Contents/Resources/Code.icns"
+./options.py "$REPOS_DIRECTORY" code</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>{var:REPOS_DIRECTORY}</string>
+				<key>title</key>
+				<string>{var:PLACEHOLDER_SUBTEXT_PREFIX}Visual Studio Code{var:PLACEHOLDER_SUBTEXT_POSTFIX}</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>EBE331B8-3E3E-46D9-8E4D-269D4E13C10D</string>
 			<key>version</key>
 			<integer>3</integer>
 		</dict>
@@ -175,81 +349,111 @@
 			<key>type</key>
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
-			<string>5BB39F00-618B-4AE1-8CFB-78F9BC1B56B4</string>
+			<string>A9E2CEB4-2BE0-49A1-90CE-F26BAABA8A35</string>
 			<key>version</key>
 			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>conditions</key>
-				<array>
-					<dict>
-						<key>inputstring</key>
-						<string>{var:repo_modifiers}</string>
-						<key>matchcasesensitive</key>
-						<true/>
-						<key>matchmode</key>
-						<integer>4</integer>
-						<key>matchstring</key>
-						<string>(?&lt;![A-Za-z])alfred(?![A-Za-z])</string>
-						<key>outputlabel</key>
-						<string>alfred</string>
-						<key>uid</key>
-						<string>FC8447AA-8C0B-47A6-A030-ED51499E6016</string>
-					</dict>
-				</array>
-				<key>elselabel</key>
-				<string>no alfred</string>
-				<key>hideelse</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.conditional</string>
-			<key>uid</key>
-			<string>7492476F-E800-4942-B9BF-469CDE066EB7</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
-				<string></string>
-				<key>passthroughargument</key>
-				<false/>
-				<key>variables</key>
-				<dict/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>3A8CE97A-CDFC-4FC7-B14C-B545C7E28678</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
+				<key>alfredfiltersresults</key>
+				<true/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
 				<key>escaping</key>
 				<integer>102</integer>
+				<key>keyword</key>
+				<string>code</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>{var:PLEASE_WAIT_SUBTEXT}</string>
 				<key>script</key>
-				<string>./open.py "$id_editor" "$repo_modifiers" "$repo"</string>
+				<string>[ -d common ] || ln -s "$(realpath ../common)" .
+./common/link.sh 5BB39F00-618B-4AE1-8CFB-78F9BC1B56B4.png "/Applications/Visual Studio Code.app/Contents/Resources/Code.icns"
+./options.py "$REPOS_DIRECTORY" code</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
 				<string></string>
+				<key>subtext</key>
+				<string>{var:REPOS_DIRECTORY}</string>
+				<key>title</key>
+				<string>{var:PLACEHOLDER_SUBTEXT_PREFIX}Visual Studio Code{var:PLACEHOLDER_SUBTEXT_POSTFIX}</string>
 				<key>type</key>
 				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
-			<string>45EABA07-AE80-4062-8A3E-D025EAEB35B5</string>
+			<string>9C591B63-703B-4CD4-8C38-6DCDBF6C0AB7</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<true/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>code</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>{var:PLEASE_WAIT_SUBTEXT}</string>
+				<key>script</key>
+				<string>[ -d common ] || ln -s "$(realpath ../common)" .
+./common/link.sh 5BB39F00-618B-4AE1-8CFB-78F9BC1B56B4.png "/Applications/Visual Studio Code.app/Contents/Resources/Code.icns"
+./options.py "$REPOS_DIRECTORY" code</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>{var:REPOS_DIRECTORY}</string>
+				<key>title</key>
+				<string>{var:PLACEHOLDER_SUBTEXT_PREFIX}Visual Studio Code{var:PLACEHOLDER_SUBTEXT_POSTFIX}</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>9587F691-4F03-4681-8E6A-44E8CFB54D4E</string>
+			<key>version</key>
+			<integer>3</integer>
 		</dict>
 	</array>
 	<key>readme</key>
@@ -259,21 +463,21 @@
 		<key>3A8CE97A-CDFC-4FC7-B14C-B545C7E28678</key>
 		<dict>
 			<key>xpos</key>
-			<real>345</real>
+			<real>305</real>
 			<key>ypos</key>
 			<real>70</real>
 		</dict>
 		<key>45EABA07-AE80-4062-8A3E-D025EAEB35B5</key>
 		<dict>
 			<key>xpos</key>
-			<real>440</real>
+			<real>380</real>
 			<key>ypos</key>
-			<real>200</real>
+			<real>170</real>
 		</dict>
 		<key>52D8A25D-EECE-4CD9-BE57-B0600D53FE5C</key>
 		<dict>
 			<key>xpos</key>
-			<real>440</real>
+			<real>380</real>
 			<key>ypos</key>
 			<real>40</real>
 		</dict>
@@ -287,9 +491,37 @@
 		<key>7492476F-E800-4942-B9BF-469CDE066EB7</key>
 		<dict>
 			<key>xpos</key>
-			<real>225</real>
+			<real>200</real>
 			<key>ypos</key>
 			<real>60</real>
+		</dict>
+		<key>9587F691-4F03-4681-8E6A-44E8CFB54D4E</key>
+		<dict>
+			<key>xpos</key>
+			<real>50</real>
+			<key>ypos</key>
+			<real>670</real>
+		</dict>
+		<key>9C591B63-703B-4CD4-8C38-6DCDBF6C0AB7</key>
+		<dict>
+			<key>xpos</key>
+			<real>45</real>
+			<key>ypos</key>
+			<real>520</real>
+		</dict>
+		<key>A9E2CEB4-2BE0-49A1-90CE-F26BAABA8A35</key>
+		<dict>
+			<key>xpos</key>
+			<real>45</real>
+			<key>ypos</key>
+			<real>360</real>
+		</dict>
+		<key>EBE331B8-3E3E-46D9-8E4D-269D4E13C10D</key>
+		<dict>
+			<key>xpos</key>
+			<real>45</real>
+			<key>ypos</key>
+			<real>170</real>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
@@ -318,6 +550,8 @@
 	</array>
 	<key>variables</key>
 	<dict>
+		<key>ALFRED_REPO_NAME</key>
+		<string>Alfred.preferences</string>
 		<key>PLACEHOLDER_SUBTEXT_POSTFIX</key>
 		<string></string>
 		<key>PLACEHOLDER_SUBTEXT_PREFIX</key>

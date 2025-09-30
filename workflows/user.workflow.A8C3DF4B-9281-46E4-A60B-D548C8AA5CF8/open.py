@@ -6,13 +6,12 @@ import subprocess
 import sys
 from typing import cast, get_args
 
-from common.validation import one_of, usage, zero_or_many_of
-from utility import REPO_MODIFIERS_SEPARATOR, EditorId, RepoModifier
+from common.validation import one_of, usage
+from utility import EditorId
 
 # Define usage string and exit function
 u, stop = usage(
     one_of(EditorId),
-    zero_or_many_of(RepoModifier),
     "REPO",
 )
 
@@ -22,16 +21,8 @@ if id_editor_raw not in get_args(EditorId):
     stop()
 id_editor: EditorId = cast("EditorId", id_editor_raw)
 
-# Assign repo modifiers
-repo_modifiers_raw: list[str] = sys.argv[2].split(REPO_MODIFIERS_SEPARATOR)
-if any(rm not in get_args(RepoModifier) for rm in repo_modifiers_raw):
-    stop()
-repo_modifiers: list[RepoModifier] = [
-    cast("RepoModifier", rm) for rm in repo_modifiers_raw
-]
-
 # Assign repo argument
-repo = sys.argv[3]
+repo = sys.argv[2]
 
 # Open repo
 match id_editor:

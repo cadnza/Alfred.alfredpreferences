@@ -15,7 +15,7 @@ from common.alfred_script_filter import (
 from common.alfred_workflow import get_workflow_plist_value
 from common.validation import one_of, usage
 from common.write import err
-from utility import REPO_MODIFIERS_SEPARATOR, EditorId, RepoModifier
+from utility import EditorId
 
 # Define usage string and exit function
 u, stop = usage("DIRECTORY", one_of(EditorId))
@@ -70,11 +70,6 @@ match id_editor:
             )
 
 
-def repo_modifier(x: RepoModifier) -> RepoModifier:
-    """Return a repo modifier (for type checking)."""
-    return x
-
-
 # Decide whether this is the Alfred folder
 is_alfred = dir_repos.name == "Alfred.alfredpreferences"
 
@@ -83,19 +78,13 @@ T = TypeVar("T")
 
 
 def condition_on_alfred(
-    repo_name: str,
     if_vanilla_repo: T,
-    if_common: T,
     if_alfred_workflow: Callable[P, T],
     *args: P.args,
     **kwargs: P.kwargs,
 ) -> T:
     """Retrieve a value conditionally on Alfred."""
-    return (
-        (if_common if repo_name == "common" else if_alfred_workflow(*args, **kwargs))
-        if is_alfred
-        else if_vanilla_repo
-    )
+    return if_alfred_workflow(*args, **kwargs) if is_alfred else if_vanilla_repo
 
 
 # Get repos
@@ -118,40 +107,25 @@ output: ScriptFilterJson = {
     "items": [
         {
             "title": condition_on_alfred(
-                repo_name=repo.name,
                 if_vanilla_repo=repo.name,
-                if_common=repo.name,
                 if_alfred_workflow=get_workflow_plist_value,
                 x="name",
                 plist=repo / "info.plist",
             ),
             "subtitle": condition_on_alfred(
-                repo_name=repo.name,
                 if_vanilla_repo=str(repo),
-                if_common="Common utilities",
                 if_alfred_workflow=get_workflow_plist_value,
                 x="description",
                 plist=repo / "info.plist",
             ),
             "variables": {
-                "repo_modifiers": REPO_MODIFIERS_SEPARATOR.join(
-                    [
-                        repo_modifier("alfred")
-                        if repo.name == "Alfred.alfredpreferences"
-                        else repo_modifier("none"),
-                    ],
-                ),
                 "repo": str(repo),
+                "repoName": repo.name,
             },
             "icon": cast(
                 "_Icon",
                 condition_on_alfred(
-                    repo_name=repo.name,
                     if_vanilla_repo={
-                        "path": str(repo),
-                        "type": "fileicon",
-                    },
-                    if_common={
                         "path": str(repo),
                         "type": "fileicon",
                     },
@@ -162,9 +136,7 @@ output: ScriptFilterJson = {
             ),
             "type": "file:skipcheck",
             "autocomplete": condition_on_alfred(
-                repo_name=repo.name,
                 if_vanilla_repo=str(repo),
-                if_common=str(repo),
                 if_alfred_workflow=get_workflow_plist_value,
                 x="name",
                 plist=repo / "info.plist",
