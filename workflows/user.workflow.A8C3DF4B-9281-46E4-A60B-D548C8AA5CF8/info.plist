@@ -267,7 +267,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>keyword</key>
-				<string>code</string>
+				<string>insiders</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
@@ -280,7 +280,7 @@
 				<string>{var:PLEASE_WAIT_SUBTEXT}</string>
 				<key>script</key>
 				<string>[ -d common ] || ln -s "$(realpath ../common)" .
-./common/link.sh 5BB39F00-618B-4AE1-8CFB-78F9BC1B56B4.png "/Applications/Visual Studio Code.app/Contents/Resources/Code.icns"
+./common/link.sh EBE331B8-3E3E-46D9-8E4D-269D4E13C10D.png "/System/Volumes/Data/Applications/Visual Studio Code - Insiders.app/Contents/Resources/Code - Insiders.icns"
 ./options.py "$REPOS_DIRECTORY" code</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
@@ -318,7 +318,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>keyword</key>
-				<string>code</string>
+				<string>zed</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
@@ -331,7 +331,7 @@
 				<string>{var:PLEASE_WAIT_SUBTEXT}</string>
 				<key>script</key>
 				<string>[ -d common ] || ln -s "$(realpath ../common)" .
-./common/link.sh 5BB39F00-618B-4AE1-8CFB-78F9BC1B56B4.png "/Applications/Visual Studio Code.app/Contents/Resources/Code.icns"
+./common/link.sh A9E2CEB4-2BE0-49A1-90CE-F26BAABA8A35.png "/System/Volumes/Data/Applications/Zed.app/Contents/Resources/Zed.icns"
 ./options.py "$REPOS_DIRECTORY" code</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
@@ -369,7 +369,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>keyword</key>
-				<string>code</string>
+				<string>pt</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
@@ -382,7 +382,7 @@
 				<string>{var:PLEASE_WAIT_SUBTEXT}</string>
 				<key>script</key>
 				<string>[ -d common ] || ln -s "$(realpath ../common)" .
-./common/link.sh 5BB39F00-618B-4AE1-8CFB-78F9BC1B56B4.png "/Applications/Visual Studio Code.app/Contents/Resources/Code.icns"
+./common/link.sh 9C591B63-703B-4CD4-8C38-6DCDBF6C0AB7.png "/Applications/Positron.app/Contents/Resources/Positron.icns"
 ./options.py "$REPOS_DIRECTORY" code</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
@@ -420,7 +420,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>keyword</key>
-				<string>code</string>
+				<string>xc</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
@@ -433,7 +433,7 @@
 				<string>{var:PLEASE_WAIT_SUBTEXT}</string>
 				<key>script</key>
 				<string>[ -d common ] || ln -s "$(realpath ../common)" .
-./common/link.sh 5BB39F00-618B-4AE1-8CFB-78F9BC1B56B4.png "/Applications/Visual Studio Code.app/Contents/Resources/Code.icns"
+./common/link.sh 9587F691-4F03-4681-8E6A-44E8CFB54D4E.png "/Applications/Xcode.app/Contents/Resources/Xcode.icns"
 ./options.py "$REPOS_DIRECTORY" code</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
@@ -498,23 +498,23 @@
 		<key>9587F691-4F03-4681-8E6A-44E8CFB54D4E</key>
 		<dict>
 			<key>xpos</key>
-			<real>50</real>
+			<real>45</real>
 			<key>ypos</key>
-			<real>670</real>
+			<real>575</real>
 		</dict>
 		<key>9C591B63-703B-4CD4-8C38-6DCDBF6C0AB7</key>
 		<dict>
 			<key>xpos</key>
 			<real>45</real>
 			<key>ypos</key>
-			<real>520</real>
+			<real>440</real>
 		</dict>
 		<key>A9E2CEB4-2BE0-49A1-90CE-F26BAABA8A35</key>
 		<dict>
 			<key>xpos</key>
 			<real>45</real>
 			<key>ypos</key>
-			<real>360</real>
+			<real>305</real>
 		</dict>
 		<key>EBE331B8-3E3E-46D9-8E4D-269D4E13C10D</key>
 		<dict>
