@@ -3,7 +3,6 @@
 """Provides options to Alfred."""
 
 import os
-import re
 import sys
 from pathlib import Path
 from typing import Callable, ParamSpec, TypeVar, cast, get_args
@@ -62,11 +61,7 @@ match id_editor:
                 [
                     p
                     for p in x.iterdir()
-                    if re.search(
-                        r"(\.xcodeproj$|^package.swift$)",
-                        p.name,
-                        re.IGNORECASE,
-                    )
+                    if p.name.lower() == "package.swift" or p.suffix == ".xcodeproj"
                 ],
             )
 
