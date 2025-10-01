@@ -61,8 +61,15 @@ match id_editor:
                 [
                     p
                     for p in x.iterdir()
-                    if p.name.lower() == "package.swift" or p.suffix == ".xcodeproj"
+                    if p.name.lower() == "package.swift"
+                    or p.suffix.lower() == ".xcodeproj"
                 ],
+            )
+    case "rstudio":
+
+        def filter_repo(x: Path) -> bool:  # noqa: D103
+            return bool(
+                [p for p in x.iterdir() if p.suffix.lower() == ".rproj"],
             )
 
 

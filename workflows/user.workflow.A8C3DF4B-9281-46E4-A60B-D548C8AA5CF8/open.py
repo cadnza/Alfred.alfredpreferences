@@ -4,6 +4,7 @@
 
 import subprocess
 import sys
+from pathlib import Path
 from typing import cast, get_args
 
 from common.validation import one_of, usage
@@ -65,6 +66,20 @@ match id_editor:
                 "-a",
                 "/Applications/Xcode.app",
                 repo,
+            ],
+            check=True,
+        )
+    case "rstudio":
+        subprocess.run(  # noqa: S603
+            [
+                "/usr/bin/open",
+                "-a",
+                "/Applications/RStudio.app",
+                str(
+                    next(
+                        f for f in Path(repo).iterdir() if f.suffix.lower() == ".rproj"
+                    ),
+                ),
             ],
             check=True,
         )
