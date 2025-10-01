@@ -12,8 +12,9 @@ path="$2"
 # shellcheck disable=SC2154
 f_cache="$alfred_workflow_cache/$name.cache"
 
-# Make sure path exists
+# Make sure path exists, removing link if not
 [ -f "$path" ] || {
+    [ -f "$name" ] && rm "$name"
     echo "Not found: $path"
     exit 1
 }
