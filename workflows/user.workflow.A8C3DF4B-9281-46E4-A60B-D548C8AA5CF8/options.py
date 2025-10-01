@@ -111,13 +111,15 @@ output: ScriptFilterJson = {
                 if_vanilla_repo=repo.name,
                 if_alfred_workflow=get_workflow_plist_value,
                 x="name",
-                plist=repo / "info.plist",
+                plist=repo
+                / ("information.plist" if repo.name == "common" else "info.plist"),
             ),
             "subtitle": condition_on_alfred(
                 if_vanilla_repo=str(repo),
                 if_alfred_workflow=get_workflow_plist_value,
                 x="description",
-                plist=repo / "info.plist",
+                plist=repo
+                / ("information.plist" if repo.name == "common" else "info.plist"),
             ),
             "variables": {
                 "repo": str(repo),
@@ -134,7 +136,7 @@ output: ScriptFilterJson = {
                         lambda: {
                             "path": get_workflow_plist_value(
                                 "modelicon",
-                                plist=repo / "info.plist",  # noqa: B023
+                                plist=repo / "information.plist",  # noqa: B023
                             ),
                             "type": "fileicon",
                         }
@@ -150,7 +152,8 @@ output: ScriptFilterJson = {
                 if_vanilla_repo=str(repo),
                 if_alfred_workflow=get_workflow_plist_value,
                 x="name",
-                plist=repo / "info.plist",
+                plist=repo
+                / ("information.plist" if repo.name == "common" else "info.plist"),
             ),
             "arg": str(repo),
         }
