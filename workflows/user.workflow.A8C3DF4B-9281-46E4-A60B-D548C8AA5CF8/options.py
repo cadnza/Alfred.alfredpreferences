@@ -130,7 +130,17 @@ output: ScriptFilterJson = {
                         "path": str(repo),
                         "type": "fileicon",
                     },
-                    if_alfred_workflow=lambda: {
+                    if_alfred_workflow=(
+                        lambda: {
+                            "path": get_workflow_plist_value(
+                                "modelicon",
+                                plist=repo / "info.plist",  # noqa: B023
+                            ),
+                            "type": "fileicon",
+                        }
+                    )
+                    if repo.name == "common"
+                    else lambda: {
                         "path": str(repo / "icon.png"),  # noqa: B023
                     },
                 ),

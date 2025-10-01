@@ -6,5 +6,7 @@
         <string>common</string>
         <key>description</key>
         <string>Common utilities</string>
+        <key>modelicon</key>
+        <string>/Library</string>
     </dict>
 </plist>
