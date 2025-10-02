@@ -13,3 +13,8 @@ EditorId = Literal[
 """
 An ID representing a specific editor.
 """
+
+NAME_COMMON = "common"
+"""
+The name of the `common` directory.
+"""

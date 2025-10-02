@@ -15,7 +15,7 @@ from common.alfred_script_filter import (
 from common.alfred_workflow import get_workflow_plist_value
 from common.validation import one_of, usage
 from common.write import err
-from utility import EditorId
+from utility import NAME_COMMON, EditorId
 
 # Define usage string and exit function
 u, stop = usage("DIRECTORY", one_of(EditorId))
@@ -114,14 +114,14 @@ output: ScriptFilterJson = {
                 if_alfred_workflow=get_workflow_plist_value,
                 x="name",
                 plist=repo
-                / ("information.plist" if repo.name == "common" else "info.plist"),
+                / ("information.plist" if repo.name == NAME_COMMON else "info.plist"),
             ),
             "subtitle": condition_on_alfred(
                 if_vanilla_repo=str(repo),
                 if_alfred_workflow=get_workflow_plist_value,
                 x="description",
                 plist=repo
-                / ("information.plist" if repo.name == "common" else "info.plist"),
+                / ("information.plist" if repo.name == NAME_COMMON else "info.plist"),
             ),
             "variables": {
                 "repo": str(repo),
@@ -143,7 +143,7 @@ output: ScriptFilterJson = {
                             "type": "fileicon",
                         }
                     )
-                    if repo.name == "common"
+                    if repo.name == NAME_COMMON
                     else lambda: {
                         "path": str(repo / "icon.png"),  # noqa: B023
                     },
@@ -155,7 +155,7 @@ output: ScriptFilterJson = {
                 if_alfred_workflow=get_workflow_plist_value,
                 x="name",
                 plist=repo
-                / ("information.plist" if repo.name == "common" else "info.plist"),
+                / ("information.plist" if repo.name == NAME_COMMON else "info.plist"),
             ),
             "arg": str(repo),
         }
