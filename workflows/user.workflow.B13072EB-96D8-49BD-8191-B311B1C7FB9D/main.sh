@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
 
+set -e
+
+# Link common
+[ -d common ] || ln -s "$(realpath ../common)" .
+
+# Link icon
+./common/link.sh icon.png /System/Volumes/Data/Applications/Steam.app/Contents/Resources/Steam.icns
+
 # Set Steam games directory
 gamesDir="$HOME/Library/Application Support/Steam/steamapps/common"
 
