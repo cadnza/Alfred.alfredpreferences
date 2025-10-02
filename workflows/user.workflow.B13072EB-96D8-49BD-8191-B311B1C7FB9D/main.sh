@@ -5,8 +5,8 @@ gamesDir="$HOME/Library/Application Support/Steam/steamapps/common"
 
 # Validate directory
 [[ -d $gamesDir ]] || {
-	final=$(
-		jq -n --arg gamesDir "$gamesDir" '{
+    final=$(
+        jq -n --arg gamesDir "$gamesDir" '{
 			items: [
 				{
 					title: "Directory not found",
@@ -15,24 +15,23 @@ gamesDir="$HOME/Library/Application Support/Steam/steamapps/common"
 				}
 			]
 		}'
-	)
-	echo "$final"
-	exit 0
+    )
+    echo "$final"
+    exit 0
 }
 
 # Initialize JSON
 final=$(echo '[]' | jq)
 
 # Build JSON
-while read -r f
-do
-	final=$(
-		echo "$final" | \
-		jq \
-		--arg title "$(basename "$f" | sed 's/\.app$//g')" \
-		--arg original "$f" \
-		--arg identifier "$(mdls -r "$f" -attr kMDItemCFBundleIdentifier)" \
-		'
+while read -r f; do
+    final=$(
+        echo "$final" |
+            jq \
+                --arg title "$(basename "$f" | sed 's/\.app$//g')" \
+                --arg original "$f" \
+                --arg identifier "$(mdls -r "$f" -attr kMDItemCFBundleIdentifier)" \
+                '
 			. |= . + [
 				{
 					title: $title,
@@ -48,13 +47,13 @@ do
 				}
 			]
 		'
-	)
-done <<< "$(
-	find "$gamesDir" \
-		-mindepth 2 \
-		-maxdepth 2 \
-		-type d \
-		-name "*.app"
+    )
+done <<<"$(
+    find "$gamesDir" \
+        -mindepth 2 \
+        -maxdepth 2 \
+        -type d \
+        -name "*.app"
 )"
 
 # Finalize JSON
