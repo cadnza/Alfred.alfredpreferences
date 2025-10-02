@@ -1,13 +1,21 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
+
+# Link common
+[ -d common ] || ln -s "$(realpath ../common)" .
+
+# Link icon
+./common/link.sh icon.png /System/Applications/Utilities/Terminal.app/Contents/Resources/Terminal.icns
 
 # Set cache file
 cacheFile="$alfred_workflow_cache/cache.json"
 
 # Show options if cached or notice if not
-[ -f $cacheFile ] && cat $cacheFile || {
-	./recache.sh > /dev/null
-	final=$(
-		echo '
+if [ -f "$cacheFile" ]; then
+    cat "$cacheFile"
+else
+    ./recache.sh >/dev/null
+    final=$(
+        echo '
 			{"items":
 				[
 					{
@@ -18,9 +26,9 @@ cacheFile="$alfred_workflow_cache/cache.json"
 				]
 			}
 		' | jq
-	)
-	echo -n $final
-}
+    )
+    echo -n "$final"
+fi
 
 # Exit
 exit 0
