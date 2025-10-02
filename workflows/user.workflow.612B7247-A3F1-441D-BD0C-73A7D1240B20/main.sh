@@ -15,35 +15,34 @@ final=$(echo '{
 }' | jq)
 
 # Open loop through stickies
-while read -r dirSticky
-do
+while read -r dirSticky; do
 
-	# Validate file
-	fTxt="$dirSticky/TXT.rtf"
-	[ -f "$fTxt" ] || continue
+    # Validate file
+    fTxt="$dirSticky/TXT.rtf"
+    [ -f "$fTxt" ] || continue
 
-	# Get text of sticky and remove extra lines
-	txtSticky="$(textutil -convert txt "$fTxt" -stdout)"
-	txtStickyTrimmed="$(echo "$txtSticky" |  sed '/^$/d')"
+    # Get text of sticky and remove extra lines
+    txtSticky="$(textutil -convert txt "$fTxt" -stdout)"
+    txtStickyTrimmed="$(echo "$txtSticky" | sed '/^$/d')"
 
-	# Create and add object
-	firstLine="$(echo "$txtStickyTrimmed" | sed '1q;d')"
-	final="$(
-		echo "$final" | jq \
-			--arg uid "$dirSticky" \
-			--arg title "$firstLine" \
-			--arg subtitle "$(echo "$txtStickyTrimmed" | sed '2q;d')" \
-			--arg arg "$dirSticky" \
-			--arg iconPath "$fIcon" \
-			--arg match "$txtStickyTrimmed" \
-			--arg autocomplete "$firstLine" \
-			--arg type "default" \
-			--arg actionText "$txtSticky" \
-			--arg actionFile "$fTxt" \
-			--arg textCopy "$txtSticky" \
-			--arg textLargetype "$txtSticky" \
-			--arg quicklookurl "$fTxt" \
-			'
+    # Create and add object
+    firstLine="$(echo "$txtStickyTrimmed" | sed '1q;d')"
+    final="$(
+        echo "$final" | jq \
+            --arg uid "$dirSticky" \
+            --arg title "$firstLine" \
+            --arg subtitle "$(echo "$txtStickyTrimmed" | sed '2q;d')" \
+            --arg arg "$dirSticky" \
+            --arg iconPath "$fIcon" \
+            --arg match "$txtStickyTrimmed" \
+            --arg autocomplete "$firstLine" \
+            --arg type "default" \
+            --arg actionText "$txtSticky" \
+            --arg actionFile "$fTxt" \
+            --arg textCopy "$txtSticky" \
+            --arg textLargetype "$txtSticky" \
+            --arg quicklookurl "$fTxt" \
+            '
 				.items += [
 					{
 						"uid": $uid,
@@ -68,9 +67,9 @@ do
 					}
 				]
 			'
-	)"
+    )"
 
-done <<< "$(find ~+ -type d -mindepth 1 -maxdepth 1)"
+done <<<"$(find ~+ -type d -mindepth 1 -maxdepth 1)"
 
 # Echo result
 echo "$final"
