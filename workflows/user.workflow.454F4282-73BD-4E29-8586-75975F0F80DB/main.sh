@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 # Link common
 [ -d common ] || ln -s "$(realpath ../common)" .
 
