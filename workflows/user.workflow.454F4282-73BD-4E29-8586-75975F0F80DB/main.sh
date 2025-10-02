@@ -7,6 +7,7 @@
 ./common/link.sh icon.png /System/Applications/Utilities/Terminal.app/Contents/Resources/Terminal.icns
 
 # Set cache file
+# shellcheck disable=SC2154
 cacheFile="$alfred_workflow_cache/cache.json"
 
 # Show options if cached or notice if not
