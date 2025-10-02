@@ -3,7 +3,7 @@
 <plist version="1.0">
     <dict>
         <key>name</key>
-        <string>common</string>
+        <string>Common</string>
         <key>description</key>
         <string>Common utilities</string>
         <key>modelicon</key>
