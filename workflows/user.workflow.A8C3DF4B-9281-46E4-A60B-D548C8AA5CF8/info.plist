@@ -296,29 +296,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>./open.py "$id_editor" "$repo"</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>45EABA07-AE80-4062-8A3E-D025EAEB35B5</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>alfredfiltersresults</key>
 				<true/>
 				<key>alfredfiltersresultsmatchmode</key>
@@ -366,6 +343,29 @@
 			<string>EBE331B8-3E3E-46D9-8E4D-269D4E13C10D</string>
 			<key>version</key>
 			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>./open.py "$id_editor" "$repo"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>45EABA07-AE80-4062-8A3E-D025EAEB35B5</string>
+			<key>version</key>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -579,16 +579,16 @@
 		<key>3A8CE97A-CDFC-4FC7-B14C-B545C7E28678</key>
 		<dict>
 			<key>xpos</key>
-			<real>305</real>
+			<real>510</real>
 			<key>ypos</key>
 			<real>70</real>
 		</dict>
 		<key>45EABA07-AE80-4062-8A3E-D025EAEB35B5</key>
 		<dict>
 			<key>xpos</key>
-			<real>380</real>
+			<real>585</real>
 			<key>ypos</key>
-			<real>170</real>
+			<real>305</real>
 		</dict>
 		<key>4A5B0A69-943B-443A-84A2-6A069DAC74BA</key>
 		<dict>
@@ -600,7 +600,7 @@
 		<key>52D8A25D-EECE-4CD9-BE57-B0600D53FE5C</key>
 		<dict>
 			<key>xpos</key>
-			<real>380</real>
+			<real>585</real>
 			<key>ypos</key>
 			<real>40</real>
 		</dict>
@@ -614,7 +614,7 @@
 		<key>7492476F-E800-4942-B9BF-469CDE066EB7</key>
 		<dict>
 			<key>xpos</key>
-			<real>200</real>
+			<real>405</real>
 			<key>ypos</key>
 			<real>60</real>
 		</dict>
