@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
 
-# shellcheck disable=SC2164
+set -e
+
+# Link common
+[ -d common ] || ln -s "$(realpath ../common)" .
+
+# Link icon
+./common/link.sh icon.png /System/Applications/Stickies.app/Contents/Resources/AppIcon.icns
 
 # Get icon
 fIcon="$(readlink "$PWD/icon.png")"
