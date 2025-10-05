@@ -180,6 +180,9 @@
 # Ensure python3.11
 ./common/check_in_path.sh python3.11 || exit 0
 
+# Ensure app is installed
+./common/check_installed.sh "Visual Studio Code" "/Applications/Visual Studio Code.app" || exit 0
+
 # Link icon
 ./common/link.sh 5BB39F00-618B-4AE1-8CFB-78F9BC1B56B4.png "/Applications/Visual Studio Code.app/Contents/Resources/Code.icns"
 
@@ -335,8 +338,11 @@
 # Ensure python3.11
 ./common/check_in_path.sh python3.11 || exit 0
 
+# Ensure app is installed
+./common/check_installed.sh "Visual Studio Code - Insiders" "/Applications/Visual Studio Code - Insiders.app" || exit 0
+
 # Link icon
-./common/link.sh EBE331B8-3E3E-46D9-8E4D-269D4E13C10D.png "/System/Volumes/Data/Applications/Visual Studio Code - Insiders.app/Contents/Resources/Code - Insiders.icns"
+./common/link.sh EBE331B8-3E3E-46D9-8E4D-269D4E13C10D.png "/Applications/Visual Studio Code - Insiders.app/Contents/Resources/Code - Insiders.icns"
 
 # Run
 ./options.py "$REPOS_DIRECTORY" insiders</string>
@@ -417,8 +423,11 @@
 # Ensure python3.11
 ./common/check_in_path.sh python3.11 || exit 0
 
+# Ensure app is installed
+./common/check_installed.sh "Zed" "/Applications/Zed.app" || exit 0
+
 # Link icon
-./common/link.sh A9E2CEB4-2BE0-49A1-90CE-F26BAABA8A35.png "/System/Volumes/Data/Applications/Zed.app/Contents/Resources/Zed.icns"
+./common/link.sh A9E2CEB4-2BE0-49A1-90CE-F26BAABA8A35.png "/Applications/Zed.app/Contents/Resources/Zed.icns"
 
 # Run
 ./options.py "$REPOS_DIRECTORY" zed</string>
@@ -475,6 +484,9 @@
 
 # Ensure python3.11
 ./common/check_in_path.sh python3.11 || exit 0
+
+# Ensure app is installed
+./common/check_installed.sh "Positron" "/Applications/Positron.app" || exit 0
 
 # Link icon
 ./common/link.sh 9C591B63-703B-4CD4-8C38-6DCDBF6C0AB7.png "/Applications/Positron.app/Contents/Resources/Positron.icns"
@@ -535,6 +547,9 @@
 # Ensure python3.11
 ./common/check_in_path.sh python3.11 || exit 0
 
+# Ensure app is installed
+./common/check_installed.sh "Xcode" "/Applications/Xcode.app" || exit 0
+
 # Link icon
 ./common/link.sh 9587F691-4F03-4681-8E6A-44E8CFB54D4E.png "/Applications/Xcode.app/Contents/Resources/Xcode.icns"
 
@@ -593,6 +608,9 @@
 
 # Ensure python3.11
 ./common/check_in_path.sh python3.11 || exit 0
+
+# Ensure app is installed
+./common/check_installed.sh "RStudio" "/Applications/RStudio.app" || exit 0
 
 # Link icon
 ./common/link.sh 4A5B0A69-943B-443A-84A2-6A069DAC74BA.png "/Applications/RStudio.app/Contents/Resources/RStudio.icns"
