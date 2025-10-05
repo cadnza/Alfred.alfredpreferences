@@ -7,7 +7,7 @@ import sys
 from pathlib import Path
 from typing import Callable, ParamSpec, TypeVar, cast, get_args
 
-from common.alfred_script_filter import (
+from common.alfred_script_filter.json import (
     ScriptFilterJson,
     _Icon,  # pyright: ignore[reportPrivateUsage]
     send,
