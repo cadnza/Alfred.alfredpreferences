@@ -19,6 +19,3 @@ alfred_object_id="$4"
 
 # Link icon
 ./common/link.sh "$alfred_object_id.png" "$app_icns_path"
-
-# Return options
-./options.py "$REPOS_DIRECTORY" "$app_name"

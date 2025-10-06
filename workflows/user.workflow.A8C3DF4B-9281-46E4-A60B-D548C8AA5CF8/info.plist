@@ -179,7 +179,8 @@
     'Visual Studio Code' \
     '/Applications/Visual Studio Code.app' \
     '/Applications/Visual Studio Code.app/Contents/Resources/Code.icns' \
-    '5BB39F00-618B-4AE1-8CFB-78F9BC1B56B4'</string>
+    '5BB39F00-618B-4AE1-8CFB-78F9BC1B56B4'
+./options.py "$REPOS_DIRECTORY" 'Visual Studio Code'</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -352,7 +353,8 @@
     'Visual Studio Code - Insiders' \
     '/Applications/Visual Studio Code - Insiders.app' \
     '/Applications/Visual Studio Code - Insiders.app/Contents/Resources/Code - Insiders.icns' \
-    'EBE331B8-3E3E-46D9-8E4D-269D4E13C10D'</string>
+    'EBE331B8-3E3E-46D9-8E4D-269D4E13C10D'
+./options.py "$REPOS_DIRECTORY" 'Visual Studio Code - Insiders'</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -406,7 +408,8 @@
     'Zed' \
     '/Applications/Zed.app' \
     '/Applications/Zed.app/Contents/Resources/Zed.icns' \
-    'A9E2CEB4-2BE0-49A1-90CE-F26BAABA8A35'</string>
+    'A9E2CEB4-2BE0-49A1-90CE-F26BAABA8A35'
+./options.py "$REPOS_DIRECTORY" 'Zed'</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -460,7 +463,8 @@
     'Positron' \
     '/Applications/Positron.app' \
     '/Applications/Positron.app/Contents/Resources/Positron.icns' \
-    '9C591B63-703B-4CD4-8C38-6DCDBF6C0AB7'</string>
+    '9C591B63-703B-4CD4-8C38-6DCDBF6C0AB7'
+./options.py "$REPOS_DIRECTORY" 'Positron'</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -514,7 +518,8 @@
     'Xcode' \
     '/Applications/Xcode.app' \
     '/Applications/Xcode.app/Contents/Resources/Xcode.icns' \
-    '9587F691-4F03-4681-8E6A-44E8CFB54D4E'</string>
+    '9587F691-4F03-4681-8E6A-44E8CFB54D4E'
+./options.py "$REPOS_DIRECTORY" 'Xcode'</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -568,7 +573,8 @@
     'RStudio' \
     '/Applications/RStudio.app' \
     '/Applications/RStudio.app/Contents/Resources/RStudio.icns' \
-    '4A5B0A69-943B-443A-84A2-6A069DAC74BA'</string>
+    '4A5B0A69-943B-443A-84A2-6A069DAC74BA'
+./options.py "$REPOS_DIRECTORY" 'RStudio'</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
