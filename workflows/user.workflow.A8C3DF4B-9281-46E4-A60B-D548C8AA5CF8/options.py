@@ -15,10 +15,10 @@ from common.alfred_script_filter.json import (
 from common.alfred_workflow import get_workflow_plist_value
 from common.validation import one_of, usage
 from common.write import err
-from utility import NAME_COMMON, EditorId
+from utility import NAME_COMMON, EditorName
 
 # Define usage string and exit function
-u, stop = usage("DIRECTORY", one_of(EditorId))
+u, stop = usage("DIRECTORY", one_of(EditorName))
 
 # Assign ad validate directory argument
 dir_repos = Path(sys.argv[1])
@@ -31,17 +31,17 @@ if not dir_repos.is_dir():
 
 # Assign editor ID argument
 id_editor_raw: str = sys.argv[2]
-if id_editor_raw not in get_args(EditorId):
+if id_editor_raw not in get_args(EditorName):
     stop()
-id_editor: EditorId = cast("EditorId", id_editor_raw)
+editor_name: EditorName = cast("EditorName", id_editor_raw)
 
 # Define closure to decide which repos get shown
-match id_editor:
-    case "code":
+match editor_name:
+    case "Visual Studio Code":
         filter_repo = lambda x: True  # noqa: ARG005
-    case "insiders":
+    case "Visual Studio Code - Insiders":
         filter_repo = lambda x: True  # noqa: ARG005
-    case "positron":
+    case "Positron":
         filter_repo = lambda x: True  # noqa: ARG005
     # case "rstudio":
     #     def filter_repo(x: Path) -> bool:
@@ -52,9 +52,9 @@ match id_editor:
     #                 if re.search(r"\.rproj$", str(p), re.IGNORECASE)
     #             ],
     #         )
-    case "zed":
+    case "Zed":
         filter_repo = lambda x: True  # noqa: ARG005
-    case "xcode":
+    case "Xcode":
 
         def filter_repo(x: Path) -> bool:  # noqa: D103
             return bool(
@@ -65,7 +65,7 @@ match id_editor:
                     or p.suffix.lower() == ".xcodeproj"
                 ],
             )
-    case "rstudio":
+    case "RStudio":
 
         def filter_repo(x: Path) -> bool:  # noqa: D103
             return bool(
@@ -104,7 +104,7 @@ repos = (
 # Prepare Alfred output
 output: ScriptFilterJson = {
     "variables": {
-        "id_editor": id_editor,
+        "id_editor": editor_name,
     },
     "items": [
         {

@@ -8,26 +8,26 @@ from pathlib import Path
 from typing import cast, get_args
 
 from common.validation import one_of, usage
-from utility import EditorId
+from utility import EditorName
 
 # Define usage string and exit function
 u, stop = usage(
-    one_of(EditorId),
+    one_of(EditorName),
     "REPO",
 )
 
 # Assign editor ID argument
 id_editor_raw: str = sys.argv[1]
-if id_editor_raw not in get_args(EditorId):
+if id_editor_raw not in get_args(EditorName):
     stop()
-id_editor: EditorId = cast("EditorId", id_editor_raw)
+editor_name: EditorName = cast("EditorName", id_editor_raw)
 
 # Assign repo argument
 repo = sys.argv[2]
 
 # Open repo
-match id_editor:
-    case "code":
+match editor_name:
+    case "Visual Studio Code":
         subprocess.run(  # noqa: S603
             [
                 "/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code",
@@ -35,7 +35,7 @@ match id_editor:
             ],
             check=True,
         )
-    case "insiders":
+    case "Visual Studio Code - Insiders":
         subprocess.run(  # noqa: S603
             [
                 "/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/bin/code",  # noqa: E501
@@ -43,7 +43,7 @@ match id_editor:
             ],
             check=True,
         )
-    case "positron":
+    case "Positron":
         subprocess.run(  # noqa: S603
             [
                 "/Applications/Positron.app/Contents/Resources/app/bin/code",
@@ -51,7 +51,7 @@ match id_editor:
             ],
             check=True,
         )
-    case "zed":
+    case "Zed":
         subprocess.run(  # noqa: S603
             [
                 "/Applications/Zed.app/Contents/MacOS/cli",
@@ -59,7 +59,7 @@ match id_editor:
             ],
             check=True,
         )
-    case "xcode":
+    case "Xcode":
         subprocess.run(  # noqa: S603
             [
                 "/usr/bin/open",
@@ -69,7 +69,7 @@ match id_editor:
             ],
             check=True,
         )
-    case "rstudio":
+    case "RStudio":
         subprocess.run(  # noqa: S603
             [
                 "/usr/bin/open",

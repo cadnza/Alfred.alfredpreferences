@@ -2,13 +2,13 @@
 
 from typing import Literal
 
-EditorId = Literal[
-    "code",  # Visual Studio Code
-    "insiders",  # Visual Studio Code - Insiders
-    "positron",  # Positron
-    "zed",  # Zed
-    "xcode",  # Xcode
-    "rstudio",  # RStudio
+EditorName = Literal[
+    "Visual Studio Code",  # Visual Studio Code
+    "Visual Studio Code - Insiders",  # Visual Studio Code - Insiders
+    "Positron",  # Positron
+    "Zed",  # Zed
+    "Xcode",  # Xcode
+    "RStudio",  # RStudio
 ]
 """
 An ID representing a specific editor.
