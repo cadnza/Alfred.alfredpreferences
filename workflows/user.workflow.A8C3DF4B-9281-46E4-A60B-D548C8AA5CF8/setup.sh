@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -e
+
 # Assign arguments
 app_name="$1"
 app_bundle_path="$2"
