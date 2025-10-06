@@ -174,7 +174,8 @@
 				<key>runningsubtext</key>
 				<string>{var:PLEASE_WAIT_SUBTEXT}</string>
 				<key>script</key>
-				<string>./setup.sh \
+				<string>set -e
+./setup.sh \
     'Visual Studio Code' \
     '/Applications/Visual Studio Code.app' \
     '/Applications/Visual Studio Code.app/Contents/Resources/Code.icns' \
@@ -346,7 +347,8 @@
 				<key>runningsubtext</key>
 				<string>{var:PLEASE_WAIT_SUBTEXT}</string>
 				<key>script</key>
-				<string>./setup.sh \
+				<string>set -e
+./setup.sh \
     'Visual Studio Code - Insiders' \
     '/Applications/Visual Studio Code - Insiders.app' \
     '/Applications/Visual Studio Code - Insiders.app/Contents/Resources/Code - Insiders.icns' \
@@ -399,7 +401,8 @@
 				<key>runningsubtext</key>
 				<string>{var:PLEASE_WAIT_SUBTEXT}</string>
 				<key>script</key>
-				<string>./setup.sh \
+				<string>set -e
+./setup.sh \
     'Zed' \
     '/Applications/Zed.app' \
     '/Applications/Zed.app/Contents/Resources/Zed.icns' \
@@ -452,7 +455,8 @@
 				<key>runningsubtext</key>
 				<string>{var:PLEASE_WAIT_SUBTEXT}</string>
 				<key>script</key>
-				<string>./setup.sh \
+				<string>set -e
+./setup.sh \
     'Positron' \
     '/Applications/Positron.app' \
     '/Applications/Positron.app/Contents/Resources/Positron.icns' \
@@ -505,7 +509,8 @@
 				<key>runningsubtext</key>
 				<string>{var:PLEASE_WAIT_SUBTEXT}</string>
 				<key>script</key>
-				<string>./setup.sh \
+				<string>set -e
+./setup.sh \
     'Xcode' \
     '/Applications/Xcode.app' \
     '/Applications/Xcode.app/Contents/Resources/Xcode.icns' \
@@ -558,7 +563,8 @@
 				<key>runningsubtext</key>
 				<string>{var:PLEASE_WAIT_SUBTEXT}</string>
 				<key>script</key>
-				<string>./setup.sh \
+				<string>set -e
+./setup.sh \
     'RStudio' \
     '/Applications/RStudio.app' \
     '/Applications/RStudio.app/Contents/Resources/RStudio.icns' \
