@@ -9,6 +9,7 @@ EditorName = Literal[
     "Zed",
     "Xcode",
     "RStudio",
+    "CodeEdit",
 ]
 """
 An ID representing a specific editor.

@@ -71,6 +71,8 @@ match editor_name:
             return bool(
                 [p for p in x.iterdir() if p.suffix.lower() == ".rproj"],
             )
+    case "CodeEdit":
+        filter_repo = lambda x: True  # noqa: ARG005
 
 
 # Decide whether this is the Alfred folder

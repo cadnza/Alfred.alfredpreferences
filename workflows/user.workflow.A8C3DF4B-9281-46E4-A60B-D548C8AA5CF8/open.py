@@ -83,3 +83,12 @@ match editor_name:
             ],
             check=True,
         )
+    case "CodeEdit":
+        subprocess.run(  # noqa: S603
+            [  # noqa: S607
+                "codeedit",
+                "open",
+                repo,
+            ],
+            check=True,
+        )
