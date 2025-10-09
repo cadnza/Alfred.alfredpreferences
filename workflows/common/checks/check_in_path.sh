@@ -7,5 +7,5 @@ command -v "$1" >/dev/null || {
         "Cannot find '$1' in \$PATH" \
         '/System/Applications/Utilities/Terminal.app/Contents/Resources/Terminal.icns' \
         ''
-    exit 1
+    exit 8
 }

@@ -7,5 +7,5 @@
         "Please install $1" \
         '/System/Applications/Utilities/Terminal.app/Contents/Resources/Terminal.icns' \
         ''
-    exit 1
+    exit 8
 }
