@@ -1,3 +1,5 @@
+#!/usr/bin/env python3.11
+
 """Return a simple banner given arguments _with no validation_.
 
 - `$1`: Title

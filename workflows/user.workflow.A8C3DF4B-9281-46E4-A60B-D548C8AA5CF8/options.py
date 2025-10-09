@@ -4,10 +4,11 @@
 
 import os
 import sys
+from collections.abc import Callable
 from pathlib import Path
-from typing import Callable, ParamSpec, TypeVar, cast, get_args
+from typing import ParamSpec, TypeVar, cast, get_args
 
-from common.alfred_script_filter.json import (
+from common.alfred_script_filter.jsn import (
     ScriptFilterJson,
     _Icon,  # pyright: ignore[reportPrivateUsage]
     send,
