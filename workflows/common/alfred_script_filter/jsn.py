@@ -2,7 +2,7 @@
 
 import json
 import sys
-from typing import Literal, NoReturn, NotRequired, TypedDict, Union
+from typing import Literal, NoReturn, TypedDict, Union
 
 
 class _IconNoType(TypedDict):
@@ -68,11 +68,11 @@ _ModKey = Literal[
 class _ModValue(TypedDict):
     """A mod element."""
 
-    valid: NotRequired[bool]
-    arg: NotRequired[str]
-    subtitle: NotRequired[str]
-    icon: NotRequired[_Icon]
-    variables: NotRequired[_Variables]
+    valid: bool
+    arg: str
+    subtitle: str
+    icon: _Icon
+    variables: _Variables
 
 
 _Mod = dict[_ModKey, _ModValue]
@@ -81,53 +81,53 @@ _Mod = dict[_ModKey, _ModValue]
 class _Action(TypedDict):
     """A universal action."""
 
-    text: NotRequired[Union[str, list[str]]]
-    url: NotRequired[str]
-    tile: NotRequired[str]
-    auto: NotRequired[Union[str, list[str]]]
+    text: Union[str, list[str]]
+    url: str
+    tile: str
+    auto: Union[str, list[str]]
 
 
 class _Text(TypedDict):
     """A text object."""
 
-    copy: NotRequired[str]
-    largetype: NotRequired[str]
+    copy: str
+    largetype: str
 
 
 class _Cache(TypedDict):
     """A cache configuration."""
 
     seconds: int
-    loosereload: NotRequired[Literal[True]]
+    loosereload: Literal[True]
 
 
 class _Item(TypedDict):
     """A single item."""
 
-    uid: NotRequired[str]
+    uid: str
     title: str
-    subtitle: NotRequired[str]
-    arg: NotRequired[Union[str, list[str]]]
-    icon: NotRequired[_Icon]
-    valid: NotRequired[bool]
-    match: NotRequired[str]
-    autocomplete: NotRequired[str]
-    type: NotRequired[Literal["default", "file", "file:skipcheck"]]
-    mods: NotRequired[list[_Mod]]
-    action: NotRequired[Union[str, list[str], _Action]]
-    text: NotRequired[_Text]
-    quicklookurl: NotRequired[str]
-    variables: NotRequired[_Variables]
+    subtitle: str
+    arg: Union[str, list[str]]
+    icon: _Icon
+    valid: bool
+    match: str
+    autocomplete: str
+    type: Literal["default", "file", "file:skipcheck"]
+    mods: list[_Mod]
+    action: Union[str, list[str], _Action]
+    text: _Text
+    quicklookurl: str
+    variables: _Variables
 
 
 class ScriptFilterJson(TypedDict):
     """An object conforming to the [script filter JSON format](https://www.alfredapp.com/help/workflows/inputs/script-filter/json/)."""
 
     items: list[_Item]
-    variables: NotRequired[_Variables]
-    rerun: NotRequired[float]
-    cache: NotRequired[_Cache]
-    skipknowledge: NotRequired[Literal[True]]
+    variables: _Variables
+    rerun: float
+    cache: _Cache
+    skipknowledge: Literal[True]
 
 
 def send(x: ScriptFilterJson) -> NoReturn:

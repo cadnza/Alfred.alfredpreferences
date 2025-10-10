@@ -1,4 +1,4 @@
-#!/usr/bin/env python3.11
+#!/usr/bin/python3
 
 """Opens a repo."""
 
@@ -26,69 +26,67 @@ editor_name: EditorName = cast("EditorName", id_editor_raw)
 repo = sys.argv[2]
 
 # Open repo
-match editor_name:
-    case "Visual Studio Code":
-        subprocess.run(  # noqa: S603
-            [
-                "/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code",
-                repo,
-            ],
-            check=True,
-        )
-    case "Visual Studio Code - Insiders":
-        subprocess.run(  # noqa: S603
-            [
-                "/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/bin/code",  # noqa: E501
-                repo,
-            ],
-            check=True,
-        )
-    case "Positron":
-        subprocess.run(  # noqa: S603
-            [
-                "/Applications/Positron.app/Contents/Resources/app/bin/code",
-                repo,
-            ],
-            check=True,
-        )
-    case "Zed":
-        subprocess.run(  # noqa: S603
-            [
-                "/Applications/Zed.app/Contents/MacOS/cli",
-                repo,
-            ],
-            check=True,
-        )
-    case "Xcode":
-        subprocess.run(  # noqa: S603
-            [
-                "/usr/bin/open",
-                "-a",
-                "/Applications/Xcode.app",
-                repo,
-            ],
-            check=True,
-        )
-    case "RStudio":
-        subprocess.run(  # noqa: S603
-            [
-                "/usr/bin/open",
-                "-a",
-                "/Applications/RStudio.app",
-                str(
-                    next(
-                        f for f in Path(repo).iterdir() if f.suffix.lower() == ".rproj"
-                    ),
-                ),
-            ],
-            check=True,
-        )
-    case "CodeEdit":
-        subprocess.run(  # noqa: S603
-            [  # noqa: S607
-                "codeedit",
-                "open",
-                repo,
-            ],
-            check=True,
-        )
+
+if editor_name == "Visual Studio Code":
+    subprocess.run(  # noqa: S603
+        [
+            "/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code",
+            repo,
+        ],
+        check=True,
+    )
+elif editor_name == "Visual Studio Code - Insiders":
+    subprocess.run(  # noqa: S603
+        [
+            "/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/bin/code",  # noqa: E501
+            repo,
+        ],
+        check=True,
+    )
+elif editor_name == "Positron":
+    subprocess.run(  # noqa: S603
+        [
+            "/Applications/Positron.app/Contents/Resources/app/bin/code",
+            repo,
+        ],
+        check=True,
+    )
+elif editor_name == "Zed":
+    subprocess.run(  # noqa: S603
+        [
+            "/Applications/Zed.app/Contents/MacOS/cli",
+            repo,
+        ],
+        check=True,
+    )
+elif editor_name == "Xcode":
+    subprocess.run(  # noqa: S603
+        [
+            "/usr/bin/open",
+            "-a",
+            "/Applications/Xcode.app",
+            repo,
+        ],
+        check=True,
+    )
+elif editor_name == "RStudio":
+    subprocess.run(  # noqa: S603
+        [
+            "/usr/bin/open",
+            "-a",
+            "/Applications/RStudio.app",
+            str(
+                next(f for f in Path(repo).iterdir() if f.suffix.lower() == ".rproj"),
+            ),
+        ],
+        check=True,
+    )
+elif editor_name == "CodeEdit":
+    subprocess.run(  # noqa: S603
+        [  # noqa: S607
+            "codeedit",
+            "open",
+            repo,
+        ],
+        check=True,
+    )

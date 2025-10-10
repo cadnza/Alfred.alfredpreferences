@@ -11,9 +11,6 @@ alfred_object_id="$4"
 # Link common directory
 [ -d common ] || ln -s "$(realpath ../common)" .
 
-# Ensure python3.11 is in path
-./common/checks/check_in_path.sh python3.11
-
 # Ensure app is installed
 ./common/checks/check_installed.sh "$app_name" "$app_bundle_path"
 

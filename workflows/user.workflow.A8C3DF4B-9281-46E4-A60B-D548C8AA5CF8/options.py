@@ -1,4 +1,4 @@
-#!/usr/bin/env python3.11
+#!/usr/bin/python3
 
 """Provides options to Alfred."""
 
@@ -6,7 +6,7 @@ import os
 import sys
 from collections.abc import Callable
 from pathlib import Path
-from typing import ParamSpec, TypeVar, cast, get_args
+from typing import TypeVar, cast, get_args
 
 from common.alfred_script_filter.jsn import (
     ScriptFilterJson,
@@ -37,57 +37,47 @@ if id_editor_raw not in get_args(EditorName):
 editor_name: EditorName = cast("EditorName", id_editor_raw)
 
 # Define closure to decide which repos get shown
-match editor_name:
-    case "Visual Studio Code":
-        filter_repo = lambda x: True  # noqa: ARG005
-    case "Visual Studio Code - Insiders":
-        filter_repo = lambda x: True  # noqa: ARG005
-    case "Positron":
-        filter_repo = lambda x: True  # noqa: ARG005
-    # case "rstudio":
-    #     def filter_repo(x: Path) -> bool:
-    #         return bool(
-    #             [
-    #                 p
-    #                 for p in x.iterdir()
-    #                 if re.search(r"\.rproj$", str(p), re.IGNORECASE)
-    #             ],
-    #         )
-    case "Zed":
-        filter_repo = lambda x: True  # noqa: ARG005
-    case "Xcode":
+if editor_name in {
+    "Visual Studio Code",
+    "Visual Studio Code - Insiders",
+    "Positron",
+    "Zed",
+}:
+    filter_repo = lambda x: True  # noqa: ARG005
+elif editor_name == "Xcode":
 
-        def filter_repo(x: Path) -> bool:  # noqa: D103
-            return bool(
-                [
-                    p
-                    for p in x.iterdir()
-                    if p.name.lower() == "package.swift"
-                    or p.suffix.lower() == ".xcodeproj"
-                ],
-            )
-    case "RStudio":
+    def filter_repo(x: Path) -> bool:  # noqa: D103
+        return bool(
+            [
+                p
+                for p in x.iterdir()
+                if p.name.lower() == "package.swift" or p.suffix.lower() == ".xcodeproj"
+            ],
+        )
+elif editor_name == "RStudio":
 
-        def filter_repo(x: Path) -> bool:  # noqa: D103
-            return bool(
-                [p for p in x.iterdir() if p.suffix.lower() == ".rproj"],
-            )
-    case "CodeEdit":
-        filter_repo = lambda x: True  # noqa: ARG005
+    def filter_repo(x: Path) -> bool:  # noqa: D103
+        return bool(
+            [p for p in x.iterdir() if p.suffix.lower() == ".rproj"],
+        )
+elif editor_name == "CodeEdit":
+    filter_repo = lambda x: True  # noqa: ARG005
+else:
+    msg = "Invalid editor ID"
+    raise ValueError(msg)
 
 
 # Decide whether this is the Alfred folder
 is_alfred = dir_repos.name == os.environ["ALFRED_REPO_NAME"]
 
-P = ParamSpec("P")
 T = TypeVar("T")
 
 
 def condition_on_alfred(
     if_vanilla_repo: T,
-    if_alfred_workflow: Callable[P, T],
-    *args: P.args,
-    **kwargs: P.kwargs,
+    if_alfred_workflow: Callable[..., T],
+    *args,
+    **kwargs,
 ) -> T:
     """Retrieve a value conditionally on Alfred."""
     return if_alfred_workflow(*args, **kwargs) if is_alfred else if_vanilla_repo
