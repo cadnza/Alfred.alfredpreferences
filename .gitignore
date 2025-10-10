@@ -3,3 +3,4 @@
 */*-LOCAL/*
 workflows/*/common
 __pycache__/
+workflows/*/ruff.toml
