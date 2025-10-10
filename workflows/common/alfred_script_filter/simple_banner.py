@@ -1,4 +1,4 @@
-#!/usr/bin/env python3.11
+#!/usr/bin/python3
 
 """Return a simple banner given arguments _with no validation_.
 
