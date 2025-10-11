@@ -77,8 +77,8 @@ T = TypeVar("T")
 def condition_on_alfred(
     if_vanilla_repo: T,
     if_alfred_workflow: Callable[..., T],
-    *args,
-    **kwargs,
+    *args,  # noqa: ANN002 # pyright: ignore[reportUnknownParameterType, reportMissingParameterType]
+    **kwargs,  # noqa: ANN003 # pyright: ignore[reportUnknownParameterType, reportMissingParameterType]
 ) -> T:
     """Retrieve a value conditionally on Alfred."""
     return if_alfred_workflow(*args, **kwargs) if is_alfred else if_vanilla_repo
