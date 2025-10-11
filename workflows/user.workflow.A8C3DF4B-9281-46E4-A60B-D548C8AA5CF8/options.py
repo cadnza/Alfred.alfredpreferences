@@ -129,13 +129,13 @@ output = ScriptFilterJson(
                     lambda: IconFileIcon(
                         path=get_workflow_plist_value(
                             "modelicon",
-                            plist=repo / "information.plist",
+                            plist=repo / "information.plist",  # noqa: B023
                         ),
                     )
                 )
                 if repo.name == NAME_COMMON
                 else lambda: IconNoType(
-                    path=str(repo / "icon.png"),
+                    path=str(repo / "icon.png"),  # noqa: B023
                 ),
             ),
             type="file:skipcheck",
