@@ -2,8 +2,8 @@
 
 import json
 import sys
-from dataclasses import asdict, dataclass
-from typing import Literal, NoReturn, Optional, Union
+from dataclasses import dataclass, is_dataclass
+from typing import Any, Literal, NoReturn, Optional, Union
 
 
 @dataclass(frozen=True)
@@ -138,6 +138,20 @@ class ScriptFilterJson:
 
     def send(self) -> NoReturn:
         """Send this script filter JSON object to Alfred."""
-        j = json.dumps(asdict(self))
+
+        def omit_none_recursive(obj: object) -> dict[str, Any]:
+            if is_dataclass(obj):
+                obj = obj.__dict__
+            if isinstance(obj, dict):
+                return {
+                    k: omit_none_recursive(v)  # pyright: ignore[reportUnknownArgumentType]
+                    for k, v in obj.items()  # pyright: ignore[reportUnknownVariableType]
+                    if v is not None
+                }
+            if isinstance(obj, (list, tuple)):
+                return [omit_none_recursive(v) for v in obj if v is not None]  # pyright: ignore[reportUnknownVariableType, reportUnknownArgumentType, reportReturnType]
+            return obj  # pyright: ignore[reportReturnType]
+
+        j = json.dumps(omit_none_recursive(self))
         sys.stdout.write(j)
         sys.exit(0)
