@@ -2,35 +2,39 @@
 
 import json
 import sys
-from typing import Literal, NoReturn, TypedDict, Union
+from dataclasses import asdict, dataclass
+from typing import Literal, NoReturn, Optional, Union
 
 
-class _IconNoType(TypedDict):
+@dataclass(frozen=True)
+class IconNoType:
     """An icon without a type."""
 
     path: str
 
 
-class _IconFileIcon(TypedDict):
+@dataclass(frozen=True)
+class IconFileIcon:
     """An icon defaulting to the icon of a filepath."""
 
     path: str
-    type: Literal["fileicon"]
+    type: Literal["fileicon"] = "fileicon"
 
 
-class _IconFileType(TypedDict):
+@dataclass(frozen=True)
+class IconFileType:
     """An icon of a filetype given by a UTI (Uniform Type Identifier)."""
 
     path: str
-    type: Literal["filetype"]
+    type: Literal["filetype"] = "filetype"
 
 
-_Icon = Union[_IconNoType, _IconFileIcon, _IconFileType]
+Icon = Union[IconNoType, IconFileIcon, IconFileType]
 
-_Variables = dict[str, str]
+Variables = dict[str, str]
 
 
-_ModKey = Literal[
+ModKey = Literal[
     "cmd",
     "alt",
     "ctrl",
@@ -65,73 +69,75 @@ _ModKey = Literal[
 ]
 
 
-class _ModValue(TypedDict):
+@dataclass(frozen=True)
+class ModValue:
     """A mod element."""
 
-    valid: bool
-    arg: str
-    subtitle: str
-    icon: _Icon
-    variables: _Variables
+    valid: Optional[bool] = None
+    arg: Optional[str] = None
+    subtitle: Optional[str] = None
+    icon: Optional[Icon] = None
+    variables: Optional[Variables] = None
 
 
-_Mod = dict[_ModKey, _ModValue]
-
-
-class _Action(TypedDict):
+@dataclass(frozen=True)
+class Action:
     """A universal action."""
 
-    text: Union[str, list[str]]
-    url: str
-    tile: str
-    auto: Union[str, list[str]]
+    text: Optional[Union[str, list[str]]] = None
+    url: Optional[str] = None
+    tile: Optional[str] = None
+    auto: Optional[Union[str, list[str]]] = None
 
 
-class _Text(TypedDict):
+@dataclass(frozen=True)
+class Text:
     """A text object."""
 
-    copy: str
-    largetype: str
+    copy: Optional[str] = None
+    largetype: Optional[str] = None
 
 
-class _Cache(TypedDict):
+@dataclass(frozen=True)
+class Cache:
     """A cache configuration."""
 
     seconds: int
-    loosereload: Literal[True]
+    loosereload: Optional[Literal[True]] = None
 
 
-class _Item(TypedDict):
+@dataclass(frozen=True)
+class Item:
     """A single item."""
 
-    uid: str
     title: str
-    subtitle: str
-    arg: Union[str, list[str]]
-    icon: _Icon
-    valid: bool
-    match: str
-    autocomplete: str
-    type: Literal["default", "file", "file:skipcheck"]
-    mods: list[_Mod]
-    action: Union[str, list[str], _Action]
-    text: _Text
-    quicklookurl: str
-    variables: _Variables
+    uid: Optional[str] = None
+    subtitle: Optional[str] = None
+    arg: Optional[Union[str, list[str]]] = None
+    icon: Optional[Icon] = None
+    valid: Optional[bool] = None
+    match: Optional[str] = None
+    autocomplete: Optional[str] = None
+    type: Optional[Literal["default", "file", "file:skipcheck"]] = None
+    mods: Optional[dict[ModKey, ModValue]] = None
+    action: Optional[Union[str, list[str], Action]] = None
+    text: Optional[Text] = None
+    quicklookurl: Optional[str] = None
+    variables: Optional[Variables] = None
 
 
-class ScriptFilterJson(TypedDict):
+@dataclass(frozen=True)
+class ScriptFilterJson:
     """An object conforming to the [script filter JSON format](https://www.alfredapp.com/help/workflows/inputs/script-filter/json/)."""
 
-    items: list[_Item]
-    variables: _Variables
-    rerun: float
-    cache: _Cache
-    skipknowledge: Literal[True]
+    items: list[Item]
+    variables: Optional[Variables] = None
+    rerun: Optional[float] = None
+    cache: Optional[Cache] = None
+    skipknowledge: Optional[Literal[True]] = None
 
-
-def send(x: ScriptFilterJson) -> NoReturn:
-    """Send this script filter JSON object to Alfred."""
-    j = json.dumps(x)
-    sys.stdout.write(j)
-    sys.exit(0)
+    def send(self) -> NoReturn:
+        """Send this script filter JSON object to Alfred."""
+        j = json.dumps(asdict(self))
+        sys.stdout.write(j)
+        sys.exit(0)

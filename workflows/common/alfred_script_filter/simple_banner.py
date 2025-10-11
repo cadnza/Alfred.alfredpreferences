@@ -8,10 +8,15 @@
 - `$4`: Icon type (none if blank or unrecognized, _i.e._ forces a `_IconNoType`)
 """
 
-import json
 import sys
 
-from write import out
+from alfred_script_filter.jsn import (
+    IconFileIcon,
+    IconFileType,
+    IconNoType,
+    Item,
+    ScriptFilterJson,
+)
 
 title = sys.argv[1]
 subtitle = sys.argv[2]
@@ -19,30 +24,18 @@ icon_path = sys.argv[3]
 icon_type = sys.argv[4]
 
 if icon_type == "fileicon":
-    icon = {
-        "path": icon_path,
-        "type": "filepath",
-    }
+    icon = IconFileIcon(path=icon_path)
 elif icon_type == "filetype":
-    icon = {
-        "path": icon_path,
-        "type": "filetype",
-    }
+    icon = IconFileType(path=icon_path)
 else:
-    icon = {
-        "path": icon_path,
-    }
+    icon = IconNoType(path=icon_path)
 
-out(
-    json.dumps(
-        {
-            "items": [
-                {
-                    "title": title,
-                    "subtitle": subtitle,
-                    "icon": icon,
-                },
-            ],
-        },
-    ),
-)
+ScriptFilterJson(
+    items=[
+        Item(
+            title=title,
+            subtitle=subtitle,
+            icon=icon,
+        ),
+    ],
+).send()

@@ -9,9 +9,10 @@ from pathlib import Path
 from typing import TypeVar, cast, get_args
 
 from common.alfred_script_filter.jsn import (
+    IconFileIcon,
+    IconNoType,
+    Item,
     ScriptFilterJson,
-    _Icon,  # pyright: ignore[reportPrivateUsage]
-    send,
 )
 from common.alfred_workflow import get_workflow_plist_value
 from common.validation import one_of, usage
@@ -95,67 +96,62 @@ repos = (
 )
 
 # Prepare Alfred output
-output: ScriptFilterJson = {
-    "variables": {
+output = ScriptFilterJson(
+    variables={
         "id_editor": editor_name,
     },
-    "items": [
-        {
-            "uid": str(repo),
-            "title": condition_on_alfred(
+    items=[
+        Item(
+            uid=str(repo),
+            title=condition_on_alfred(
                 if_vanilla_repo=repo.name,
                 if_alfred_workflow=get_workflow_plist_value,
                 x="name",
                 plist=repo
                 / ("information.plist" if repo.name == NAME_COMMON else "info.plist"),
             ),
-            "subtitle": condition_on_alfred(
+            subtitle=condition_on_alfred(
                 if_vanilla_repo=str(repo),
                 if_alfred_workflow=get_workflow_plist_value,
                 x="description",
                 plist=repo
                 / ("information.plist" if repo.name == NAME_COMMON else "info.plist"),
             ),
-            "variables": {
+            variables={
                 "repo": str(repo),
                 "repoName": repo.name,
             },
-            "icon": cast(
-                "_Icon",
-                condition_on_alfred(
-                    if_vanilla_repo={
-                        "path": str(repo),
-                        "type": "fileicon",
-                    },
-                    if_alfred_workflow=(
-                        lambda: {
-                            "path": get_workflow_plist_value(
-                                "modelicon",
-                                plist=repo / "information.plist",  # noqa: B023
-                            ),
-                            "type": "fileicon",
-                        }
+            icon=condition_on_alfred(
+                if_vanilla_repo=IconFileIcon(
+                    path=str(repo),
+                ),
+                if_alfred_workflow=(
+                    lambda: IconFileIcon(
+                        path=get_workflow_plist_value(
+                            "modelicon",
+                            plist=repo / "information.plist",
+                        ),
                     )
-                    if repo.name == NAME_COMMON
-                    else lambda: {
-                        "path": str(repo / "icon.png"),  # noqa: B023
-                    },
+                )
+                if repo.name == NAME_COMMON
+                else lambda: IconNoType(
+                    path=str(repo / "icon.png"),
                 ),
             ),
-            "type": "file:skipcheck",
-            "autocomplete": condition_on_alfred(
+            type="file:skipcheck",
+            autocomplete=condition_on_alfred(
                 if_vanilla_repo=str(repo),
                 if_alfred_workflow=get_workflow_plist_value,
                 x="name",
                 plist=repo
                 / ("information.plist" if repo.name == NAME_COMMON else "info.plist"),
             ),
-            "arg": str(repo),
-        }
+            arg=str(repo),
+        )
         for repo in repos
         if filter_repo(repo)
     ],
-}
+)
 
 # Send it
-send(output)
+output.send()

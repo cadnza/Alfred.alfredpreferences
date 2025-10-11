@@ -1,10 +1,10 @@
 """Utilities for documenting usage."""
 
 import sys
+from collections.abc import Callable
 from pathlib import Path
 from typing import (
     Any,
-    Callable,
     NoReturn,
     get_args,
 )
