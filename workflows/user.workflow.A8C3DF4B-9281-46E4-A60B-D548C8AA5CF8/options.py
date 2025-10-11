@@ -140,7 +140,7 @@ output = ScriptFilterJson(
             ),
             type="file:skipcheck",
             autocomplete=condition_on_alfred(
-                if_vanilla_repo=str(repo),
+                if_vanilla_repo=str(repo.name),
                 if_alfred_workflow=get_workflow_plist_value,
                 x="name",
                 plist=repo
